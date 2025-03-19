@@ -6,11 +6,11 @@ import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import "../lib/i18n";
 import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
-import { appWithTranslation } from "next-i18next";
 
-import ToasterContext from "../context/ToastContext";
+import ToasterContext from "@/app/context/ToastContext";
 
 export default function RootLayout({
   children,

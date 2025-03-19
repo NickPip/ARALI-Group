@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"; // Import i18next hook
 
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import LanguageSwitcher from "./languageSwitcher";
 // Optionally, if you have a LanguageSwitcher component, you can import it too:
 // import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -61,7 +62,7 @@ const Header = () => {
           </Link>
 
           {/* Optionally, render the language switcher here */}
-          {/* <LanguageSwitcher /> */}
+          <LanguageSwitcher />
 
           {/* Hamburger Toggle BTN */}
           <button
