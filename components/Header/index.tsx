@@ -62,7 +62,6 @@ const Header = () => {
           </Link>
 
           {/* Optionally, render the language switcher here */}
-          <LanguageSwitcher />
 
           {/* Hamburger Toggle BTN */}
           <button
@@ -165,6 +164,7 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
+            <LanguageSwitcher />
             <ThemeToggler />
           </div>
         </div>

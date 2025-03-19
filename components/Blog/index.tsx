@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../Common/SectionHeader";
 import BlogItem from "./BlogItem";
 import BlogData from "./blogData";
 
-const Blog = async () => {
+const Blog = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 lg:py-25 xl:py-30">
       <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
@@ -12,8 +16,8 @@ const Blog = async () => {
           <SectionHeader
             headerInfo={{
               title: ``,
-              subtitle: `პროექტები`,
-              description: `მიმდინარე და დასრულებული პროექტები.`,
+              subtitle: t("blog.subtitle"),
+              description: t("blog.description"),
             }}
           />
         </div>

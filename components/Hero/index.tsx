@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -17,18 +19,13 @@ const Hero = () => {
             {/* Left Section */}
             <div className="text-center lg:w-1/2 lg:text-left">
               <h4 className="mb-4 text-lg font-medium text-gray-700 dark:text-gray-300">
-                პროფესიონალური სამშენებლო მომსახურება
+                {t("hero.subtitle")}
               </h4>
               <h1 className="mb-5 text-4xl font-extrabold leading-tight text-black dark:text-white">
-                ჩვენ ვქმნით{" "}
-                <span className="text-primary">მდგრად და ინოვაციურ</span>{" "}
-                პროექტებს
+                <span className="text-primary">{t("hero.title")}</span>{" "}
               </h1>
               <p className="leading-relaxed text-gray-700 dark:text-gray-400">
-                Arali Group არის სამშენებლო კომპანია, რომელიც სპეციალიზებულია
-                ხარისხიან, ენერგოეფექტურ და ეკოლოგიურად მდგრად მშენებლობებში.
-                ჩვენი გუნდი უზრუნველყოფს სრულ პროცესს - დიზაინიდან
-                რეალიზაციამდე.
+                {t("hero.description")}
               </p>
 
               <div className="mt-10">
@@ -40,18 +37,18 @@ const Hero = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
-                    placeholder="თქვენი ელ. ფოსტა"
+                    placeholder={t("hero.email_placeholder")}
                     className="rounded-full border border-gray-300 px-6 py-3 text-gray-900 focus:border-primary focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                   />
                   <button
                     type="submit"
                     className="hover:bg-primary-dark rounded-full bg-primary px-7.5 py-3 font-semibold text-white transition"
                   >
-                    დაგვიკავშირდით
+                    {t("hero.button_text")}
                   </button>
                 </form>
                 <p className="mt-5 text-gray-600 dark:text-gray-400">
-                  მიიღეთ კონსულტაცია ჩვენი ექსპერტებისგან.
+                  {t("hero.consultation_text")}
                 </p>
               </div>
             </div>
@@ -62,7 +59,7 @@ const Hero = () => {
                 <Image
                   className="rounded-lg shadow-lg"
                   src="/images/hero/mshenebloba.jpg"
-                  alt="Arali Group Construction"
+                  alt={t("hero.image_alt")}
                   width={620}
                   height={644}
                 />

@@ -14,7 +14,7 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "ARALI Group",
+  title: "AraliGroup",
 
   // other metadata
   description: "Arali",

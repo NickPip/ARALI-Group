@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t border-stroke bg-white dark:border-strokedark dark:bg-blacksection">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
@@ -51,7 +54,7 @@ const Footer = () => {
             className="text-right"
           >
             <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-              კონტაქტი
+              {t("contact.title")}
             </p>
             <p className="text-itemtitle font-medium text-black dark:text-white">
               araligroup@gmail.com
@@ -72,7 +75,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="animate_top w-full text-center lg:w-auto"
           >
-            <p>&copy; 2025 არალი ყველა უფლება დაცულია</p>
+            <p>{t("footer.copyright")}</p>
           </motion.div>
 
           <motion.div

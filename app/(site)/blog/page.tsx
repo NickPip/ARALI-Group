@@ -3,7 +3,7 @@ import BlogItem from "@/components/Blog/BlogItem";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "შესრულებული პროექტები - ARALI Group",
+  title: "AraliGroup",
 
   // other metadata
   description: "This is Blog page for Solid Pro",

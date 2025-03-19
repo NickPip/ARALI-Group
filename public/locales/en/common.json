@@ -2,8 +2,322 @@
   "menu": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
-    "contact": "Contact"
+    "completedProjects": "Completed Projects",
+    "directions": "Aims / Objectives",
+    "contact": "Contact Us",
+    "roadConstruction": "Road Construction",
+    "civilConstruction": "Civil Construction",
+    "concreteProduction": "Concrete Production",
+    "quarries": "Quarries",
+    "gasFillingStation": "Gas Filling Station",
+    "energy": "Energy"
   },
-  "language": "Language"
+  "language": "Language",
+  "hero": {
+    "subtitle": "Professional Construction Services",
+    "title": "We Create Sustainable and Innovative Projects",
+    "description": "Arali Group is a construction company specializing in high-quality, energy-efficient, and environmentally sustainable buildings. Our team ensures the entire process—from design to realization.",
+    "email_placeholder": "Your Email",
+    "button_text": "Contact Us",
+    "consultation_text": "Get a consultation from our experts."
+  },
+  "features": {
+    "title": "Aims",
+    "subtitle": "Main Objectives",
+    "description": "Below are the key directions the company is focused on.",
+    "roadConstruction": {
+      "title": "Road Construction",
+      "description": "Our company provides high-quality road construction that meets international standards and ensures durable infrastructure."
+    },
+    "civilConstruction": {
+      "title": "Civil Construction",
+      "description": "Civil construction projects that include multi-purpose buildings, residential, and commercial structures built with the highest quality materials."
+    },
+    "concreteProduction": {
+      "title": "Concrete Production",
+      "description": "Reliable and high-quality concrete production for your construction projects, supported by modern technology."
+    },
+    "quarries": {
+      "title": "Quarries",
+      "description": "Extraction and supply of high-quality inert materials for the construction industry."
+    },
+    "gasFillingStation": {
+      "title": "Gas Filling Station",
+      "description": "Our modern gas filling stations ensure safe and environmentally friendly fuel supply."
+    },
+    "energy": {
+      "title": "Energy",
+      "description": "Innovative energy solutions based on renewable and sustainable energy sources."
+    }
+  },
+  "featuresTab": {
+    "innovation": {
+      "title": "Innovation",
+      "desc1": "We continuously monitor global trends and technologies. We listen, learn, and seek the best ideas, striving to implement the latest approaches in our work processes. We believe that improvement is a continuous process, and we are never satisfied with what has been achieved."
+    },
+    "efficiency": {
+      "title": "Efficiency",
+      "desc1": "We understand that efficiency is the key factor in achieving successful results. Efficiency in time, decisions, and processes is equally important. That is why, during project implementation, each stage is given the utmost attention."
+    },
+    "integrity": {
+      "title": "Integrity",
+      "desc1": "We recognize that development and progress do not exist in a single aspect. There is no such thing as just one person's success in an organization. That is why integrity, teamwork, and a comprehensive approach are our top priorities."
+    },
+    "planning": {
+      "title": "Planning",
+      "desc1": "Project planning and effective management are the strengths of our company. With 16 years of experience, we have developed approaches where, at the initial stage of the project, maximum attention is given to the calculation of material, technical, time, and human resources needed for each stage, ensuring that the project progresses sequentially and without interruption and is completed within the agreed timeframe."
+    }
+  },
+  "funFact": {
+    "title": "Arali Group Stands Out for Reliability",
+    "description": "With 20 years of operation, the company has built a strong reputation, trust, and respect. Our partners feel secure and confident when working with us.",
+    "completedProjects": {
+      "number": "1540",
+      "label": "Completed Projects"
+    },
+    "partnerCompanies": {
+      "number": "800",
+      "label": "Partner Companies"
+    },
+    "ongoingProjects": {
+      "number": "10",
+      "label": "Ongoing Projects"
+    }
+  },
+  "faq": {
+    "title1": "Frequently Asked",
+    "title2": "Questions",
+    "question1": "What services do you offer?",
+    "answer1": "We are a construction company providing a full cycle – from design and planning to construction. We work on residential, commercial, and industrial projects.",
+    "question2": "What types of construction do you specialize in?",
+    "answer2": "We specialize in residential buildings, commercial spaces, and industrial projects. Our portfolio includes apartment buildings, office spaces, shopping centers, and other infrastructure developments.",
+    "question3": "Do you have ongoing projects?",
+    "answer3": "Yes, you can view our ongoing and completed projects on our website, or contact us for detailed information."
+  },
+  "blog": {
+    "title": "Our Projects",
+    "subtitle": "Projects",
+    "description": "Ongoing and completed projects."
+  },
+
+  "project1": {
+    "title": "Rustavi 2024",
+    "metadata": "A multifunctional sports complex, a two-story, closed-type sports facility whose main hall will serve 8 Olympic sports."
+  },
+  "project2": {
+    "title": "Road Rehabilitation",
+    "metadata": "Rehabilitation works of Aspindza Street in Akhaltsikhe."
+  },
+  "project3": {
+    "title": "Road Cleaning Works",
+    "metadata": "The company actively assists snowy regions with road cleaning operations."
+  },
+
+  "contact": {
+    "leaveMessage": "Leave a Message",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "phone": "Phone Number",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "getInTouch": "Contact Us",
+    "address": "Our Address",
+    "addressDetails": "Georgia, Akhaltsikhe, David Aghmashenebeli St, N 3B",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone Number",
+    "title": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2025 Arali. All rights reserved."
+  },
+  "roadConstruction": {
+    "title": "Road Construction",
+    "companyName": "Arali",
+    "experience": "with 20 years of experience",
+    "leadership": "a leader in road infrastructure development",
+    "location": "in Georgia",
+    "completedRoads": "The total length of roads built and rehabilitated by us",
+    "roadLength": "exceeds X0,000 km",
+    "scale": "making it one of the largest projects nationwide",
+    "materialBase": "Arali's material and technical base",
+    "equipment": "is equipped with the latest European-standard construction machinery and equipment",
+    "qualityAssurance": "allowing us to complete roadwork in the shortest time and with the highest quality",
+    "mainDirections": "Key Areas of Our Road Construction:",
+    "highways": "Highway Construction and Rehabilitation",
+    "innerRoads": "Inner Road Paving",
+    "bridges": "Bridge Construction and Restoration",
+    "safetyInfrastructure": "Road Safety Infrastructure",
+    "asphaltConcrete": "Asphalt-Concrete Work",
+    "image1": "Road construction project",
+    "image2": "Infrastructure work",
+    "image3": "Road rehabilitation"
+  },
+  "civilConstruction": {
+    "title": "Civil Construction",
+    "companyName": "Arali",
+    "experience": "Our experience includes the construction of complex projects and successful collaborations",
+    "infrastructure": "Residential, healthcare, hospitality, public, and other infrastructure projects are part of citizens' daily lives.",
+    "regulations": "Strict compliance with construction regulations and labor laws",
+    "priority": "is our priority in every project we undertake",
+    "mainDirections": "Key Areas of Our Civil Construction:",
+    "residentialCommercial": "Residential and Commercial Buildings",
+    "healthcare": "Healthcare Infrastructure",
+    "hospitality": "Hotels and Hospitality Facilities",
+    "publicBuildings": "Public and Administrative Buildings",
+    "renovation": "Infrastructure Renovation and Modernization",
+    "expertise": "Expertise:",
+    "tenderManagement": "Tender Process Management and Contract Negotiation",
+    "supervision": "Management Supervision, including Field Procurement",
+    "constructionAdmin": "Construction and Site Administration",
+    "operation": "Commissioning and Operations",
+    "image1": "Civil construction project",
+    "image2": "Infrastructure work",
+    "image3": "Construction project"
+  },
+  "concreteProduction": {
+    "title": "Concrete Production",
+    "companyName": "Arali",
+    "introduction": "has been providing concrete production and supply for its own construction projects, as well as for various private and state customers for years.",
+    "productionCapacity": "Currently, the company owns X concrete production facilities across Georgia, ensuring a capacity of X-XX m³/hr.",
+    "technologyStandards": "Concrete production is carried out using modern technology and ecological standards.",
+    "mainDirections": "Main Areas of Our Concrete Production:",
+    "standardConcrete": "Standard and High-Strength Concrete Production",
+    "industrialCommercial": "Concrete Supply for Industrial and Commercial Construction",
+    "bridgeConcrete": "Concrete Structures for Bridges and Roads",
+    "residentialSupply": "Concrete Supply for Residential Complexes",
+    "specialCement": "Special Cement and Concrete Additives for Specific Projects",
+    "expertise": "Expertise:",
+    "qualityControl": "Concrete Quality Control and Testing",
+    "compliance": "Ensuring Compliance with Construction Standards",
+    "transport": "Concrete Transportation and Timely Delivery",
+    "siteSupply": "Supply of Special Concrete Mixtures for Construction Sites",
+    "modernEquipment": "Production Base Equipped with Modern Machinery",
+    "image1": "Concrete production process",
+    "image2": "Concrete factory",
+    "image3": "Concrete supply for construction projects"
+  },
+  "quarries": {
+    "title": "Quarries",
+    "companyName": "Arali",
+    "introduction": "operates high-tech sand and gravel quarries that produce and supply construction materials to the highest standards.",
+    "locationTitle": "Quarries are strategically located:",
+    "locationDescription": "Their strategic location allows for fast and efficient delivery for various construction projects.",
+    "productsTitle": "Our Quarry Products:",
+    "product1": "Concrete Aggregates",
+    "product2": "Materials for Asphalt Production",
+    "product3": "Crushed Rock and Gravel",
+    "product4": "Road Base and Sub-Base Materials",
+    "product5": "Pavement Surface Materials",
+    "product6": "Special Construction Minerals",
+    "image1": "Quarry work process",
+    "image2": "Production of construction materials",
+    "image3": "Supply of high-quality materials"
+  },
+  "gasStation": {
+    "title": "Gas Filling Station",
+    "companyName": "Arali Gas",
+    "introduction": "specializes in compressed natural gas distribution and operates X gas stations across Georgia.",
+    "description": "Our stations are equipped with the latest technology, ensuring customers receive eco-friendly, economical, and safe fuel.",
+    "offersTitle": "Arali Gas offers customers:",
+    "offer1": "A nationwide network of gas stations",
+    "offer2": "Eco-friendly and cost-effective fuel",
+    "offer3": "Service equipped with the latest technology",
+    "offer4": "Continuous monitoring and safety control",
+    "offer5": "High-quality customer service",
+    "image1": "Gas filling station",
+    "image2": "Eco-friendly fuel",
+    "image3": "High safety standards",
+    "safetyTitle": "Safety and Standards:",
+    "safety1": "Compliance with international safety standards",
+    "safety2": "Continuous technical monitoring",
+    "safety3": "Energy-efficient and innovative systems",
+    "safety4": "Ongoing improvement and service upgrades"
+  },
+  "solarPanels": {
+    "title": "Solar Panel Installation",
+    "companyName": "Arali",
+    "introduction": "offers solar panel installation and transition to renewable energy, ensuring eco-friendly and energy-efficient solutions.",
+    "description": "Our team provides professional design, installation, and maintenance of solar power stations, helping to save energy and protect the environment.",
+    "servicesTitle": "Our Services",
+    "service1": "Professional installation of solar panels",
+    "service2": "Energy storage systems (batteries and inverters)",
+    "service3": "Execution of individual and commercial projects",
+    "service4": "Technical maintenance of solar power stations",
+    "service5": "Energy efficiency analysis and consulting",
+    "image1": "Solar panel installation",
+    "image2": "Energy storage system",
+    "image3": "Eco-friendly energy usage",
+    "whyChooseUsTitle": "Why Choose Arali?",
+    "whyChooseUs1": "High-quality and certified products",
+    "whyChooseUs2": "High-performance technology",
+    "whyChooseUs3": "Eco-friendly energy systems",
+    "whyChooseUs4": "Complete package of installation and maintenance services",
+    "whyChooseUs5": "Long-term operation guarantee"
+  },
+  "blog2": {
+    "title": "ქალაქ რუსთავში სპორტული კომპლექსი",
+    "author": "შემსრულებელი: არალი ჯგუფი",
+    "introduction": "This is an introduction about the sports complex.",
+    "date": "დასრულდა: მარტი 21, 2024",
+    "category": "კატეგორია: სპორტი",
+    "details": "Project Details",
+    "content": "Completed a new multi-functional sports complex in Rustavi...",
+    "image1": "Sports Complex Exterior",
+    "image2": "Interior View",
+    "image3": "Competition Area",
+    "accessibility": "Accessibility Features",
+    "accessibilityInfo": "The complex is fully adapted for people with disabilities."
+  },
+  "blogTwo": {
+    "title": "Sports Complex in Rustavi",
+    "executor": "Executor",
+    "executorName": "Arali Group",
+    "date": "Completed",
+    "dateValue": "March 21, 2024",
+    "category": "Category",
+    "categoryName": "Sports",
+    "introduction": "We have completed the construction of a new multi-functional sports complex in Rustavi!",
+    "details": "The two-story enclosed sports complex will serve 8 Olympic sports disciplines, specifically, events can be held in basketball, volleyball, handball, mini football, boxing, wrestling, judo, and fencing.",
+    "section1": "The hall’s retractable, so-called telescopic stands are designed for 1,500 spectators, allowing for efficient use of space.",
+    "section2": "The hall is equipped according to international standards. For hosting competitions, LED screens have been installed. The building is equipped with heating, cooling, and ventilation systems.",
+    "section3": "The sports complex already includes a fitness hall and provides all necessary spaces for athletes’ training and local or international competitions: locker rooms, showers, rest areas, storage rooms, a conference hall, and an open café.",
+    "section4": "A recreational zone has been arranged around the complex, along with pedestrian paths, an open parking lot for 85 cars, and installed outdoor lighting fixtures.",
+    "coverImageAlt": "Sports Complex Cover Image",
+    "image1": "Sports Complex Interior",
+    "image2": "Gym Area",
+    "image3": "Competition Hall",
+    "accessibility": "The multi-functional sports complex is fully adapted for persons with disabilities."
+  },
+  "about": {
+    "companyName": "Arali",
+    "experienceYears": "has been actively involved for over 20 years",
+    "sectors": "in the development of key economic sectors such as road and infrastructure construction.",
+    "supportClients": "We help clients implement large-scale and complex projects that create long-term and sustainable legacies, contributing to the country's social and economic progress.",
+    "strategy": "The group's successful experience is based on an efficient organizational and strategic vision, a dynamic entrepreneurial approach,",
+    "focusQuality": "which is focused on quality and customer satisfaction.",
+    "techBase": "Arali's material and technical base, along with strong project management, allows us to effectively execute projects of any complexity in parallel.",
+    "professionalTeam": "The company’s main asset is a professional team, whose years of experience and expertise ensure effective and successful project management. Arali also plays a key role in employing and developing local talent across Georgia.",
+    "mainDirections": "Our main business directions are:",
+    "roadConstruction": "Road construction and rehabilitation",
+    "buildings": "Multi-functional civil buildings construction",
+    "hotels": "Hotel construction",
+    "residential": "Residential construction",
+    "waterSystems": "Reservoirs, water purification plants, regulatory systems, and rehabilitation",
+    "bridges": "Bridge construction and rehabilitation",
+    "retainingWalls": "Retaining walls construction and rehabilitation",
+    "concreteWorks": "Concrete reinforcement works",
+    "shoreReinforcement": "Shore reinforcement works",
+    "sewageSystems": "Water and sewage systems construction and rehabilitation",
+    "missionAndGoals": "Mission and Goals",
+    "mission": "Mission",
+    "missionDescription": "Our mission is to design and construct civil infrastructure projects that improve the quality of life for citizens.",
+    "goal": "Goal",
+    "goalDescription": "Our goal is to become the leading group in the region, leveraging project management and engineering expertise in construction and engineering sectors.",
+    "values": "Values",
+    "valuesDescription": "Every thought and action of our team is based on company values: teamwork, responsibility for quality, innovation, sustainable development, and environmental care."
+  },
+  "sidebar": {
+    "companyAbout": "About the Company"
+  }
 }

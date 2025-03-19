@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 type FaqData = {
   activeFaq: number;
   id: number;
@@ -7,6 +9,7 @@ type FaqData = {
 };
 
 const FAQItem = ({ faqData }: { faqData: FaqData }) => {
+  const { t } = useTranslation();
   const { activeFaq, id, handleFaqToggle, quest, ans } = faqData;
 
   return (
@@ -18,7 +21,7 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
           }}
           className="flex cursor-pointer items-center justify-between px-6 py-5 text-metatitle3 font-medium text-black dark:text-white lg:px-9 lg:py-7.5"
         >
-          {quest}
+          {t(quest)}
 
           {activeFaq === id ? (
             <svg
@@ -53,7 +56,7 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
             activeFaq === id ? "block" : "hidden"
           }`}
         >
-          {ans}
+          {t(ans)}
         </p>
       </div>
     </>

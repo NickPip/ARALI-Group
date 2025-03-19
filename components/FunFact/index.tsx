@@ -2,8 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const FunFact = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* <!-- ===== Funfact Start ===== --> */}
@@ -24,15 +27,8 @@ const FunFact = () => {
 
           <motion.div
             variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-              },
-
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0 },
             }}
             initial="hidden"
             whileInView="visible"
@@ -41,27 +37,16 @@ const FunFact = () => {
             className="animate_top mx-auto mb-12.5 px-4 text-center md:w-4/5 md:px-0 lg:mb-17.5 lg:w-2/3 xl:w-1/2"
           >
             <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-              არალი ჯგუფი გამოირჩევა სანდოობით
+              {t("funFact.title")}
             </h2>
-            <p className="mx-auto lg:w-11/12">
-              20 წლლიანიი მუშაობის შედეგად, კომოანიამ გამოიმუშავა უდიდესი
-              რეპუტაცია, სანდოობა და პატივისცემა. ჩვენი ნებისმიერი პარტნიორი
-              კომპანია თავს გრძნობს მშვიდად და დაცულად.
-            </p>
+            <p className="mx-auto lg:w-11/12">{t("funFact.description")}</p>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -70,21 +55,16 @@ const FunFact = () => {
               className="animate_top text-center"
             >
               <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                1540
+                {t("funFact.completedProjects.number")}
               </h3>
-              <p className="text-lg lg:text-para2">შესრულებული პროექტი</p>
+              <p className="text-lg lg:text-para2">
+                {t("funFact.completedProjects.label")}
+              </p>
             </motion.div>
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -93,21 +73,16 @@ const FunFact = () => {
               className="animate_top text-center"
             >
               <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                800
+                {t("funFact.partnerCompanies.number")}
               </h3>
-              <p className="text-lg lg:text-para2">მეგობარი კომპანია</p>
+              <p className="text-lg lg:text-para2">
+                {t("funFact.partnerCompanies.label")}
+              </p>
             </motion.div>
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -116,9 +91,11 @@ const FunFact = () => {
               className="animate_top text-center"
             >
               <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                10
+                {t("funFact.ongoingProjects.number")}
               </h3>
-              <p className="text-lg lg:text-para2">მიმდინარე პროექტი</p>
+              <p className="text-lg lg:text-para2">
+                {t("funFact.ongoingProjects.label")}
+              </p>
             </motion.div>
           </div>
         </div>

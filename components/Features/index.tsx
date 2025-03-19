@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import featuresData from "./featuresData";
 import SingleFeature from "./SingleFeature";
 import SectionHeader from "../Common/SectionHeader";
 
 const Feature = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* <!-- ===== Features Start ===== --> */}
@@ -13,9 +16,9 @@ const Feature = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: "მიმართულებები",
-              subtitle: "ძირითადი მიმართულებები",
-              description: `ქვემოთ ჩამოთვლილია ძირითადი მიმართულებები რომელზეც კომოანია არის ორიენტირებული`,
+              title: t("features.title"),
+              subtitle: t("features.subtitle"),
+              description: t("features.description"),
             }}
           />
           {/* <!-- Section Title End --> */}

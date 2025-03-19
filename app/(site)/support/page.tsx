@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "დაგვიკავშირდით - ARALI Group",
+  title: "AraliGroup",
 
   // other metadata
   description: "This is Support page for Solid Pro",

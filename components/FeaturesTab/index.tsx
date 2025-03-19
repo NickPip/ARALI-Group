@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import FeaturesTabItem from "./FeaturesTabItem";
 import featuresTabData from "./featuresTabData";
-
 import { motion } from "framer-motion";
 
 const FeaturesTab = () => {
+  const { t } = useTranslation();
   const [currentTab, setCurrentTab] = useState("tabOne");
 
   return (
@@ -56,10 +57,10 @@ const FeaturesTab = () => {
                 </div>
                 <div className="md:w-3/5 lg:w-auto">
                   <button className="text-sm font-medium text-black dark:text-white xl:text-regular">
-                    {tab === "tabOne" && "ინოვაცია"}
-                    {tab === "tabTwo" && "ეფექტურობა"}
-                    {tab === "tabThree" && "მთლიანობა"}
-                    {tab === "tabFour" && "დაგეგმვა"}
+                    {tab === "tabOne" && t("featuresTab.innovation.title")}
+                    {tab === "tabTwo" && t("featuresTab.efficiency.title")}
+                    {tab === "tabThree" && t("featuresTab.integrity.title")}
+                    {tab === "tabFour" && t("featuresTab.planning.title")}
                   </button>
                 </div>
               </div>

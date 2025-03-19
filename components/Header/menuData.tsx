@@ -9,55 +9,55 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "ჩვენ შესახებ",
+    title: "menu.about",
     newTab: false,
     path: "/docs",
   },
   {
     id: 2.1,
-    title: "შესრულებული პროექტები",
+    title: "menu.completedProjects",
     newTab: false,
     path: "/blog",
   },
 
   {
     id: 3,
-    title: "მიმართულებები",
+    title: "menu.directions",
     newTab: false,
     submenu: [
       {
         id: 31,
-        title: "საგზაო მშენებლობა",
+        title: "menu.roadConstruction",
         newTab: false,
         path: "/road-construction",
       },
       {
         id: 34,
-        title: "სამოქალაქო მშენებლობა",
+        title: "menu.civilConstruction",
         newTab: false,
         path: "/buildings",
       },
       {
         id: 35,
-        title: "ბეტონის წარმოება",
+        title: "menu.concreteProduction",
         newTab: false,
         path: "/concrete-production",
       },
       {
         id: 35,
-        title: "კარიერები",
+        title: "menu.quarries",
         newTab: false,
         path: "/quarries",
       },
       {
         id: 35.1,
-        title: "გაზ-გასამართი სადგური",
+        title: "menu.gasFillingStation",
         newTab: false,
         path: "/gas-station",
       },
       {
         id: 36,
-        title: "ენერგეტიკა",
+        title: "menu.energy",
         newTab: false,
         path: "/solar",
       },
@@ -66,7 +66,7 @@ const menuData: Menu[] = [
 
   {
     id: 4,
-    title: "დაგვიკავშირდით",
+    title: "menu.contact",
     newTab: false,
     path: "/support",
   },

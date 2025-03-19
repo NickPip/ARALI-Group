@@ -1,12 +1,9 @@
-import SidebarLink from "@/components/Docs/SidebarLink";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "კარიერები - ARALI Group",
-  description: "ARALI Group-ის კარიერების გვერდი.",
-};
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function QuarriesPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="flex justify-center pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
@@ -15,38 +12,33 @@ export default function QuarriesPage() {
             <div className="w-full px-4">
               <div className="company-intro rounded-lg bg-gray-100 p-6 text-left shadow-md dark:bg-gray-800">
                 <h1 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
-                  კარიერები
+                  {t("quarries.title")}
                 </h1>
                 <p className="mt-4 text-gray-700 dark:text-gray-300">
                   <span className="text-blue-600 dark:text-blue-400">
-                    არალი
+                    {t("quarries.companyName")}
                   </span>{" "}
-                  ფლობს მაღალტექნოლოგიურ ქვიშისა და ხრეშის კარიერებს, რომლებიც
-                  აწარმოებენ და ამარაგებენ სამშენებლო მასალებს უმაღლესი
-                  სტანდარტებით. ჩვენი კარიერები მოიცავს ბეტონის აგრეგატებს,
-                  ასფალტს, დალუქულ აგრეგატებს, დამსხვრეულ ქანებს, ტროტუარის
-                  მასალას და სხვა სპეციფიკურ სამშენებლო პროდუქტებს.
+                  {t("quarries.introduction")}
                 </p>
                 <p className="mt-4 text-gray-700 dark:text-gray-300">
                   <span className="text-blue-600 dark:text-blue-400">
-                    კარიერები განლაგებულია:
+                    {t("quarries.locationTitle")}
                   </span>{" "}
-                  მათი სტრატეგიული მდებარეობა საშუალებას იძლევა სწრაფი და
-                  ეფექტური მიწოდება სხვადასხვა სამშენებლო პროექტისთვის.
+                  {t("quarries.locationDescription")}
                 </p>
               </div>
 
               <div className="mt-10 rounded-lg border border-gray-200 p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  ჩვენი კარიერების პროდუქცია:
+                  {t("quarries.productsTitle")}
                 </h2>
                 <ul className="mt-4 space-y-2 text-gray-800 dark:text-gray-300">
-                  <li>⛏️ ბეტონის აგრეგატები</li>
-                  <li>🛣️ ასფალტის წარმოებისთვის საჭირო მასალები</li>
-                  <li>🏗️ დამსხვრეული ქანები და ხრეში</li>
-                  <li>🚧 გზის საყრდენი და ქვე-ბაზის მასალები</li>
-                  <li>🧱 ტროტუარის საფარის მასალები</li>
-                  <li>🔨 სპეციალური სამშენებლო მინერალები</li>
+                  <li>⛏️ {t("quarries.product1")}</li>
+                  <li>🛣️ {t("quarries.product2")}</li>
+                  <li>🏗️ {t("quarries.product3")}</li>
+                  <li>🚧 {t("quarries.product4")}</li>
+                  <li>🧱 {t("quarries.product5")}</li>
+                  <li>🔨 {t("quarries.product6")}</li>
                 </ul>
               </div>
 
@@ -54,21 +46,21 @@ export default function QuarriesPage() {
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <img
                     src="/images/quarries/quarries2.jpg"
-                    alt="კარიერის სამუშაო პროცესი"
+                    alt={t("quarries.image1")}
                     className="h-64 w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <img
                     src="/images/quarries/quarries1.jpg"
-                    alt="სამშენებლო მასალების წარმოება"
+                    alt={t("quarries.image2")}
                     className="h-64 w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <img
                     src="/images/quarries/quarries3.jpg"
-                    alt="ხარისხიანი მასალების მომარაგება"
+                    alt={t("quarries.image3")}
                     className="h-64 w-full object-cover"
                   />
                 </div>

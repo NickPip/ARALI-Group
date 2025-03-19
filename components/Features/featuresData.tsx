@@ -1,47 +1,42 @@
 import { Feature } from "@/types/feature";
+import { useTranslation } from "react-i18next";
 
 const featuresData: Feature[] = [
   {
     id: 1,
     icon: "/images/icon/icon-01.svg",
-    title: "საგზაო მშენებლობა",
-    description:
-      "ჩვენი კომპანია გთავაზობთ მაღალხარისხიან საგზაო მშენებლობას, რომელიც შეესაბამება საერთაშორისო სტანდარტებს და უზრუნველყოფს გამძლე ინფრასტრუქტურას.",
+    title: "features.roadConstruction.title",
+    description: "features.roadConstruction.description",
   },
   {
     id: 2,
     icon: "/images/icon/icon-02.svg",
-    title: "სამოქალაქო მშენებლობა",
-    description:
-      "სამოქალაქო მშენებლობის პროექტები, რომლებიც მოიცავს მრავალფუნქციურ ობიექტებს, საცხოვრებელ და კომერციულ შენობებს უმაღლესი ხარისხის მასალებით.",
+    title: "features.civilConstruction.title",
+    description: "features.civilConstruction.description",
   },
   {
     id: 3,
     icon: "/images/icon/icon-03.svg",
-    title: "ბეტონის წარმოება",
-    description:
-      "სანდო და მაღალხარისხიანი ბეტონის წარმოება თქვენი სამშენებლო პროექტებისთვის, უზრუნველყოფილი თანამედროვე ტექნოლოგიებით.",
+    title: "features.concreteProduction.title",
+    description: "features.concreteProduction.description",
   },
   {
     id: 4,
     icon: "/images/icon/icon-04.svg",
-    title: "კარიერები",
-    description:
-      "მაღალხარისხიანი ინერტული მასალების მოპოვება და მიწოდება სამშენებლო ინდუსტრიისთვის.",
+    title: "features.quarries.title",
+    description: "features.quarries.description",
   },
   {
     id: 5,
     icon: "/images/icon/icon-05.svg",
-    title: "გაზ-გასამართი სადგური",
-    description:
-      "ჩვენი თანამედროვე გაზ-გასამართი სადგურები უზრუნველყოფენ უსაფრთხო და ეკოლოგიურად სუფთა საწვავის მიწოდებას.",
+    title: "features.gasFillingStation.title",
+    description: "features.gasFillingStation.description",
   },
   {
     id: 6,
     icon: "/images/icon/icon-06.svg",
-    title: "ენერგეტიკა",
-    description:
-      "ინოვაციური ენერგეტიკული გადაწყვეტილებები, რომლებიც ეფუძნება განახლებად და მდგრად ენერგიის წყაროებს.",
+    title: "features.energy.title",
+    description: "features.energy.description",
   },
 ];
 
