@@ -89,21 +89,15 @@ const Footer = () => {
             viewport={{ once: true }}
             className="animate_top flex items-center gap-5"
           >
-            <a href="#" aria-label="social icon">
+            <a
+              href="https://www.facebook.com/araliconstruction"
+              aria-label="social icon"
+            >
               <Image
                 src="/images/icon/facebook-logo.png"
                 width={24}
                 height={24}
                 alt="Facebook"
-              />
-            </a>
-
-            <a href="#" aria-label="social icon">
-              <Image
-                src="/images/icon/linkedin.png"
-                width={24}
-                height={24}
-                alt="LinkedIn"
               />
             </a>
           </motion.div>

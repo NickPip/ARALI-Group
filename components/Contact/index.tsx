@@ -94,8 +94,9 @@ const Contact = () => {
                 </div>
 
                 <button
-                  type="submit"
+                  type="button"
                   className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white"
+                  onClick={() => {}}
                 >
                   {t("contact.sendMessage")}
                 </button>
