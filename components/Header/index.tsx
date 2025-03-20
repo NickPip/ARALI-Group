@@ -3,16 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next"; // Import i18next hook
+import { useTranslation } from "react-i18next";
 
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import LanguageSwitcher from "./languageSwitcher";
-// Optionally, if you have a LanguageSwitcher component, you can import it too:
-// import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
-  const { t } = useTranslation(); // Get the translation function
+  const { t } = useTranslation();
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
@@ -33,6 +31,13 @@ const Header = () => {
       window.removeEventListener("scroll", handleStickyMenu);
     };
   }, []);
+
+  // Function to close menu on mobile when clicking a menu item
+  const handleMenuClick = () => {
+    if (window.innerWidth < 1280) {
+      setNavigationOpen(false);
+    }
+  };
 
   return (
     <header
@@ -60,8 +65,6 @@ const Header = () => {
               className="w-full dark:hidden"
             />
           </Link>
-
-          {/* Optionally, render the language switcher here */}
 
           {/* Hamburger Toggle BTN */}
           <button
@@ -141,7 +144,12 @@ const Header = () => {
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li key={key} className="hover:text-primary">
-                            <Link href={item.path || "#"}>{t(item.title)}</Link>
+                            <Link
+                              href={item.path || "#"}
+                              onClick={handleMenuClick}
+                            >
+                              {t(item.title)}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -154,6 +162,7 @@ const Header = () => {
                           ? "text-primary hover:text-primary"
                           : "hover:text-primary"
                       }
+                      onClick={handleMenuClick} // Close menu when clicking
                     >
                       {t(menuItem.title)}
                     </Link>
@@ -164,8 +173,12 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <LanguageSwitcher />
-            <ThemeToggler />
+            <div onClick={handleMenuClick}>
+              <LanguageSwitcher />
+            </div>
+            <div onClick={handleMenuClick}>
+              <ThemeToggler />
+            </div>
           </div>
         </div>
       </div>
