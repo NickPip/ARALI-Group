@@ -32,7 +32,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               {`${t(title).slice(0, 40)}...`} {/* ✅ Translate title */}
             </Link>
           </h3>
-          <p className="line-clamp-3">{t("metadata")}</p>{" "}
+          <p className="line-clamp-3">{t(metadata || "")}</p>{" "}
           {/* ✅ Translate metadata */}
         </div>
       </motion.div>
