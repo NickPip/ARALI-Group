@@ -57,7 +57,7 @@ const Footer = () => {
               {t("contact.title")}
             </p>
             <p className="text-itemtitle font-medium text-black dark:text-white">
-              araligroup@gmail.com
+              info@araligroup.ge
             </p>
           </motion.div>
         </div>

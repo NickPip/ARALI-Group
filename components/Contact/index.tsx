@@ -129,7 +129,7 @@ const Contact = () => {
                   {t("contact.emailLabel")}
                 </h3>
                 <p>
-                  <a href="#">araligroup@gmail.com</a>
+                  <a href="#">info@araligroup.ge</a>
                 </p>
               </div>
               <div>
