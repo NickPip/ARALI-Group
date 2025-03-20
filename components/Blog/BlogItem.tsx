@@ -3,10 +3,10 @@ import { Blog } from "@/types/blog";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next"; // ✅ Import translation hook
+import { useTranslation } from "react-i18next";
 
-const BlogItem = ({ blog }: { blog: Blog }) => {
-  const { t } = useTranslation(); // ✅ Initialize translation
+const BlogItem = ({ blog, index }: { blog: Blog; index: number }) => {
+  const { t } = useTranslation();
   const { mainImage, title, metadata } = blog;
 
   return (
@@ -22,18 +22,21 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
         viewport={{ once: true }}
         className="animate_top rounded-lg bg-white p-4 pb-9 shadow-solid-8 dark:bg-blacksection"
       >
-        <Link href={`/blog/`} className="relative block aspect-[368/239]">
+        {/* ✅ Corrected URL to `/blog/blog-details` */}
+        <Link
+          href={`/blog/blog-details${index === 0 ? "" : index}`}
+          className="relative block aspect-[368/239]"
+        >
           <Image src={mainImage} alt={t(title)} fill />
         </Link>
 
         <div className="px-4">
           <h3 className="mb-3.5 mt-7.5 line-clamp-2 inline-block text-lg font-medium text-black duration-300 hover:text-primary dark:text-white dark:hover:text-primary xl:text-itemtitle2">
-            <Link href={`/blog/blog-details`}>
-              {`${t(title).slice(0, 40)}...`} {/* ✅ Translate title */}
+            <Link href={`/blog/blog-details${index === 0 ? "" : index}`}>
+              {`${t(title).slice(0, 40)}...`}
             </Link>
           </h3>
-          <p className="line-clamp-3">{t(metadata || "")}</p>{" "}
-          {/* ✅ Translate metadata */}
+          <p className="line-clamp-3">{t(metadata || "")}</p>
         </div>
       </motion.div>
     </>

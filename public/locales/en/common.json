@@ -319,5 +319,45 @@
   },
   "sidebar": {
     "companyAbout": "About the Company"
+  },
+  "blog-details1": {
+    "title": "Road Rehabilitation in Akhaltsikhe",
+    "executor": "Executor",
+    "executorName": "Arali Group",
+    "date": "Completed",
+    "dateValue": "March 15, 2024",
+    "category": "Category",
+    "categoryName": "Infrastructure - Road Expansion & Safety",
+    "introduction": "Rehabilitation works of Aspindza Street in Akhaltsikhe... Rehabilitation works of Aspindza Street in Akhaltsikhe aimed at improving road quality and traffic safety, ensuring long-term durability.",
+    "details": "Road works included modern infrastructure implementation... Road works included modern infrastructure implementation, advanced paving techniques, and enhanced drainage systems to prevent flooding.",
+    "section1": "All necessary traffic safety measures were taken... Speed limits, road signs, and pedestrian crossings were added to ensure better road safety.",
+    "section2": "Drainage and paving work was performed... A high-quality drainage system was installed alongside a durable asphalt overlay for long-term road sustainability.",
+    "section3": "Sidewalks and pedestrian crossings were improved... Wider sidewalks and improved pedestrian-friendly zones enhance accessibility for residents and tourists.",
+    "section4": "The project was completed within the agreed time frame... Despite weather challenges, the project was delivered ahead of schedule, maintaining high construction standards.",
+    "coverImageAlt": "Road Rehabilitation Cover Image - Project Success",
+    "image1": "Before Road Repair - Old Infrastructure Challenges",
+    "image2": "During Construction - Modern Techniques Applied",
+    "image3": "Completed Road - Smooth & Safer Transportation",
+    "accessibility": "Infrastructure was improved for pedestrians and disabled individuals. New ramps, tactile paving, and accessibility features ensure inclusive urban development."
+  },
+  "blog-details2": {
+    "title": "Road Clearing Operations in Georgia’s Mountainous Regions",
+    "executor": "Executor",
+    "executorName": "Arali Group",
+    "date": "Completed",
+    "dateValue": "February 10, 2024",
+    "category": "Category",
+    "categoryName": "Infrastructure - Road Clearing & Safety",
+    "introduction": "During winter, road clearing in Georgia’s mountainous regions is essential for safe transportation. The operations involved removing snow and ice to ensure uninterrupted movement.",
+    "details": "Modern equipment was used to maximize efficiency and respond quickly. Snowplows and special materials helped protect road surfaces from freezing.",
+    "section1": "Safety measures were implemented, including road signs and salt solutions to reduce accident risks.",
+    "section2": "High-performance machinery effectively cleared roads in extreme weather, minimizing travel disruptions.",
+    "section3": "Operations ran 24/7 to maintain continuous transport connections for mountain communities.",
+    "section4": "Despite challenging conditions, the project was completed on time, significantly improving road accessibility and safety.",
+    "coverImageAlt": "Road Clearing Operations - Winter Safety",
+    "image1": "Snow-covered road before clearing",
+    "image2": "Clearing in progress - Heavy machinery at work",
+    "image3": "Cleared road - Safe and accessible for travel",
+    "accessibility": "The cleared roads restored mobility for both residents and tourists, playing a vital role in regional infrastructure development."
   }
 }
