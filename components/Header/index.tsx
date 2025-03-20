@@ -32,7 +32,7 @@ const Header = () => {
     };
   }, []);
 
-  // Function to close menu on mobile when clicking a menu item
+  // Close menu on mobile when clicking an item, language switcher, or theme toggler
   const handleMenuClick = () => {
     if (window.innerWidth < 1280) {
       setNavigationOpen(false);
@@ -41,10 +41,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-7 ${
-        stickyMenu
-          ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-          : ""
+      className={`fixed left-0 top-0 z-99999 w-full py-7 transition-all duration-200 ${
+        stickyMenu ? "bg-white !py-4 shadow dark:bg-black" : "bg-transparent"
       }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
@@ -90,21 +88,8 @@ const Header = () => {
                   }`}
                 ></span>
               </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
-                <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-[0]" : "h-full"
-                  }`}
-                ></span>
-                <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-200" : "h-0.5"
-                  }`}
-                ></span>
-              </span>
             </span>
           </button>
-          {/* End Hamburger Toggle BTN */}
         </div>
 
         {/* Nav Menu */}
