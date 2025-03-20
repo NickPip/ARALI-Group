@@ -52,7 +52,7 @@ export default function QuarriesPage() {
                 </div>
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <img
-                    src="/images/quarries/quarries1.jpg"
+                    src="/images/quarries/quarries-add.png"
                     alt={t("quarries.image2")}
                     className="h-64 w-full object-cover"
                   />
