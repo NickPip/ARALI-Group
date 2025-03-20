@@ -8,18 +8,10 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
-        <div className="container mx-auto">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 lg:w-1/4">
-              <div className="sticky top-[74px] rounded-lg border border-white p-4 shadow-solid-4 transition-all dark:border-strokedark dark:bg-blacksection">
-                <ul className="space-y-2">
-                  <SidebarLink />
-                </ul>
-              </div>
-            </div>
-
-            <div className="w-full px-4 lg:w-3/4">
+      <section className="flex justify-center pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
+        <div className="container mx-auto max-w-4xl">
+          <div className="-mx-4 flex flex-wrap justify-center">
+            <div className="w-full px-4">
               <div className="company-intro rounded-lg bg-gray-100 p-6 text-left shadow-md dark:bg-gray-800">
                 <p className="animate-fadeIn text-xl font-semibold tracking-wide text-gray-900 dark:text-white">
                   <span className="text-blue-600 dark:text-blue-400">
@@ -69,30 +61,33 @@ export default function AboutPage() {
               <h1 className="mt-10 text-center text-3xl font-bold text-blue-700 dark:text-blue-400">
                 {t("about.missionAndGoals")}
               </h1>
-              <div className="mt-6 grid grid-cols-1 gap-6 text-center md:grid-cols-3">
-                <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                  <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                    {t("about.mission")}
-                  </h2>
-                  <p className="mt-4 text-gray-800 dark:text-gray-300">
-                    {t("about.missionDescription")}
-                  </p>
-                </div>
-                <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                  <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                    {t("about.goal")}
-                  </h2>
-                  <p className="mt-4 text-gray-800 dark:text-gray-300">
-                    {t("about.goalDescription")}
-                  </p>
-                </div>
-                <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                  <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                    {t("about.values")}
-                  </h2>
-                  <p className="mt-4 text-gray-800 dark:text-gray-300">
-                    {t("about.valuesDescription")}
-                  </p>
+
+              <div className="mt-6 flex justify-center">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                      {t("about.mission")}
+                    </h2>
+                    <p className="mt-4 text-gray-800 dark:text-gray-300">
+                      {t("about.missionDescription")}
+                    </p>
+                  </div>
+                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                      {t("about.goal")}
+                    </h2>
+                    <p className="mt-4 text-gray-800 dark:text-gray-300">
+                      {t("about.goalDescription")}
+                    </p>
+                  </div>
+                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                      {t("about.values")}
+                    </h2>
+                    <p className="mt-4 text-gray-800 dark:text-gray-300">
+                      {t("about.valuesDescription")}
+                    </p>
+                  </div>
                 </div>
               </div>
 
