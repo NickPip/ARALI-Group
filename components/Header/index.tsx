@@ -158,6 +158,23 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
+            {/* Facebook Button - Moved Before Language Switcher */}
+            <div>
+              <a
+                href="https://www.facebook.com/araliconstruction"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/icon/facebook-logo.png"
+                  width={24}
+                  height={24}
+                  alt="Facebook"
+                />
+              </a>
+            </div>
+
             <div onClick={handleMenuClick}>
               <LanguageSwitcher />
             </div>

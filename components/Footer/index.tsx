@@ -88,19 +88,7 @@ const Footer = () => {
             transition={{ duration: 1, delay: 0.1 }}
             viewport={{ once: true }}
             className="animate_top flex items-center gap-5"
-          >
-            <a
-              href="https://www.facebook.com/araliconstruction"
-              aria-label="social icon"
-            >
-              <Image
-                src="/images/icon/facebook-logo.png"
-                width={24}
-                height={24}
-                alt="Facebook"
-              />
-            </a>
-          </motion.div>
+          ></motion.div>
         </div>
       </div>
     </footer>
