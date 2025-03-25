@@ -24,11 +24,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <FunFact />
       {/* <Brands /> */}
+      <FeaturesTab />
       <Feature />
       {/* <About /> */}
-      <FeaturesTab />
-      <FunFact />
+
       {/* <Integration /> */}
       {/* <CTA /> */}
       <FAQ />

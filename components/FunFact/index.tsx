@@ -1,102 +1,72 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const FunFact = () => {
   const { t } = useTranslation();
+  const [startCount, setStartCount] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true });
+
+  React.useEffect(() => {
+    if (inView) setStartCount(true);
+  }, [inView]);
+
+  const CounterBox = ({ end, label }) => {
+    const [hovered, setHovered] = useState(false);
+    const shouldStart = startCount || hovered;
+
+    return (
+      <div onMouseEnter={() => setHovered(true)} className="cursor-pointer">
+        <h3 className="text-6xl font-light text-blue-800 dark:text-white">
+          {shouldStart ? <CountUp end={end} duration={4} /> : "0"}
+        </h3>
+        <p className="mt-4 text-base text-gray-500 dark:text-gray-300">
+          {label}
+        </p>
+      </div>
+    );
+  };
 
   return (
     <>
       {/* <!-- ===== Funfact Start ===== --> */}
-      <section className="px-4 py-20 md:px-8 lg:py-22.5 2xl:px-0">
-        <div className="relative z-1 mx-auto max-w-c-1390 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] py-22.5 dark:bg-blacksection dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:stroke-strokedark xl:py-27.5">
-          <Image
-            fill
-            src="/images/shape/shape-dotted-light-02.svg"
-            alt="Dotted"
-            className="absolute left-0 top-0 -z-1 dark:hidden"
-          />
-          <Image
-            fill
-            src="/images/shape/shape-dotted-dark-02.svg"
-            alt="Dotted"
-            className="absolute left-0 top-0 -z-1 hidden dark:block"
-          />
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 1, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="animate_top mx-auto mb-12.5 px-4 text-center md:w-4/5 md:px-0 lg:mb-17.5 lg:w-2/3 xl:w-1/2"
-          >
-            <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-              {t("funFact.title")}
+      <section
+        ref={ref}
+        className="bg-white px-4 py-20 dark:bg-blacksection md:px-8 lg:py-24"
+      >
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[2fr_1fr]">
+          {/* მარცხენა ნაწილი */}
+          <div>
+            <h2 className="mb-10 text-7xl font-bold leading-tight text-black dark:text-white">
+              <span className="text-blue-700">Arali Group</span> Stands Out for
+              Reliability
             </h2>
-            <p className="mx-auto lg:w-11/12">{t("funFact.description")}</p>
-          </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                {t("funFact.completedProjects.number")}
-              </h3>
-              <p className="text-lg lg:text-para2">
-                {t("funFact.completedProjects.label")}
-              </p>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.7 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                {t("funFact.partnerCompanies.number")}
-              </h3>
-              <p className="text-lg lg:text-para2">
-                {t("funFact.partnerCompanies.label")}
-              </p>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                {t("funFact.ongoingProjects.number")}
-              </h3>
-              <p className="text-lg lg:text-para2">
-                {t("funFact.ongoingProjects.label")}
-              </p>
-            </motion.div>
+            <p className="mb-10 text-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+              With 20 years of operation, the company has built a strong
+              reputation, trust, and respect. Our partners feel secure and
+              confident when working with us.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="rounded-md border border-transparent bg-blue-700 px-10 py-4 font-semibold text-white transition hover:border-blue-700 hover:bg-white hover:text-blue-700">
+                Contact Us
+              </button>
+              <button className="rounded-md border border-transparent bg-blue-700 px-10 py-4 font-semibold text-white transition hover:border-blue-700 hover:bg-white hover:text-blue-700">
+                Our Work
+              </button>
+            </div>
+          </div>
+
+          {/* მარჯვენა სტატისტიკა */}
+          <div className="grid gap-12 border-l-4 border-blue-400 pl-10">
+            <CounterBox end={1540} label="Completed Projects" />
+            <CounterBox end={800} label="Partner Companies" />
+            <CounterBox end={10} label="Ongoing Projects" />
           </div>
         </div>
       </section>

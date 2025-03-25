@@ -5,7 +5,7 @@ import "keen-slider/keen-slider.min.css";
 
 const slides = [
   {
-    image: "/images/blog/truck-1-arali.png",
+    image: "/images/blog/gzebi.png",
     title: "Leading the Way in Road Construction",
     description:
       "With over 20 years of experience and more than 12,000 km of roads built and rehabilitated, Arali stands as a leader in Georgia's infrastructure development. Our projects combine speed, quality, and European-standard technology.",
@@ -13,7 +13,7 @@ const slides = [
   },
   {
     image: "/images/blog/feature4.jpg",
-    title: "Transforming Ideas Into Iconic Structures",
+    title: "Transforming Ideas Into Structures",
     description:
       "From the initial sketches to the final finishing touches, our expert team ensures every project is completed on time, within budget, and above expectations—combining modern technology with trusted craftsmanship.",
     buttonText: "Learn more",
@@ -58,7 +58,7 @@ export default function HeroCarousel() {
     if (!isPaused) {
       interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 5000);
+      }, 8000);
     }
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -129,22 +129,29 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 z-10 bg-black/60" />
 
       {/* Text Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-center px-4 text-white md:px-16">
+      <div className="absolute inset-0 z-20 flex flex-col justify-center px-4 text-white sm:px-10 sm:px-10  lg:px-50">
         <div className="mx-auto w-full max-w-screen-xl">
           <h1
-            key={currentSlide} // this forces re-render per slide
-            className="text-14xl animate-slideDown translate-y-[-20px] font-bold uppercase 
-             leading-tight tracking-wider opacity-0 md:text-5xl 
-             lg:text-9xl"
+            key={currentSlide}
+            className="animate-slideDown translate-y-[-20px] text-4xl font-bold uppercase leading-tight 
+             tracking-wide opacity-0 sm:text-5xl md:text-6xl 
+             lg:text-7xl xl:text-7xl 2xl:text-9xl"
           >
             {slides[currentSlide].title}
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/80 md:text-lg">
+          <p
+            key={currentSlide + "-p"}
+            className="animate-slideInRightSlow mt-6 max-w-3xl text-sm leading-relaxed text-white/80 md:text-sm"
+          >
             {slides[currentSlide].description}
           </p>
 
-          <button className="mt-10 rounded-md bg-primary px-24 py-1 font-semibold text-white  hover:bg-primary/80 lg:text-2xl">
+          <button
+            key={currentSlide + "-button"}
+            className="animate-slideInRightDelay lg:text-1xl mt-10 rounded-md bg-primary px-12 py-1 
+             font-thin text-white opacity-0 hover:bg-primary/80"
+          >
             {slides[currentSlide].buttonText}
           </button>
         </div>
@@ -154,19 +161,45 @@ export default function HeroCarousel() {
       <div className="absolute bottom-4 right-4 z-50 flex items-center justify-center">
         <button
           onClick={() => setIsPaused((prev) => !prev)}
-          className="border-1 relative flex h-16 w-16 items-center 
-                     justify-center rounded-full border-white bg-transparent
-                     transition-colors hover:bg-white hover:text-black"
+          className="border-1 group relative flex h-16 w-16 items-center 
+               justify-center rounded-full border-white bg-transparent
+               transition-colors hover:bg-white"
           aria-label="Pause/Play Slideshow"
         >
+          {/* Progress Circle */}
+          <svg
+            key={currentSlide}
+            className="pointer-events-none absolute left-0 top-0 h-full w-full -rotate-90 transform"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="white"
+              strokeWidth="4"
+              fill="transparent"
+              strokeDasharray="282.743"
+              strokeDashoffset="282.743"
+              className={!isPaused ? "animate-progress" : ""}
+            />
+          </svg>
+
+          {/* Icon (white normally, black on hover) */}
           {isPaused ? (
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              {/* Play Icon */}
+            <svg
+              className="h-8 w-8 text-white transition-colors duration-300 group-hover:text-black"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M8 5v14l11-7z" />
             </svg>
           ) : (
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              {/* Pause Icon */}
+            <svg
+              className="h-8 w-8 text-white transition-colors duration-300 group-hover:text-black"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
             </svg>
           )}
@@ -174,21 +207,23 @@ export default function HeroCarousel() {
       </div>
 
       {/* Navigation Section with Sliding Indicator */}
-      {/* Navigation Section with Sliding Indicator */}
+
       <div className="absolute bottom-10 z-20 w-full">
         <div className="flex justify-center py-10">
-          <div
-            ref={containerRef}
-            className="relative flex space-x-12 text-xl uppercase text-white md:text-4xl"
-          >
-            {/* 3) Use `sliderStyle.top` and remove the old `top-[-8px]` class */}
-
+          <div className="flex w-full justify-center">
             {categories.map((category, index) => (
               <button
-                key={index}
+                key={`cat-${index}`}
                 ref={(el) => (buttonsRef.current[index] = el)}
                 onClick={() => handleCategoryClick(index)}
-                className="relative cursor-pointer px-1 py-8 text-white transition-all"
+                className={`
+        relative cursor-pointer px-4 py-8 text-sm text-white opacity-0 transition-all md:text-base 
+        animate-fade-right-delay-${index + 1}
+        before:absolute before:right-0 before:top-1/2 before:h-8 
+        before:w-px before:-translate-y-1/2 before:bg-white/30
+        ${index === categories.length - 1 ? "before:hidden" : ""}
+        ${index === 0 ? "pl-0" : ""}
+      `}
                 style={{
                   transition: "font-variation-settings 0.5s ease",
                   fontVariationSettings:

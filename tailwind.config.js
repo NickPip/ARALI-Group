@@ -7,6 +7,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "animate-fade-right-delay-1",
+    "animate-fade-right-delay-2",
+    "animate-fade-right-delay-3",
+    "animate-fade-right-delay-4",
+    "animate-fade-right-delay-5",
+    "animate-fade-right-delay-6",
+  ],
   darkMode: "class",
   theme: {
     fontFamily: {
@@ -112,7 +120,10 @@ module.exports = {
       opacity: {
         65: ".65",
       },
-      transitionProperty: { width: "width" },
+      transitionProperty: {
+        width: "width",
+        "stroke-dashoffset": "stroke-dashoffset",
+      },
       boxShadow: {
         "solid-l": "0px 10px 120px 0px rgba(45, 74, 170, 0.1)",
         "solid-2": "0px 2px 10px rgba(122, 135, 167, 0.05)",
@@ -129,6 +140,10 @@ module.exports = {
         "solid-13": "0px 2px 19px rgba(0, 0, 0, 0.05)",
       },
       keyframes: {
+        progress: {
+          "0%": { strokeDashoffset: "282.743" },
+          "100%": { strokeDashoffset: "0" },
+        },
         line: {
           "0%, 100%": { transform: "translateY(100%)" },
           "50%": { transform: "translateY(0)" },
@@ -157,7 +172,6 @@ module.exports = {
           "0%": { opacity: 0, transform: "translateX(100vw)" },
           "100%": { opacity: 1, transform: "translateX(0)" },
         },
-        // Keyframe for header appearing from down to up
         fadeUp: {
           "0%": { opacity: 0, transform: "translateY(20px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
@@ -167,17 +181,22 @@ module.exports = {
         line1: "line 3s linear infinite",
         line2: "line 6s linear infinite",
         line3: "line 9s linear infinite",
-        "fade-down": "fadeDown 1.6s ease-out forwards", // 2x slower
-        "fade-right": "fadeRight 1.6s ease-out forwards", // 2x slower
-        "fade-right-delay-1": "fadeRight 1.6s ease-out 0.4s forwards",
-        "fade-right-delay-2": "fadeRight 1.6s ease-out 0.8s forwards",
-        "fade-right-delay-3": "fadeRight 1.6s ease-out 1.2s forwards",
+        "fade-right-delay-1": "fadeRight 0.8s ease-out 0.1s forwards",
+        "fade-right-delay-2": "fadeRight 0.8s ease-out 0.2s forwards",
+        "fade-right-delay-3": "fadeRight 0.8s ease-out 0.3s forwards",
+        "fade-right-delay-4": "fadeRight 0.8s ease-out 0.4s forwards",
+        "fade-right-delay-5": "fadeRight 0.8s ease-out 0.5s forwards",
+        "fade-right-delay-6": "fadeRight 0.8s ease-out 0.6s forwards",
         backgroundSlow: "backgroundMove 60s linear infinite",
         backgroundZoom: "backgroundZoom 30s ease-in-out infinite",
-        slideInRight: "slideInFromRight 1.6s ease-out forwards", // 2x slower
-        fadeUp: "fadeUp 1.6s ease-out forwards", // 2x slower
+        slideInRight: "slideInFromRight 1.6s ease-out forwards",
+        fadeUp: "fadeUp 1.6s ease-out forwards",
         slideDown: "slideDown 2s cubic-bezier(0.25, 1, 0.5, 1) forwards",
         slideLeft: "slideLeft 1s ease-out forwards",
+        progress: "progress 8s linear forwards",
+        slideInRight: "slideInFromRight 1.6s ease-out forwards",
+        slideInRightDelay: "slideInFromRight 0.8s ease-out 0.2s forwards",
+        slideInRightSlow: "slideInFromRight 0.7s ease-out forwards",
       },
     },
   },

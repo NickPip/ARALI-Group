@@ -18,6 +18,7 @@ const Header = () => {
   const pathUrl = usePathname();
   const isHome = pathUrl === "/";
   const onDark = isHome && !stickyMenu;
+  const [isFacebookHovered, setIsFacebookHovered] = useState(false);
 
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
@@ -55,9 +56,10 @@ const Header = () => {
           <div className="flex items-center gap-13">
             <Link
               href="/"
-              className="flex items-center gap-3 rounded-md px-4 py-1"
+              className="flex items-center gap-3 rounded-md px-10 py-1"
             >
               <Image
+                className="-mt-1" // 👈 Add this
                 src={
                   stickyMenu || isHovered
                     ? "/images/logo/arali_logo_high_res.png"
@@ -67,8 +69,9 @@ const Header = () => {
                 width={40}
                 height={40}
               />
+
               <span
-                className={`mt-2 text-2xl font-extrabold tracking-tight ${
+                className={` text-1xl pt-1 font-extrabold tracking-tight ${
                   stickyMenu || isHovered ? "text-black" : "text-white"
                 }`}
               >
@@ -111,7 +114,7 @@ const Header = () => {
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 text-lg xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 pl-12 text-sm xl:flex-row xl:items-center xl:gap-16">
               {menuData.map((menuItem, key) => (
                 <li
                   key={key}
@@ -178,16 +181,22 @@ const Header = () => {
                   ) : (
                     <Link
                       href={`${menuItem.path}`}
-                      className={`${
-                        isHovered
-                          ? "text-blue-500 hover:text-blue-500"
-                          : pathUrl === menuItem.path
-                            ? "text-primary"
-                            : onDark
-                              ? "text-white hover:text-primary"
-                              : "text-primary hover:text-primary"
-                      }`}
                       onClick={handleMenuClick}
+                      className={`
+                      transition-all transition-colors
+                      duration-200
+                      duration-300 ease-in-out group-hover:text-blue-500
+
+                      ${
+                        pathUrl === menuItem.path
+                          ? onDark
+                            ? "text-white"
+                            : "text-primary"
+                          : onDark
+                            ? "text-white hover:text-primary"
+                            : "text-primary hover:text-primary"
+                      }
+                    `}
                     >
                       {t(menuItem.title)}
                     </Link>
@@ -206,10 +215,15 @@ const Header = () => {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/images/icon/facebook-logo-white.png"
+                  src={
+                    isHovered
+                      ? "/images/icon/facebook-logo.png" // ლურჯი ვერსია hover-ზე
+                      : "/images/icon/facebook-logo-white.png" // თეთრი default
+                  }
                   width={24}
                   height={24}
                   alt="Facebook"
+                  className="transition-all duration-300"
                 />
               </a>
             </div>
@@ -221,11 +235,15 @@ const Header = () => {
               <ThemeToggler />
             </div>
             <div
-              className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide ${
-                stickyMenu
-                  ? "border-black text-black dark:border-white dark:text-white"
-                  : "border-white text-white"
-              }`}
+              className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide 
+    transition-all duration-300
+    ${
+      isHovered
+        ? "border-black bg-white text-black dark:bg-white dark:text-black"
+        : stickyMenu
+          ? "border-black text-black dark:border-white dark:text-white"
+          : "border-white text-white"
+    }`}
             >
               SINCE 2004
             </div>
