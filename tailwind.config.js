@@ -5,8 +5,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
@@ -135,11 +133,51 @@ module.exports = {
           "0%, 100%": { transform: "translateY(100%)" },
           "50%": { transform: "translateY(0)" },
         },
+        slideDown: {
+          "0%": { opacity: 0, transform: "translateY(-200px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        fadeDown: {
+          "0%": { opacity: 0, transform: "translateY(-20px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        fadeRight: {
+          "0%": { opacity: 0, transform: "translateX(40px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        backgroundMove: {
+          "0%": { backgroundPosition: "center bottom" },
+          "100%": { backgroundPosition: "center top" },
+        },
+        backgroundZoom: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(2)" },
+        },
+        slideInFromRight: {
+          "0%": { opacity: 0, transform: "translateX(100vw)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        // Keyframe for header appearing from down to up
+        fadeUp: {
+          "0%": { opacity: 0, transform: "translateY(20px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       },
       animation: {
         line1: "line 3s linear infinite",
         line2: "line 6s linear infinite",
         line3: "line 9s linear infinite",
+        "fade-down": "fadeDown 1.6s ease-out forwards", // 2x slower
+        "fade-right": "fadeRight 1.6s ease-out forwards", // 2x slower
+        "fade-right-delay-1": "fadeRight 1.6s ease-out 0.4s forwards",
+        "fade-right-delay-2": "fadeRight 1.6s ease-out 0.8s forwards",
+        "fade-right-delay-3": "fadeRight 1.6s ease-out 1.2s forwards",
+        backgroundSlow: "backgroundMove 60s linear infinite",
+        backgroundZoom: "backgroundZoom 30s ease-in-out infinite",
+        slideInRight: "slideInFromRight 1.6s ease-out forwards", // 2x slower
+        fadeUp: "fadeUp 1.6s ease-out forwards", // 2x slower
+        slideDown: "slideDown 2s cubic-bezier(0.25, 1, 0.5, 1) forwards",
+        slideLeft: "slideLeft 1s ease-out forwards",
       },
     },
   },

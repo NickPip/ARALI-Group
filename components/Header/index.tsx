@@ -14,9 +14,11 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [isHovered, setIsHovered] = useState(false); // ახალი მდგომარეობა
   const pathUrl = usePathname();
+  const isHome = pathUrl === "/";
+  const onDark = isHome && !stickyMenu;
 
-  // Sticky menu handler
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
       setStickyMenu(true);
@@ -32,7 +34,6 @@ const Header = () => {
     };
   }, []);
 
-  // Close menu on mobile when clicking an item, language switcher, or theme toggler
   const handleMenuClick = () => {
     if (window.innerWidth < 1280) {
       setNavigationOpen(false);
@@ -41,30 +42,41 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-7 transition-all duration-200 ${
-        stickyMenu ? "bg-white !py-4 shadow dark:bg-black" : "bg-transparent"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`group fixed left-0 top-0 z-99999 w-full transition-all duration-200 ${
+        stickyMenu
+          ? "bg-white !py-4 shadow dark:bg-black"
+          : "bg-transparent py-7 hover:bg-white"
       }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <Link href="/">
-            <Image
-              src="/images/logo/arali_logo_high_res.png"
-              alt="logo"
-              width={49.03}
-              height={30}
-              className="hidden w-full dark:block"
-            />
-            <Image
-              src="/images/logo/arali_logo_high_res.png"
-              alt="logo"
-              width={49.03}
-              height={30}
-              className="w-full dark:hidden"
-            />
-          </Link>
+          <div className="flex items-center gap-13">
+            <Link
+              href="/"
+              className="flex items-center gap-3 rounded-md px-4 py-1"
+            >
+              <Image
+                src={
+                  stickyMenu || isHovered
+                    ? "/images/logo/arali_logo_high_res.png"
+                    : "/images/logo/arali_logo_fully_white.png"
+                }
+                alt="logo"
+                width={40}
+                height={40}
+              />
+              <span
+                className={`mt-2 text-2xl font-extrabold tracking-tight ${
+                  stickyMenu || isHovered ? "text-black" : "text-white"
+                }`}
+              >
+                ARALI GROUP
+              </span>
+            </Link>
+          </div>
 
-          {/* Hamburger Toggle BTN */}
           <button
             aria-label="hamburger Toggler"
             className="block xl:hidden"
@@ -92,7 +104,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Nav Menu */}
         <div
           className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
             navigationOpen &&
@@ -100,7 +111,7 @@ const Header = () => {
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 text-lg xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
                 <li
                   key={key}
@@ -110,12 +121,26 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                        className={`flex cursor-pointer items-center justify-between gap-3 ${
+                          isHovered
+                            ? "text-blue-500"
+                            : pathUrl === menuItem.path
+                              ? "text-primary"
+                              : onDark
+                                ? "text-white hover:text-primary"
+                                : "text-primary hover:text-primary"
+                        }`}
                       >
                         {t(menuItem.title)}
                         <span>
                           <svg
-                            className="h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-primary"
+                            className={`h-3 w-3 cursor-pointer ${
+                              isHovered
+                                ? "fill-blue-500"
+                                : onDark
+                                  ? "fill-white group-hover:fill-primary"
+                                  : "fill-primary group-hover:fill-primary"
+                            }`}
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
                           >
@@ -125,13 +150,24 @@ const Header = () => {
                       </button>
 
                       <ul
-                        className={`dropdown ${dropdownToggler ? "flex" : ""}`}
+                        className={`dropdown absolute left-0 top-full mt-2 w-60 flex-col gap-2 rounded-md px-4 py-3 shadow-md ${
+                          dropdownToggler ? "flex" : "hidden"
+                        } ${
+                          onDark
+                            ? "bg-black/80 text-white"
+                            : "bg-white text-primary"
+                        }`}
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li key={key} className="hover:text-primary">
                             <Link
                               href={item.path || "#"}
                               onClick={handleMenuClick}
+                              className={
+                                isHovered
+                                  ? "text-blue-500 hover:text-blue-500"
+                                  : ""
+                              }
                             >
                               {t(item.title)}
                             </Link>
@@ -142,12 +178,16 @@ const Header = () => {
                   ) : (
                     <Link
                       href={`${menuItem.path}`}
-                      className={
-                        pathUrl === menuItem.path
-                          ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
-                      }
-                      onClick={handleMenuClick} // Close menu when clicking
+                      className={`${
+                        isHovered
+                          ? "text-blue-500 hover:text-blue-500"
+                          : pathUrl === menuItem.path
+                            ? "text-primary"
+                            : onDark
+                              ? "text-white hover:text-primary"
+                              : "text-primary hover:text-primary"
+                      }`}
+                      onClick={handleMenuClick}
                     >
                       {t(menuItem.title)}
                     </Link>
@@ -158,7 +198,6 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            {/* Facebook Button - Moved Before Language Switcher */}
             <div>
               <a
                 href="https://www.facebook.com/araliconstruction"
@@ -167,7 +206,7 @@ const Header = () => {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/images/icon/facebook-logo.png"
+                  src="/images/icon/facebook-logo-white.png"
                   width={24}
                   height={24}
                   alt="Facebook"
@@ -180,6 +219,15 @@ const Header = () => {
             </div>
             <div onClick={handleMenuClick}>
               <ThemeToggler />
+            </div>
+            <div
+              className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide ${
+                stickyMenu
+                  ? "border-black text-black dark:border-white dark:text-white"
+                  : "border-white text-white"
+              }`}
+            >
+              SINCE 2004
             </div>
           </div>
         </div>

@@ -10,6 +10,13 @@ import { useEffect, useState } from "react";
 import "../lib/i18n";
 import "../globals.css";
 
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 const inter = Inter({ subsets: ["latin"] });
 
 import ToasterContext from "@/app/context/ToastContext";
@@ -32,7 +39,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
+      <body className={`dark:bg-black ${oswald.className}`}>
         {isLoading ? (
           // Loading Screen
           <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black text-lg text-white transition-opacity duration-500">
