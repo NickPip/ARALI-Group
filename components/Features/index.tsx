@@ -1,53 +1,55 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 import featuresData from "./featuresData";
-import SingleFeature from "./SingleFeature";
-import SectionHeader from "../Common/SectionHeader";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-const Feature = () => {
+const featureRoutes = {
+  1: "/road-construction",
+  2: "/buildings",
+  3: "/concrete-production",
+  4: "/quarries",
+  5: "/gas-station",
+  6: "/solar",
+};
+
+const FeatureIcons = () => {
   const { t } = useTranslation();
 
-  // Define specific navigation paths for each feature
-  const featureRoutes = {
-    1: "/road-construction",
-    2: "/buildings",
-    3: "/concrete-production",
-    4: "/quarries",
-    5: "/gas-station",
-    6: "/solar",
-  };
-
   return (
-    <>
-      <section id="features" className="py-20 lg:py-25 xl:py-30">
-        <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <SectionHeader
-            headerInfo={{
-              title: t("features.title"),
-              subtitle: t("features.subtitle"),
-              description: t("features.description"),
-            }}
-          />
+    <section className="bg-[#5072A7] py-6">
+      <div className="flex w-full flex-wrap justify-center gap-10 px-4 md:px-10">
+        {featuresData.map((item, index) => {
+          const Icon = item.icon;
 
-          <div className="mt-12.5 grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-20 xl:gap-12.5">
-            {featuresData.map((feature, key) => (
-              <Link
-                key={key}
-                href={featureRoutes[feature.id] || `/features/${feature.id}`} // Default route if not in the map
-                passHref
-              >
-                <div className="cursor-pointer">
-                  <SingleFeature feature={feature} />
+          return (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.1, // ამან გააკეთოს staggered appearance
+              }}
+              viewport={{ once: true }}
+            >
+              <Link href={featureRoutes[item.id] || "#"}>
+                <div className="flex cursor-pointer flex-col items-center text-white transition-transform duration-200 hover:scale-110 hover:text-blue-200">
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white">
+                    <Icon size={20} />
+                  </div>
+                  <span className="mt-1 text-center text-sm font-semibold uppercase tracking-wide">
+                    {t(item.title)}
+                  </span>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 
-export default Feature;
+export default FeatureIcons;

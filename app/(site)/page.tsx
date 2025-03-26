@@ -27,16 +27,18 @@ export default function Home() {
       <FunFact />
       {/* <Brands /> */}
       {/* <FeaturesTab /> */}
-      <Feature />
+
       {/* <About /> */}
 
       {/* <Integration /> */}
       {/* <CTA /> */}
-      <FAQ />
+
       {/* <Testimonial /> */}
       {/* <Pricing /> */}
       <Blog />
-      <Contact />
+      <FAQ />
+      {/* <Contact /> */}
+      <Feature />
     </main>
   );
 }

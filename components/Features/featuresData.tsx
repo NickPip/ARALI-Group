@@ -1,40 +1,47 @@
 import { Feature } from "@/types/feature";
-import { useTranslation } from "react-i18next";
+import {
+  FaRoad,
+  FaBuilding,
+  FaIndustry,
+  FaMountain,
+  FaGasPump,
+  FaSolarPanel,
+} from "react-icons/fa";
 
 const featuresData: Feature[] = [
   {
     id: 1,
-    icon: "/images/icon/icon-01.svg",
+    icon: FaRoad,
     title: "features.roadConstruction.title",
     description: "features.roadConstruction.description",
   },
   {
     id: 2,
-    icon: "/images/icon/icon-02.svg",
+    icon: FaBuilding,
     title: "features.civilConstruction.title",
     description: "features.civilConstruction.description",
   },
   {
     id: 3,
-    icon: "/images/icon/icon-03.svg",
+    icon: FaIndustry,
     title: "features.concreteProduction.title",
     description: "features.concreteProduction.description",
   },
   {
     id: 4,
-    icon: "/images/icon/icon-04.svg",
+    icon: FaMountain,
     title: "features.quarries.title",
     description: "features.quarries.description",
   },
   {
     id: 5,
-    icon: "/images/icon/icon-05.svg",
+    icon: FaGasPump,
     title: "features.gasFillingStation.title",
     description: "features.gasFillingStation.description",
   },
   {
     id: 6,
-    icon: "/images/icon/icon-06.svg",
+    icon: FaSolarPanel,
     title: "features.energy.title",
     description: "features.energy.description",
   },
