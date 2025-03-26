@@ -20,13 +20,22 @@ const FunFact = () => {
     const shouldStart = startCount || hovered;
 
     return (
-      <div onMouseEnter={() => setHovered(true)} className="cursor-pointer">
-        <h3 className="text-6xl font-light text-blue-800 dark:text-white">
-          {shouldStart ? <CountUp end={end} duration={4} /> : "0"}
-        </h3>
-        <p className="mt-4 text-base text-gray-500 dark:text-gray-300">
-          {label}
-        </p>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        className="flex items-start gap-4"
+      >
+        {/* ვერტიკალური ხაზი */}
+        <div className="mt-1 h-14 w-1 bg-blue-600" />
+
+        {/* ტექსტის ნაწილი */}
+        <div className="cursor-pointer">
+          <h3 className="text-5xl font-light text-gray-800 dark:text-white">
+            {shouldStart ? <CountUp end={end} duration={4} /> : "0"}
+          </h3>
+          <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">
+            {label}
+          </p>
+        </div>
       </div>
     );
   };
@@ -63,7 +72,7 @@ const FunFact = () => {
           </div>
 
           {/* მარჯვენა სტატისტიკა */}
-          <div className="grid gap-12 border-l-4 border-blue-400 pl-10">
+          <div className="border- -4 grid gap-14 pl-10">
             <CounterBox end={1540} label="Completed Projects" />
             <CounterBox end={800} label="Partner Companies" />
             <CounterBox end={10} label="Ongoing Projects" />

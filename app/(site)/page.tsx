@@ -26,7 +26,7 @@ export default function Home() {
       <Hero />
       <FunFact />
       {/* <Brands /> */}
-      <FeaturesTab />
+      {/* <FeaturesTab /> */}
       <Feature />
       {/* <About /> */}
 

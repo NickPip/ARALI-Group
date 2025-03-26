@@ -11,6 +11,7 @@ import "../lib/i18n";
 import "../globals.css";
 
 import { Oswald } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 const oswald = Oswald({
   subsets: ["latin"],

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import "keen-slider/keen-slider.min.css";
+import Link from "next/link";
 
 const slides = [
   {
@@ -10,28 +11,47 @@ const slides = [
     description:
       "With over 20 years of experience and more than 12,000 km of roads built and rehabilitated, Arali stands as a leader in Georgia's infrastructure development. Our projects combine speed, quality, and European-standard technology.",
     buttonText: "Explore Our Road Projects",
-  },
-  {
-    image: "/images/blog/feature4.jpg",
-    title: "Transforming Ideas Into Structures",
-    description:
-      "From the initial sketches to the final finishing touches, our expert team ensures every project is completed on time, within budget, and above expectations—combining modern technology with trusted craftsmanship.",
-    buttonText: "Learn more",
+    link: "/road-construction",
   },
   {
     image: "/images/features/slider.png",
-    title: "Leading the Way in Mining Infrastructure",
+    title: "Ideas Into Structures",
     description:
-      "We offer comprehensive mining services including mine management, production, infrastructure construction, maintenance, and contract mining. Our highly-skilled professionals are equipped to handle the most complex ventures with efficiency and precision.",
-    buttonText: "Learn more about our Mining markets",
+      "From the initial sketches to the final finishing touches, our expert team ensures every project is completed on time, within budget, and above expectations—combining modern technology with trusted craftsmanship.",
+    buttonText: "Learn more",
+    link: "/buildings",
+  },
+  {
+    image: "/images/features/slider.png",
+    title: "Quality Concrete Production",
+    description:
+      "We specialize in producing high-performance concrete using certified raw materials and precise batching processes. Our facilities ensure consistent quality, fast delivery, and customizable mixes for every construction need.",
+    buttonText: "Explore production",
+    link: "/concrete-production",
   },
   {
     image: "/images/blog/truck-1-arali.png",
-
     title: "MINING MARKETS",
     description:
       "Kiewit specializes in mine management, production, infrastructure construction, maintenance and contract mining ventures, offering some of the most highly-skilled and experienced professionals in the industry.",
     buttonText: "Learn more about our Mining markets",
+    link: "/quarries",
+  },
+  {
+    image: "/images/blog/gas.png",
+    title: "Reliable Fueling Infrastructure",
+    description:
+      "From concept to completion, we build gas stations that meet today’s energy demands with tomorrow’s standards.",
+    buttonText: "Explore Our Gas Projects",
+    link: "/gas",
+  },
+  {
+    image: "/images/blog/solar.png",
+    title: "Solar That Works Smarter",
+    description:
+      "We engineer and install solar systems built for performance—powering homes, businesses, and the future.",
+    buttonText: "View Solar Installations",
+    link: "/solar",
   },
 ];
 
@@ -55,13 +75,15 @@ export default function HeroCarousel() {
   // Auto-slide: only run interval when NOT paused.
   useEffect(() => {
     let interval;
+
     if (!isPaused) {
       interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
       }, 8000);
     }
+
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, currentSlide]); // ✅ ← დაემატა currentSlide
 
   // Update slider indicator position on slide change
   useEffect(() => {
@@ -147,13 +169,15 @@ export default function HeroCarousel() {
             {slides[currentSlide].description}
           </p>
 
-          <button
-            key={currentSlide + "-button"}
-            className="animate-slideInRightDelay lg:text-1xl mt-10 rounded-md bg-primary px-12 py-1 
-             font-thin text-white opacity-0 hover:bg-primary/80"
-          >
-            {slides[currentSlide].buttonText}
-          </button>
+          <Link href={slides[currentSlide].link}>
+            <button
+              key={currentSlide + "-button"}
+              className="animate-slideInRightDelay lg:text-1xl mt-10 rounded-md bg-primary px-12 py-1 
+     font-thin text-white opacity-0 hover:bg-primary/80"
+            >
+              {slides[currentSlide].buttonText}
+            </button>
+          </Link>
         </div>
       </div>
 

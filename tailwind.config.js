@@ -19,6 +19,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
     },
     extend: {
       colors: {
