@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import featuresData from "./featuresData";
@@ -18,28 +19,28 @@ const FeatureIcons = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#5072A7] py-6">
-      <div className="flex w-full flex-wrap justify-center gap-10 px-4 md:px-10">
+    <section className="bg-[#e5ecf6] py-4 dark:bg-[#1f2a40]">
+      <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-6 px-4 md:gap-10">
         {featuresData.map((item, index) => {
           const Icon = item.icon;
 
           return (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.4,
-                delay: index * 0.1, // ამან გააკეთოს staggered appearance
+                duration: 0.3,
+                delay: index * 0.05,
               }}
               viewport={{ once: true }}
             >
               <Link href={featureRoutes[item.id] || "#"}>
-                <div className="flex cursor-pointer flex-col items-center text-white transition-transform duration-200 hover:scale-110 hover:text-blue-200">
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white">
-                    <Icon size={20} />
+                <div className="group flex cursor-pointer flex-col items-center text-gray-700 transition hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+                  <div className="mb-1 flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white transition group-hover:scale-105 group-hover:border-blue-400 dark:border-gray-700 dark:bg-zinc-800">
+                    <Icon size={16} />
                   </div>
-                  <span className="mt-1 text-center text-sm font-semibold uppercase tracking-wide">
+                  <span className="text-center text-[11px] font-medium uppercase tracking-wide">
                     {t(item.title)}
                   </span>
                 </div>

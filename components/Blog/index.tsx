@@ -15,7 +15,7 @@ const Blog = () => {
         <div className="animate_top mx-auto text-center">
           <SectionHeader
             headerInfo={{
-              title: ``,
+              title: `OUR WORK`,
               subtitle: t("blog.subtitle"),
               description: t("blog.description"),
             }}

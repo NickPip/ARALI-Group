@@ -315,7 +315,19 @@
     "goal": "Goal",
     "goalDescription": "Our goal is to become the leading group in the region, leveraging project management and engineering expertise in construction and engineering sectors.",
     "values": "Values",
-    "valuesDescription": "Every thought and action of our team is based on company values: teamwork, responsibility for quality, innovation, sustainable development, and environmental care."
+    "valuesDescription": "Every thought and action of our team is based on company values: teamwork, responsibility for quality, innovation, sustainable development, and environmental care.",
+    "heroTitle": "Arali Group / Building More Than Structures",
+    "heroSubtitle": "With over 20 years of active involvement in Georgia’s key economic sectors, Arali Group specializes in large-scale infrastructure and civil construction projects. Backed by a strong technical base and efficient project management, we support clients in delivering complex, high-impact developments that contribute to long-term national growth and sustainability.",
+    "stats": {
+      "years": "Years of Experience",
+      "projects": "Completed Projects",
+      "employees": "Team Members",
+      "countries": "Location Served"
+    },
+    "ctaTitle": "ARALI GROUP",
+    "ctaSubtitle": "Number 1 Construction Company in Caucasus",
+    "ctaProjects": "Our Work",
+    "ctaContact": "Contact Us"
   },
   "sidebar": {
     "companyAbout": "About the Company"
@@ -359,5 +371,37 @@
     "image2": "Clearing in progress - Heavy machinery at work",
     "image3": "Cleared road - Safe and accessible for travel",
     "accessibility": "The cleared roads restored mobility for both residents and tourists, playing a vital role in regional infrastructure development."
+  },
+  "carousel": {
+    "slide1": {
+      "title": "Leading the Way in Road Construction",
+      "description": "With over 20 years of experience and more than 12,000 km of roads built and rehabilitated, Arali stands as a leader in Georgia's infrastructure development. Our projects combine speed, quality, and European-standard technology.",
+      "buttonText": "Explore Our Road Projects"
+    },
+    "slide2": {
+      "title": "Solar That Works Smarter",
+      "description": "We engineer and install solar systems built for performance—powering homes, businesses, and the future.",
+      "buttonText": "View Solar Installations"
+    },
+    "slide3": {
+      "title": "Quality Concrete Production",
+      "description": "We specialize in producing high-performance concrete using certified raw materials and precise batching processes.",
+      "buttonText": "Explore production"
+    },
+    "slide4": {
+      "title": "MINING MARKETS",
+      "description": "Kiewit specializes in mine management, production, infrastructure construction...",
+      "buttonText": "Learn more about our Mining markets"
+    },
+    "slide5": {
+      "title": "Reliable Fueling Infrastructure",
+      "description": "From concept to completion, we build gas stations that meet today’s energy demands with tomorrow’s standards.",
+      "buttonText": "Explore Our Gas Projects"
+    },
+    "slide6": {
+      "title": "Ideas Into Structures",
+      "description": "From the initial sketches to the final finishing touches...",
+      "buttonText": "Learn more"
+    }
   }
 }

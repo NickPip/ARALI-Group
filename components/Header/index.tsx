@@ -192,7 +192,7 @@ const Header = () => {
                         href={menuItem.path}
                         onClick={handleMenuClick}
                         className={`transition-all duration-200 ease-in-out ${linkColor} ${
-                          !isMobile ? "hover:scale-105" : ""
+                          !isMobile ? "hover:scale-105 hover:text-blue-600" : ""
                         }`}
                       >
                         {t(menuItem.title)}

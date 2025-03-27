@@ -12,6 +12,8 @@ import "../globals.css";
 
 import { Oswald } from "next/font/google";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
+import ToasterContext from "@/app/context/ToastContext";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -19,8 +21,6 @@ const oswald = Oswald({
 });
 
 const inter = Inter({ subsets: ["latin"] });
-
-import ToasterContext from "@/app/context/ToastContext";
 
 export default function RootLayout({
   children,
@@ -30,10 +30,10 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time (adjust as needed)
+    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // 1-second delay for smoother transition
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -42,12 +42,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black ${oswald.className}`}>
         {isLoading ? (
-          // Loading Screen
-          <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black text-lg text-white transition-opacity duration-500">
-            <div className="h-12 w-12 animate-spin rounded-full border-t-2 border-white"></div>
+          // Logo Preloader
+          <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-white text-black transition-opacity duration-500">
+            <Image
+              src="/images/logo/arali_logo_high_res.png"
+              alt="AraliGroup Logo"
+              width={80}
+              height={80}
+              className="animate-spin"
+              priority
+            />
           </div>
         ) : (
-          // Main Content
+          // Main content
           <ThemeProvider
             enableSystem={false}
             attribute="class"

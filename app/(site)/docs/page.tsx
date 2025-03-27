@@ -1,101 +1,149 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import SidebarLink from "@/components/Docs/SidebarLink";
+import Feature from "@/components/Features";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import React, { useEffect, useState } from "react";
 
 export default function AboutPage() {
   const { t } = useTranslation();
+  const [startCount, setStartCount] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) setStartCount(true);
+  }, [inView]);
 
   return (
     <>
-      <section className="flex justify-center pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
-        <div className="container mx-auto max-w-4xl">
-          <div className="-mx-4 flex flex-wrap justify-center">
-            <div className="w-full px-4">
-              <div className="company-intro rounded-lg bg-gray-100 p-6 text-left shadow-md dark:bg-gray-800">
-                <p className="animate-fadeIn text-xl font-semibold tracking-wide text-gray-900 dark:text-white">
-                  <span className="text-blue-600 dark:text-blue-400">
-                    {t("about.companyName")}
-                  </span>{" "}
-                  {t("about.experienceYears")}{" "}
-                  <span className="text-blue-600 dark:text-blue-400">
-                    {t("about.sectors")}
-                  </span>
-                </p>
-
-                <p className="mt-4 text-gray-700 dark:text-gray-300">
-                  {t("about.supportClients")}
-                </p>
-                <p className="mt-4 text-gray-700 dark:text-gray-300">
-                  {t("about.strategy")}
-                </p>
-                <span className="text-blue-600 dark:text-blue-400">
-                  {t("about.focusQuality")}
-                </span>
-                <p className="mt-4 text-gray-700 dark:text-gray-300">
-                  {t("about.techBase")}
-                </p>
-                <p className="mt-4 text-gray-700 dark:text-gray-300">
-                  {t("about.professionalTeam")}
-                </p>
-              </div>
-
-              <div className="mt-10 rounded-lg border border-gray-200 p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {t("about.mainDirections")}
-                </h2>
-                <ul className="mt-4 space-y-2 text-gray-800 dark:text-gray-300">
-                  <li>🚧 {t("about.roadConstruction")}</li>
-                  <li>🏢 {t("about.buildings")}</li>
-                  <li>🏨 {t("about.hotels")}</li>
-                  <li>🏠 {t("about.residential")}</li>
-                  <li>💧 {t("about.waterSystems")}</li>
-                  <li>🌉 {t("about.bridges")}</li>
-                  <li>🏗️ {t("about.retainingWalls")}</li>
-                  <li>🏗️ {t("about.concreteWorks")}</li>
-                  <li>🌊 {t("about.shoreReinforcement")}</li>
-                  <li>🚰 {t("about.sewageSystems")}</li>
-                </ul>
-              </div>
-
-              <h1 className="mt-10 text-center text-3xl font-bold text-blue-700 dark:text-blue-400">
-                {t("about.missionAndGoals")}
-              </h1>
-
-              <div className="mt-6 flex justify-center">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                      {t("about.mission")}
-                    </h2>
-                    <p className="mt-4 text-gray-800 dark:text-gray-300">
-                      {t("about.missionDescription")}
-                    </p>
-                  </div>
-                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                      {t("about.goal")}
-                    </h2>
-                    <p className="mt-4 text-gray-800 dark:text-gray-300">
-                      {t("about.goalDescription")}
-                    </p>
-                  </div>
-                  <div className="transform rounded-lg border border-gray-300 bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                    <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                      {t("about.values")}
-                    </h2>
-                    <p className="mt-4 text-gray-800 dark:text-gray-300">
-                      {t("about.valuesDescription")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 text-center"></div>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section
+        className="relative h-[60vh] bg-cover bg-center text-white"
+        style={{ backgroundImage: "url('/images/hero/development.png')" }}
+      >
+        <div className="flex h-full w-full items-center justify-center bg-black/50">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h1 className="text-4xl font-bold uppercase tracking-wide">
+              {t("about.heroTitle")}
+            </h1>
+          </motion.div>
         </div>
       </section>
+
+      {/* Hero Description Text Under Image */}
+      <motion.section
+        className="bg-gray-100 px-4 py-8 text-center dark:bg-gray-800"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="mx-auto max-w-4xl">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            {t("about.heroSubtitle")}
+          </p>
+        </div>
+      </motion.section>
+
+      {/* Company Stats with CountUp */}
+      <motion.section
+        ref={ref}
+        className="bg-white py-12 dark:bg-gray-900"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <h2 className="text-4xl font-bold text-blue-600">
+              {startCount ? <CountUp end={20} duration={2} /> : "0"}+
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">
+              {t("about.stats.years")}
+            </p>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <h2 className="text-4xl font-bold text-blue-600">
+              {startCount ? <CountUp end={800} duration={2} /> : "0"}+
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">
+              {t("about.stats.projects")}
+            </p>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <h2 className="text-4xl font-bold text-blue-600">
+              {startCount ? <CountUp end={1000} duration={2} /> : "0"}+
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">
+              {t("about.stats.employees")}
+            </p>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <h2 className="text-4xl font-bold text-blue-600">
+              {startCount ? <CountUp end={15} duration={2} /> : "0"}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">
+              {t("about.stats.countries")}
+            </p>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Mission, Vision, Values */}
+      <motion.section
+        className="bg-gray-50 py-16 dark:bg-gray-800"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto grid gap-8 md:grid-cols-3">
+          <motion.div
+            className="rounded-lg bg-white p-6 shadow dark:bg-gray-900"
+            whileHover={{ scale: 1.05 }}
+          >
+            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+              {t("about.mission")}
+            </h2>
+            <p className="mt-4 text-gray-700 dark:text-gray-300">
+              {t("about.missionDescription")}
+            </p>
+          </motion.div>
+          <motion.div
+            className="rounded-lg bg-white p-6 shadow dark:bg-gray-900"
+            whileHover={{ scale: 1.05 }}
+          >
+            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+              {t("about.goal")}
+            </h2>
+            <p className="mt-4 text-gray-700 dark:text-gray-300">
+              {t("about.goalDescription")}
+            </p>
+          </motion.div>
+          <motion.div
+            className="rounded-lg bg-white p-6 shadow dark:bg-gray-900"
+            whileHover={{ scale: 1.05 }}
+          >
+            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+              {t("about.values")}
+            </h2>
+            <p className="mt-4 text-gray-700 dark:text-gray-300">
+              {t("about.valuesDescription")}
+            </p>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Features Section */}
+      <Feature />
     </>
   );
 }

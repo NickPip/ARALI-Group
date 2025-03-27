@@ -14,15 +14,16 @@ const slides = [
     link: "/road-construction",
   },
   {
-    image: "/images/features/slider.png",
-    title: "Ideas Into Structures",
+    image: "/images/blog/solar.png",
+    title: "Solar That Works Smarter",
     description:
-      "From the initial sketches to the final finishing touches, our expert team ensures every project is completed on time, within budget, and above expectations—combining modern technology with trusted craftsmanship.",
-    buttonText: "Learn more",
-    link: "/buildings",
+      "We engineer and install solar systems built for performance—powering homes, businesses, and the future.",
+    buttonText: "View Solar Installations",
+    link: "/solar",
   },
+
   {
-    image: "/images/features/slider.png",
+    image: "/images/blog/concrete.png",
     title: "Quality Concrete Production",
     description:
       "We specialize in producing high-performance concrete using certified raw materials and precise batching processes. Our facilities ensure consistent quality, fast delivery, and customizable mixes for every construction need.",
@@ -43,25 +44,25 @@ const slides = [
     description:
       "From concept to completion, we build gas stations that meet today’s energy demands with tomorrow’s standards.",
     buttonText: "Explore Our Gas Projects",
-    link: "/gas",
+    link: "/gas-station",
   },
   {
-    image: "/images/blog/solar.png",
-    title: "Solar That Works Smarter",
+    image: "/images/features/slider.png",
+    title: "Ideas Into Structures",
     description:
-      "We engineer and install solar systems built for performance—powering homes, businesses, and the future.",
-    buttonText: "View Solar Installations",
-    link: "/solar",
+      "From the initial sketches to the final finishing touches, our expert team ensures every project is completed on time, within budget, and above expectations—combining modern technology with trusted craftsmanship.",
+    buttonText: "Learn more",
+    link: "/buildings",
   },
 ];
 
 const categories = [
   "Roadwork",
-  "Development",
+  "Energy",
   "Concrete",
   "Quarries",
   "Gas",
-  "Energy",
+  "Development",
 ];
 
 export default function HeroCarousel() {
