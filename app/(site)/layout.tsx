@@ -49,7 +49,7 @@ export default function RootLayout({
               alt="AraliGroup Logo"
               width={80}
               height={80}
-              className="animate-spin"
+              // className="animate-spin"
               priority
             />
           </div>

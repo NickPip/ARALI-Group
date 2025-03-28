@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import Image from "next/image";
+import Feature from "@/components/Features";
 
 const SingleBlogPage = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+      <section className="bg-gray-600 pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col-reverse gap-7.5 lg:ml-16 lg:flex-row xl:ml-24 xl:gap-12.5">
             <div className="lg:w-2/2.5">
@@ -87,6 +88,7 @@ const SingleBlogPage = () => {
           </div>
         </div>
       </section>
+      <Feature />
     </>
   );
 };

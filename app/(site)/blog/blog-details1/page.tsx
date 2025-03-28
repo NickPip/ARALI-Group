@@ -5,13 +5,14 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Feature from "@/components/Features";
 
 const SingleBlogPage = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <section className="bg-gradient-to-b from-white via-gray-50 to-white pb-20 pt-36 dark:from-black dark:via-gray-900 dark:to-black lg:pb-28 lg:pt-44 xl:pb-32 xl:pt-52">
+      <section className="bg-gray-600 pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col items-center justify-center gap-10 xl:gap-16">
             <div className="w-full max-w-5xl">
@@ -98,6 +99,7 @@ const SingleBlogPage = () => {
           </div>
         </div>
       </section>
+      <Feature />
     </>
   );
 };

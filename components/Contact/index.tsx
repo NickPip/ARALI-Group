@@ -32,7 +32,7 @@ const Contact = () => {
     setIsSubmitting(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      setFormStatus("success");
+      // setFormStatus("success");
       setFormData({
         fullName: "",
         email: "",
@@ -41,7 +41,7 @@ const Contact = () => {
         message: "",
       });
     } catch {
-      setFormStatus("error");
+      // setFormStatus("error");
     } finally {
       setIsSubmitting(false);
     }

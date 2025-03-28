@@ -90,7 +90,7 @@ const Header = () => {
                   headerIsWhite ? "text-black dark:text-white" : "text-white"
                 }`}
               >
-                ARALI GROUP
+                Arali Group
               </span>
             </Link>
           </div>

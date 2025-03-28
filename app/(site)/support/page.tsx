@@ -75,10 +75,7 @@ const Contact = () => {
           <h2 className="mt-10 text-4xl font-bold text-white dark:text-white">
             {t("contact.title") || "Get in Touch"}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-200 dark:text-gray-400">
-            {t("contact.subtitle") ||
-              "We’d love to hear from you. Let’s start a conversation."}
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-gray-200 dark:text-gray-400"></p>
         </motion.div>
 
         <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row">
@@ -212,7 +209,7 @@ const Contact = () => {
           className="relative z-10 mt-20"
         >
           <h3 className="mb-4 text-center text-2xl font-semibold text-white dark:text-white">
-            {t("contact.findUs") || "Find Us on the Map"}
+            {t("contact.findus") || "Find Us on the Map"}
           </h3>
           <div className="h-[400px] w-full overflow-hidden rounded-xl shadow-lg">
             <iframe

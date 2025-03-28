@@ -19,7 +19,8 @@
     "description": "Arali Group is a construction company specializing in high-quality, energy-efficient, and environmentally sustainable buildings. Our team ensures the entire process—from design to realization.",
     "email_placeholder": "Your Email",
     "button_text": "Contact Us",
-    "consultation_text": "Get a consultation from our experts."
+    "consultation_text": "Get a consultation from our experts.",
+    "ctaProjects": "Our Work"
   },
   "features": {
     "title": "Aims",
@@ -69,7 +70,7 @@
     }
   },
   "funFact": {
-    "title": "Arali Group Stands Out for Reliability",
+    "titleHtml": "<span class='text-blue-700'>Arali Group</span> Stands Out for Reliability",
     "description": "With 20 years of operation, the company has built a strong reputation, trust, and respect. Our partners feel secure and confident when working with us.",
     "completedProjects": {
       "number": "1540",
@@ -97,7 +98,8 @@
   "blog": {
     "title": "Our Projects",
     "subtitle": "Projects",
-    "description": "Ongoing and completed projects."
+    "description": "Ongoing and completed projects.",
+    "ourwork": "OUR WORK"
   },
 
   "project1": {
@@ -126,7 +128,8 @@
     "addressDetails": "Georgia, Akhaltsikhe, David Aghmashenebeli St, N 3B",
     "emailLabel": "Email",
     "phoneLabel": "Phone Number",
-    "title": "Contact"
+    "title": "Contact",
+    "findus": "Find Us On The Map"
   },
   "footer": {
     "copyright": "© 2025 Arali. All rights reserved."
@@ -326,7 +329,7 @@
     },
     "ctaTitle": "ARALI GROUP",
     "ctaSubtitle": "Number 1 Construction Company in Caucasus",
-    "ctaProjects": "Our Work",
+
     "ctaContact": "Contact Us"
   },
   "sidebar": {
