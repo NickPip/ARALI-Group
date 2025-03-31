@@ -1,6 +1,8 @@
-export type Feature = {
+import { IconType } from "react-icons";
+
+export interface Feature {
   id: number;
-  icon: string;
+  icon: IconType; // ✅ Use the correct type
   title: string;
   description: string;
-};
+}

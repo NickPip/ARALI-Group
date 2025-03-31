@@ -129,7 +129,7 @@ const Header = () => {
   `}
         >
           <nav>
-            <ul className="font-roboto ml-6 mt-4 flex flex-col gap-5 pl-5 pt-6 text-left text-sm font-bold xl:mt-0 xl:flex-row xl:items-center xl:gap-16 xl:pl-[80px] xl:pt-0 xl:text-center">
+            <ul className="ml-6 mt-4 flex flex-col gap-5 pl-5 pt-6 text-left font-roboto text-sm font-bold xl:mt-0 xl:flex-row xl:items-center xl:gap-16 xl:pl-[80px] xl:pt-0 xl:text-center">
               {menuData.map((menuItem, idx) => {
                 if (idx === 3) return null;
 
@@ -189,7 +189,7 @@ const Header = () => {
                       </>
                     ) : (
                       <Link
-                        href={menuItem.path}
+                        href={menuItem.path!}
                         onClick={handleMenuClick}
                         className={`transition-all duration-200 ease-in-out ${linkColor} ${
                           !isMobile ? "hover:scale-105 hover:text-blue-600" : ""

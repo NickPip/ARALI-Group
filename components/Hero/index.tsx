@@ -68,7 +68,8 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const buttonsRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const [sliderStyle, setSliderStyle] = useState({ width: 0, left: 0 });
 
   useEffect(() => {
@@ -151,14 +152,14 @@ export default function HeroCarousel() {
         <div className="mx-auto w-full max-w-screen-xl">
           <h1
             key={currentSlide}
-            className="animate-slideDown translate-y-[-20px] text-4xl font-bold uppercase leading-tight tracking-wide opacity-0 sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-9xl"
+            className="translate-y-[-20px] animate-slideDown text-4xl font-bold uppercase leading-tight tracking-wide opacity-0 sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-9xl"
           >
             {slides[currentSlide].title}
           </h1>
 
           <p
             key={currentSlide + "-p"}
-            className="animate-slideInRightSlow mt-6 max-w-3xl text-sm leading-relaxed text-white/80 md:text-sm"
+            className="mt-6 max-w-3xl animate-slideInRightSlow text-sm leading-relaxed text-white/80 md:text-sm"
           >
             {slides[currentSlide].description}
           </p>
@@ -166,7 +167,7 @@ export default function HeroCarousel() {
           <Link href={slides[currentSlide].link}>
             <button
               key={currentSlide + "-button"}
-              className="animate-slideInRightDelay lg:text-1xl mt-10 rounded-md bg-primary px-12 py-1 font-thin text-white opacity-0 hover:bg-primary/80"
+              className="lg:text-1xl mt-10 animate-slideInRightDelay rounded-md bg-primary px-12 py-1 font-thin text-white opacity-0 hover:bg-primary/80"
             >
               {slides[currentSlide].buttonText}
             </button>
@@ -226,7 +227,9 @@ export default function HeroCarousel() {
             {categories.map((category, index) => (
               <button
                 key={`cat-${index}`}
-                ref={(el) => (buttonsRef.current[index] = el)}
+                ref={(el: HTMLButtonElement | null) => {
+                  buttonsRef.current[index] = el;
+                }}
                 onClick={() => handleCategoryClick(index)}
                 className={`relative cursor-pointer px-4 py-8 text-sm text-white opacity-0 transition-all md:text-base animate-fade-right-delay-${index + 1}
                 before:absolute before:right-0 before:top-1/2 before:h-8 before:w-px before:-translate-y-1/2 before:bg-white/30
