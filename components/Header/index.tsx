@@ -172,6 +172,7 @@ const Header = () => {
                               : "bg-white text-black"
                           }`}
                         >
+                          <ThemeToggler />
                           {menuItem.submenu.map((item, key) => (
                             <li key={key}>
                               <Link
@@ -224,11 +225,15 @@ const Header = () => {
                 />
               </a>
             </div>
-            <ThemeToggler />
+
             <div onClick={handleMenuClick}>
               <LanguageSwitcher />
+              {/* <ThemeToggler /> */}
             </div>
-
+            <div onClick={handleMenuClick}></div>
+            <div className="hidden xl:block">
+              <ThemeToggler />
+            </div>
             <div onClick={handleMenuClick}></div>
 
             <div

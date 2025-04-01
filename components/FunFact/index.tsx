@@ -47,7 +47,7 @@ const FunFact = () => {
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[2fr_1fr]">
         <div>
           <h2
-            className="mb-10 text-7xl font-bold leading-tight text-black dark:text-white"
+            className="mb-10 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             dangerouslySetInnerHTML={{ __html: t("funFact.titleHtml") }}
           />
 

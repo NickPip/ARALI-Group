@@ -231,8 +231,8 @@ export default function HeroCarousel() {
                   buttonsRef.current[index] = el;
                 }}
                 onClick={() => handleCategoryClick(index)}
-                className={`relative cursor-pointer px-2 py-6 text-xs text-white opacity-100 transition-all before:absolute before:right-0 before:top-1/2 before:h-6
-                  before:w-px before:-translate-y-1/2 before:bg-white/30 sm:px-3 sm:text-sm md:px-4 md:text-base
+                className={`relative cursor-pointer whitespace-nowrap px-2 py-4 text-[10px] text-white transition-all before:absolute before:right-0 before:top-1/2 before:h-6
+                  before:w-px before:-translate-y-1/2 before:bg-white/30 sm:px-3 sm:text-xs md:px-4 md:text-sm
                   ${index === categories.length - 1 ? "before:hidden" : ""}
                   ${index === 0 ? "pl-0" : ""}
                 `}
