@@ -61,7 +61,7 @@ const Header = () => {
       className={`fixed left-0 top-0 z-[99999] w-full transform transition-all duration-300 
         ${
           headerIsWhite
-            ? "bg-white py-4 shadow dark:bg-black"
+            ? "bg-white/20 py-4 shadow-none backdrop-blur-xl dark:bg-black/10"
             : "bg-transparent py-4"
         }
         ${!isMobile ? "hover:scale-105" : ""}
@@ -86,8 +86,8 @@ const Header = () => {
                 height={40}
               />
               <span
-                className={`text-1xl pt-1 font-extrabold tracking-tight ${
-                  headerIsWhite ? "text-black dark:text-white" : "text-white"
+                className={`pt-1 text-2xl font-extrabold tracking-tight ${
+                  headerIsWhite ? "text-blue-800 dark:text-white" : "text-white"
                 }`}
               >
                 AraliGroup
@@ -134,8 +134,8 @@ const Header = () => {
                 if (idx === 3) return null;
 
                 const linkColor = headerIsWhite
-                  ? "text-black dark:text-white"
-                  : "text-white";
+                  ? "text-blue-800 hover:text-blue-800 drop-shadow dark:text-blue-400 dark:hover:text-blue-400"
+                  : "text-white hover:text-white drop-shadow-sm dark:text-white dark:hover:text-white";
 
                 return (
                   <li key={idx} className={menuItem.submenu ? "relative" : ""}>
@@ -191,8 +191,8 @@ const Header = () => {
                       <Link
                         href={menuItem.path!}
                         onClick={handleMenuClick}
-                        className={`transition-all duration-200 ease-in-out ${linkColor} ${
-                          !isMobile ? "hover:scale-105 hover:text-blue-600" : ""
+                        className={`transition-colors duration-300 ease-in-out ${linkColor} ${
+                          !isMobile ? "hover:scale-105" : ""
                         }`}
                       >
                         {t(menuItem.title)}
@@ -224,18 +224,18 @@ const Header = () => {
                 />
               </a>
             </div>
-
+            <ThemeToggler />
             <div onClick={handleMenuClick}>
               <LanguageSwitcher />
             </div>
 
-            <div onClick={handleMenuClick}>{/* <ThemeToggler /> */}</div>
+            <div onClick={handleMenuClick}></div>
 
             <div
               className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide transition-all duration-300
                 ${
                   headerIsWhite
-                    ? "border-black text-black dark:border-white dark:text-white"
+                    ? "border-blue-800 text-blue-800 dark:border-white dark:text-white"
                     : "border-white text-white"
                 }`}
             >

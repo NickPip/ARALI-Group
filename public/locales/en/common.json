@@ -392,17 +392,18 @@
       "buttonText": "Explore production"
     },
     "slide4": {
-      "title": "MINING MARKETS",
-      "description": "Kiewit specializes in mine management, production, infrastructure construction...",
-      "buttonText": "Learn more about our Mining markets"
+      "title": "HIGH-TECH QUARRIES",
+      "description": "Arali operates advanced sand and gravel quarries that supply top-grade construction materials. Strategically located, they ensure fast and efficient delivery for a wide range of projects, including concrete, asphalt, and road construction.",
+      "buttonText": "Explore our Quarry Products"
     },
+
     "slide5": {
       "title": "Reliable Fueling Infrastructure",
       "description": "From concept to completion, we build gas stations that meet today’s energy demands with tomorrow’s standards.",
       "buttonText": "Explore Our Gas Projects"
     },
     "slide6": {
-      "title": "Ideas Into Structures",
+      "title": "Vision Into Structures",
       "description": "From the initial sketches to the final finishing touches...",
       "buttonText": "Learn more"
     }

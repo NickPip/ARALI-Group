@@ -60,12 +60,26 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="light"
           >
-            <Lines />
-            <Header />
-            <ToasterContext />
-            {children}
-            <Footer />
-            <ScrollToTop />
+            {isLoading ? (
+              <div className="top- fixed left-0 z-50 flex h-full w-full items-center justify-center bg-white text-black transition-opacity duration-500">
+                <Image
+                  src="/images/logo/arali_logo_high_res.png"
+                  alt="AraliGroup Logo"
+                  width={80}
+                  height={80}
+                  priority
+                />
+              </div>
+            ) : (
+              <>
+                <Lines />
+                <Header />
+                <ToasterContext />
+                {children}
+                <Footer />
+                <ScrollToTop />
+              </>
+            )}
           </ThemeProvider>
         )}
       </body>
