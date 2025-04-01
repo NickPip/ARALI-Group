@@ -214,7 +214,7 @@ const Contact = () => {
           <div className="h-[400px] w-full overflow-hidden rounded-xl shadow-lg">
             <iframe
               title="AraliGroup Location"
-              src="https://maps.google.com/maps?q=41.71028,44.79611&z=15&output=embed"
+              src="https://maps.google.com/maps?q=41.656897,43.028364&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

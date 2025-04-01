@@ -10,6 +10,7 @@ import {
   FaCubes,
   FaHammer,
 } from "react-icons/fa";
+import Feature from "@/components/Features";
 
 export default function QuarriesPage() {
   const { t } = useTranslation();
@@ -127,6 +128,7 @@ export default function QuarriesPage() {
           </motion.div>
         </div>
       </section>
+      <Feature />
     </>
   );
 }
