@@ -61,7 +61,7 @@ const Header = () => {
       className={`fixed left-0 top-0 z-[99999] w-full transform transition-all duration-300 
         ${
           headerIsWhite
-            ? "bg-white/20 py-4 shadow-none backdrop-blur-xl dark:bg-black/10"
+            ? "bg-black/10 py-4 shadow-none backdrop-blur-xl dark:bg-black/10"
             : "bg-transparent py-4"
         }
         ${!isMobile ? "hover:scale-105" : ""}
@@ -134,7 +134,7 @@ const Header = () => {
                 if (idx === 3) return null;
 
                 const linkColor = headerIsWhite
-                  ? "text-blue-800 hover:text-blue-800 drop-shadow dark:text-blue-400 dark:hover:text-blue-400"
+                  ? "text-blue-400 hover:text-blue-400 drop-shadow dark:text-blue-400 dark:hover:text-blue-400"
                   : "text-white hover:text-white drop-shadow-sm dark:text-white dark:hover:text-white";
 
                 return (
