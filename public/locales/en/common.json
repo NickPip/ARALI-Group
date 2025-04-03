@@ -282,9 +282,9 @@
     "categoryName": "Sports",
     "introduction": "We have completed the construction of a new multi-functional sports complex in Rustavi!",
     "details": "The two-story enclosed sports complex will serve 8 Olympic sports disciplines, specifically, events can be held in basketball, volleyball, handball, mini football, boxing, wrestling, judo, and fencing.",
-    "section1": "The hall’s retractable, so-called telescopic stands are designed for 1,500 spectators, allowing for efficient use of space.",
+    "section1": "The hall's retractable, so-called telescopic stands are designed for 1,500 spectators, allowing for efficient use of space.",
     "section2": "The hall is equipped according to international standards. For hosting competitions, LED screens have been installed. The building is equipped with heating, cooling, and ventilation systems.",
-    "section3": "The sports complex already includes a fitness hall and provides all necessary spaces for athletes’ training and local or international competitions: locker rooms, showers, rest areas, storage rooms, a conference hall, and an open café.",
+    "section3": "The sports complex already includes a fitness hall and provides all necessary spaces for athletes' training and local or international competitions: locker rooms, showers, rest areas, storage rooms, a conference hall, and an open café.",
     "section4": "A recreational zone has been arranged around the complex, along with pedestrian paths, an open parking lot for 85 cars, and installed outdoor lighting fixtures.",
     "coverImageAlt": "Sports Complex Cover Image",
     "image1": "Sports Complex Interior",
@@ -300,7 +300,7 @@
     "strategy": "The group's successful experience is based on an efficient organizational and strategic vision, a dynamic entrepreneurial approach,",
     "focusQuality": "which is focused on quality and customer satisfaction.",
     "techBase": "Arali's material and technical base, along with strong project management, allows us to effectively execute projects of any complexity in parallel.",
-    "professionalTeam": "The company’s main asset is a professional team, whose years of experience and expertise ensure effective and successful project management. Arali also plays a key role in employing and developing local talent across Georgia.",
+    "professionalTeam": "The company's main asset is a professional team, whose years of experience and expertise ensure effective and successful project management. Arali also plays a key role in employing and developing local talent across Georgia.",
     "mainDirections": "Our main business directions are:",
     "roadConstruction": "Road construction and rehabilitation",
     "buildings": "Multi-functional civil buildings construction",
@@ -320,7 +320,7 @@
     "values": "Values",
     "valuesDescription": "Every thought and action of our team is based on company values: teamwork, responsibility for quality, innovation, sustainable development, and environmental care.",
     "heroTitle": "Arali Group / Building More Than Structures",
-    "heroSubtitle": "With over 20 years of active involvement in Georgia’s key economic sectors, Arali Group specializes in large-scale infrastructure and civil construction projects. Backed by a strong technical base and efficient project management, we support clients in delivering complex, high-impact developments that contribute to long-term national growth and sustainability.",
+    "heroSubtitle": "With over 20 years of active involvement in Georgia's key economic sectors, Arali Group specializes in large-scale infrastructure and civil construction projects. Backed by a strong technical base and efficient project management, we support clients in delivering complex, high-impact developments that contribute to long-term national growth and sustainability.",
     "stats": {
       "years": "Years of Experience",
       "projects": "Completed Projects",
@@ -330,7 +330,34 @@
     "ctaTitle": "ARALI GROUP",
     "ctaSubtitle": "Number 1 Construction Company in Caucasus",
 
-    "ctaContact": "Contact Us"
+    "ctaContact": "Contact Us",
+    "overview": {
+      "title": "Our Story",
+      "description": "Since our founding in 2003, Arali Group has been at the forefront of Georgia's construction industry. We've grown from a small local contractor to a leading construction company, delivering excellence in road construction, civil engineering, and concrete production. Our commitment to quality and innovation has earned us a reputation for reliability and excellence across the Caucasus region.",
+      "roadConstruction": "Road Construction",
+      "civilConstruction": "Civil Construction",
+      "concreteProduction": "Concrete Production",
+      "internationalProjects": "International Projects"
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "founding": {
+        "title": "Company Foundation",
+        "description": "Arali Group was established with a vision to transform Georgia's construction landscape through innovative solutions and quality craftsmanship."
+      },
+      "expansion": {
+        "title": "Regional Expansion",
+        "description": "Expanded operations across Georgia, establishing a strong presence in key regions and developing strategic partnerships."
+      },
+      "innovation": {
+        "title": "Innovation & Growth",
+        "description": "Introduced cutting-edge construction technologies and sustainable practices, setting new industry standards in the Caucasus region."
+      },
+      "leadership": {
+        "title": "Industry Leadership",
+        "description": "Achieved recognition as a leading construction company in the Caucasus, with a portfolio of landmark projects and international partnerships."
+      }
+    }
   },
   "sidebar": {
     "companyAbout": "About the Company"
@@ -356,14 +383,14 @@
     "accessibility": "Infrastructure was improved for pedestrians and disabled individuals. New ramps, tactile paving, and accessibility features ensure inclusive urban development."
   },
   "blog-details2": {
-    "title": "Road Clearing Operations in Georgia’s Mountainous Regions",
+    "title": "Road Clearing Operations in Georgia's Mountainous Regions",
     "executor": "Executor",
     "executorName": "Arali Group",
     "date": "Completed",
     "dateValue": "February 10, 2024",
     "category": "Category",
     "categoryName": "Infrastructure - Road Clearing & Safety",
-    "introduction": "During winter, road clearing in Georgia’s mountainous regions is essential for safe transportation. The operations involved removing snow and ice to ensure uninterrupted movement.",
+    "introduction": "During winter, road clearing in Georgia's mountainous regions is essential for safe transportation. The operations involved removing snow and ice to ensure uninterrupted movement.",
     "details": "Modern equipment was used to maximize efficiency and respond quickly. Snowplows and special materials helped protect road surfaces from freezing.",
     "section1": "Safety measures were implemented, including road signs and salt solutions to reduce accident risks.",
     "section2": "High-performance machinery effectively cleared roads in extreme weather, minimizing travel disruptions.",
@@ -399,7 +426,7 @@
 
     "slide5": {
       "title": "Reliable Fueling Infrastructure",
-      "description": "From concept to completion, we build gas stations that meet today’s energy demands with tomorrow’s standards.",
+      "description": "From concept to completion, we build gas stations that meet today's energy demands with tomorrow's standards.",
       "buttonText": "Explore Our Gas Projects"
     },
     "slide6": {
