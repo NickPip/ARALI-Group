@@ -14,6 +14,8 @@ import { Oswald } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import ToasterContext from "@/app/context/ToastContext";
+import ModernMinimalHeader from "@/components/HeaderVariants/ModernMinimalHeader";
+import DynamicGlassHeader from "@/components/HeaderVariants/DynamicGlassHeader";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -60,26 +62,13 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="light"
           >
-            {isLoading ? (
-              <div className="top- fixed left-0 z-50 flex h-full w-full items-center justify-center bg-white text-black transition-opacity duration-500">
-                <Image
-                  src="/images/logo/arali_logo_high_res.png"
-                  alt="AraliGroup Logo"
-                  width={80}
-                  height={80}
-                  priority
-                />
-              </div>
-            ) : (
-              <>
-                <Lines />
-                <Header />
-                <ToasterContext />
-                {children}
-                <Footer />
-                <ScrollToTop />
-              </>
-            )}
+            <Lines />
+            {/* <Header /> */}
+            <DynamicGlassHeader />
+            <ToasterContext />
+            {children}
+            <Footer />
+            <ScrollToTop />
           </ThemeProvider>
         )}
       </body>
