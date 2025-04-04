@@ -243,7 +243,7 @@ export default function AboutPage() {
               className="relative h-[500px] overflow-hidden rounded-2xl shadow-2xl"
             >
               <Image
-                src="/images/blog/gzebi.png"
+                src="/images/blog/araliHistory.png"
                 alt="Company History"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
