@@ -453,5 +453,8 @@
       "description": "From the initial sketches to the final finishing touches...",
       "buttonText": "Learn more"
     }
+  },
+  "loading": {
+    "message": "Building Excellence..."
   }
 }
