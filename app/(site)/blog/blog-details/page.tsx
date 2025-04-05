@@ -1,89 +1,141 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Feature from "@/components/Features";
+import { useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const SingleBlogPage = () => {
   const { t } = useTranslation();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    "/images/blog/coverProject.png",
+    "/images/blog/feature1.jpg",
+    "/images/blog/feature2.png",
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + heroImages.length) % heroImages.length,
+    );
+  };
 
   return (
     <>
-      <section className="bg-gray-600 pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col-reverse gap-7.5 lg:ml-16 lg:flex-row xl:ml-24 xl:gap-12.5">
-            <div className="lg:w-2/2.5">
-              <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-                <div className="mb-10 w-full overflow-hidden ">
-                  <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                    <Image
-                      src={"/images/blog/coverProject.png"}
-                      alt={t("blogTwo.coverImageAlt")}
-                      fill
-                      className="rounded-md object-cover object-center"
-                    />
-                  </div>
-                </div>
+      {/* Hero Image Carousel */}
+      <div className="relative h-[80vh] w-full">
+        <div className="relative h-full w-full">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute h-full w-full transition-opacity duration-500 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Project hero image ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  {t("blogTwo.title")}
-                </h2>
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30"
+            aria-label="Previous slide"
+          >
+            <FiChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30"
+            aria-label="Next slide"
+          >
+            <FiChevronRight size={24} />
+          </button>
 
-                <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
-                  <li>
-                    <span className="text-black dark:text-white">
-                      {t("blogTwo.executor")}:
-                    </span>{" "}
-                    {t("blogTwo.executorName")}
-                  </li>
-                  <li>
-                    <span className="text-black dark:text-white">
-                      {t("blogTwo.date")}:
-                    </span>{" "}
-                    {t("blogTwo.dateValue")}
-                  </li>
-                  <li>
-                    <span className="text-black dark:text-white">
-                      {t("blogTwo.category")}:
-                    </span>{" "}
-                    {t("blogTwo.categoryName")}
-                  </li>
-                </ul>
+          {/* Slide Indicators */}
+          <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 w-2 rounded-full transition-all ${
+                  index === currentSlide ? "w-6 bg-white" : "bg-white/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
 
-                <div className="blog-details">
-                  <p>{t("blogTwo.introduction")}</p>
-                  <p>{t("blogTwo.details")}</p>
-                  <p>{t("blogTwo.section1")}</p>
-                  <p>{t("blogTwo.section2")}</p>
-                  <p>{t("blogTwo.section3")}</p>
-                  <p>{t("blogTwo.section4")}</p>
+      <section className="relative bg-white pb-20 dark:bg-gray-900 lg:pb-25 xl:pb-30">
+        {/* Content Section */}
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <h1 className="mb-4 mt-8 text-3xl font-bold text-gray-800 dark:text-white md:text-4xl lg:text-5xl">
+              {t("blogTwo.title")}
+            </h1>
 
-                  <div className="flex flex-wrap gap-5">
-                    <Image
-                      src={"/images/blog/feature1.jpg"}
-                      width={350}
-                      height={200}
-                      alt={t("blogTwo.image1")}
-                    />
-                    <Image
-                      src={"/images/blog/feature2.png"}
-                      width={350}
-                      height={200}
-                      alt={t("blogTwo.image2")}
-                    />
-                    <Image
-                      src={"/images/blog/feature3.png"}
-                      width={350}
-                      height={200}
-                      alt={t("blogTwo.image3")}
-                    />
-                  </div>
+            {/* Project Specifications - Simplified */}
+            <ul className="mb-6 flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-400">
+              <li>
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Executor:
+                </span>{" "}
+                Arali Group
+              </li>
+              <li className="ml-1">•</li>
+              <li>
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Completed:
+                </span>{" "}
+                March 21, 2024
+              </li>
+              <li className="ml-1">•</li>
+              <li>
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  Category:
+                </span>{" "}
+                Sports
+              </li>
+            </ul>
 
-                  <h3 className="pt-8">{t("blogTwo.accessibility")}</h3>
-                </div>
-              </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="mb-8 text-xl leading-relaxed text-gray-700 dark:text-gray-300"></p>
+
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {t("blogTwo.details")}
+              </p>
+
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {t("blogTwo.section1")}
+              </p>
+
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {t("blogTwo.section2")}
+              </p>
+
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {t("blogTwo.section3")}
+              </p>
+
+              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {t("blogTwo.section4")}
+              </p>
             </div>
           </div>
         </div>
