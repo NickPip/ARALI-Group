@@ -1,18 +1,48 @@
+"use client";
 import BlogData from "@/components/Blog/blogData";
 import BlogItem from "@/components/Blog/BlogItem";
-import { Metadata } from "next";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-export const metadata: Metadata = {
-  title: "AraliGroup",
-  description: "This is Blog page for Solid Pro",
-};
+const BlogPage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-const BlogPage = async () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <section className="bg-gray-600 pb-20 pt-20 lg:pt-25 xl:pt-30">
-        <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
-          <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
+      {/* Header Background Overlay - Shows when not scrolled */}
+      <div
+        className={`fixed left-0 right-0 top-0 z-40 h-32 bg-gradient-to-b from-black/30 via-black/20 to-transparent transition-opacity duration-300 ${
+          isScrolled ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
+      {/* Title Section */}
+      <section className="bg-white pb-16 pt-48 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h1 className="text-center text-6xl font-bold uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white md:text-7xl lg:text-7xl">
+            OUR WORK
+          </h1>
+        </div>
+      </section>
+
+      {/* Projects Grid Section */}
+      <section className="bg-white pb-32 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
             {BlogData.map((post, index) => (
               <BlogItem key={index} blog={post} index={index} />
             ))}

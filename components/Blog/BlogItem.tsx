@@ -7,44 +7,43 @@ import { useTranslation } from "react-i18next";
 
 const BlogItem = ({ blog, index }: { blog: Blog; index: number }) => {
   const { t } = useTranslation();
-  const { mainImage, title, metadata } = blog;
+  const {
+    mainImage = "/images/blog/default.jpg",
+    title,
+    metadata,
+    location,
+  } = blog;
 
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: -20 },
+        hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
       }}
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:bg-gray-900"
+      className="group cursor-pointer"
     >
-      <Link
-        href={`/blog/blog-details${index === 0 ? "" : index}`}
-        className="relative block aspect-[368/239] overflow-hidden rounded-t-xl"
-      >
-        <Image
-          src={mainImage}
-          alt={t(title)}
-          fill
-          className="object-cover transition-transform duration-300 hover:scale-105"
-        />
+      <Link href={`/blog/blog-details${index === 0 ? "" : index}`}>
+        <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <Image
+            src={mainImage}
+            alt={t(title)}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
+        <div className="mt-8">
+          <h2 className="mb-3 text-[28px] font-bold uppercase leading-tight tracking-wide text-[#1a1a1a] dark:text-white">
+            {title}
+          </h2>
+          <p className="text-lg font-medium text-gray-600 dark:text-gray-400">
+            {location}
+          </p>
+        </div>
       </Link>
-
-      <div className="px-4 py-5">
-        <h3 className="text-lg font-semibold text-gray-900 transition-colors hover:text-blue-700 dark:text-white dark:hover:text-blue-400">
-          <Link href={`/blog/blog-details${index === 0 ? "" : index}`}>
-            {`${t(title).slice(0, 40)}...`}
-          </Link>
-        </h3>
-        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-          {t(metadata || "")}
-        </p>
-      </div>
     </motion.div>
   );
 };

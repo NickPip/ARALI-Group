@@ -19,6 +19,7 @@ const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
   const pathUrl = usePathname();
   const isHome = pathUrl === "/";
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +39,13 @@ const Header = () => {
 
   useEffect(() => {
     const handleStickyMenu = () => {
-      setStickyMenu(window.scrollY >= 80);
+      if (window.scrollY > 0) {
+        setStickyMenu(true);
+        setIsScrolled(true);
+      } else {
+        setStickyMenu(false);
+        setIsScrolled(false);
+      }
     };
     window.addEventListener("scroll", handleStickyMenu);
     return () => {
@@ -58,14 +65,11 @@ const Header = () => {
     <header
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`fixed left-0 top-0 z-[99999] w-full transform transition-all duration-300 
-        ${
-          headerIsWhite
-            ? "bg-black/10 py-4 shadow-none backdrop-blur-xl dark:bg-black/10"
-            : "bg-transparent py-4"
-        }
-        ${!isMobile ? "hover:scale-105" : ""}
-      `}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-white backdrop-blur-md dark:bg-gray-900/90"
+          : "bg-transparent"
+      }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
