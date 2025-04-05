@@ -1,7 +1,8 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 type FaqData = {
-  activeFaq: number;
+  activeFaq: number | null;
   id: number;
   handleFaqToggle: (id: number) => void;
   quest: string;
@@ -11,55 +12,56 @@ type FaqData = {
 const FAQItem = ({ faqData }: { faqData: FaqData }) => {
   const { t } = useTranslation();
   const { activeFaq, id, handleFaqToggle, quest, ans } = faqData;
+  const isActive = activeFaq === id;
 
   return (
-    <>
-      <div className="flex flex-col border-b border-stroke last-of-type:border-none dark:border-strokedark">
-        <button
-          onClick={() => {
-            handleFaqToggle(id);
-          }}
-          className="flex cursor-pointer items-center justify-between px-6 py-5 text-metatitle3 font-medium text-black dark:text-white lg:px-9 lg:py-7.5"
-        >
+    <div className="group">
+      <button
+        onClick={() => handleFaqToggle(id)}
+        className="flex w-full items-center justify-between px-4 py-5 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/80"
+      >
+        <span className="text-left text-lg font-medium text-gray-900 dark:text-white">
           {t(quest)}
-
-          {activeFaq === id ? (
-            <svg
-              width="18"
-              height="4"
-              viewBox="0 0 18 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.1666 0.833374H10.1666H7.83331H0.833313V3.16671H7.83331H10.1666H17.1666V0.833374Z"
-                fill="currentColor"
-              />
-            </svg>
-          ) : (
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.83331 7.83337V0.833374H10.1666V7.83337H17.1666V10.1667H10.1666V17.1667H7.83331V10.1667H0.833313V7.83337H7.83331Z"
-                fill="currentColor"
-              />
-            </svg>
-          )}
-        </button>
-        <p
-          className={`border-t border-stroke px-6 py-5 dark:border-strokedark lg:px-9 lg:py-7.5 ${
-            activeFaq === id ? "block" : "hidden"
+        </span>
+        <span
+          className={`ml-6 flex h-7 items-center transition-transform duration-300 ${
+            isActive ? "rotate-180" : ""
           }`}
         >
-          {t(ans)}
-        </p>
-      </div>
-    </>
+          <svg
+            className="h-6 w-6 text-blue-500 transition-colors group-hover:text-blue-600 dark:text-blue-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </span>
+      </button>
+
+      <AnimatePresence>
+        {isActive && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-4 pb-5 pt-0">
+              <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                {t(ans)}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 

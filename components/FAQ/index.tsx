@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FAQItem from "./FAQItem";
@@ -8,81 +7,79 @@ import faqData from "./faqData";
 
 const FAQ = () => {
   const { t } = useTranslation();
-  const [activeFaq, setActiveFaq] = useState(1);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const handleFaqToggle = (id: number) => {
-    activeFaq === id ? setActiveFaq(0) : setActiveFaq(id);
+    setActiveFaq(activeFaq === id ? null : id);
   };
 
   return (
-    <>
-      {/* <!-- ===== FAQ Start ===== --> */}
-      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
-        <div className="relative mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div className="absolute -bottom-16 -z-1 h-full w-full">
-            <Image
-              fill
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-            />
-            <Image
-              fill
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="hidden dark:block"
-            />
-          </div>
-          <div className="flex flex-wrap gap-8 md:flex-nowrap md:items-center xl:gap-32.5">
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left md:w-2/5 lg:w-1/2"
-            >
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                {t("faq.title1")}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
-                  {t("faq.title2")}
-                </span>
-              </h2>
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-24 dark:from-gray-900 dark:to-gray-800 lg:py-32">
+      {/* Background decorative elements */}
+      <div className="pointer-events-none absolute inset-0 select-none">
+        <div className="absolute -left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-blue-50/50 blur-3xl dark:bg-blue-900/20" />
+        <div className="absolute -right-1/4 bottom-0 h-[500px] w-[500px] rounded-full bg-blue-50/50 blur-3xl dark:bg-blue-900/20" />
+      </div>
 
-              <a
-                href="#"
-                className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
-              ></a>
-            </motion.div>
+      <div className="container relative mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mx-auto mb-16 max-w-2xl text-center"
+        >
+          <span className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
+            FAQ
+          </span>
+          <h2 className="mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-white dark:to-gray-300 sm:text-5xl">
+            {t("faq.title1")}
+          </h2>
+        </motion.div>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_right md:w-3/5 lg:w-1/2"
-            >
-              <div className="rounded-lg bg-white shadow-solid-8 dark:border dark:border-strokedark dark:bg-blacksection">
-                {faqData.map((faq, key) => (
-                  <FAQItem
-                    key={key}
-                    faqData={{ ...faq, activeFaq, handleFaqToggle }}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          </div>
+        {/* FAQ Grid */}
+        <div className="relative mx-auto max-w-3xl">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="rounded-2xl bg-white p-2 shadow-xl dark:bg-gray-800/50 dark:shadow-gray-900/10"
+          >
+            <div className="divide-y divide-gray-100 dark:divide-gray-700">
+              {faqData.map((faq, key) => (
+                <FAQItem
+                  key={key}
+                  faqData={{ ...faq, activeFaq, handleFaqToggle }}
+                />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact Section */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          ></motion.div>
         </div>
-      </section>
-      {/* <!-- ===== FAQ End ===== --> */}
-    </>
+      </div>
+    </section>
   );
 };
 
