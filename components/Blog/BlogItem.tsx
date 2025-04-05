@@ -27,21 +27,25 @@ const BlogItem = ({ blog, index }: { blog: Blog; index: number }) => {
       className="group cursor-pointer"
     >
       <Link href={`/blog/blog-details${index === 0 ? "" : index}`}>
-        <div className="relative aspect-[4/3] w-full overflow-hidden">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
           <Image
             src={mainImage}
             alt={t(title)}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
-        <div className="mt-8">
-          <h2 className="mb-3 text-[28px] font-bold uppercase leading-tight tracking-wide text-[#1a1a1a] dark:text-white">
-            {title}
-          </h2>
-          <p className="text-lg font-medium text-gray-600 dark:text-gray-400">
-            {location}
-          </p>
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+          {/* Text content */}
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <h2 className="mb-1 text-xl font-bold uppercase leading-tight tracking-wide text-white">
+              {title}
+            </h2>
+            {location && (
+              <p className="text-sm font-normal text-white/90">{location}</p>
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>
