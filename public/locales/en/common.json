@@ -118,19 +118,19 @@
         "location": "Various Locations, Georgia"
       },
       "solarPowerPlant": {
-        "title": "SOLAR POWER PLANT",
+        "title": "Modern Kindergarten Project",
         "metadata": "Construction of a solar power plant to provide clean energy to the region.",
-        "location": "Kakheti, Georgia"
+        "location": "Akhaltsikhe, Georgia"
       },
       "gasStation": {
-        "title": "GAS STATION CONSTRUCTION",
-        "metadata": "Modern gas station construction with advanced safety features and amenities.",
-        "location": "Tbilisi, Georgia"
+        "title": "Urban Renewal",
+        "metadata": "Abastumani Urban Renewal.",
+        "location": "Abastumani, Georgia"
       },
       "industrialComplex": {
-        "title": "INDUSTRIAL COMPLEX",
+        "title": "Renewed Regions Program",
         "metadata": "Development of a state-of-the-art industrial complex for manufacturing.",
-        "location": "Kutaisi, Georgia"
+        "location": "Samtskhe-Javakheti, Georgia"
       }
     }
   },
@@ -489,5 +489,65 @@
   },
   "loading": {
     "message": "Building Excellence..."
+  },
+  "blogThree": {
+    "title": "Abastumani Urban Renewal",
+    "executor": "Executor",
+    "executorName": "Ministry of Regional Development and Infrastructure",
+    "date": "In Progress",
+    "dateValue": "April 2025",
+    "category": "Category",
+    "categoryName": "Urban Development",
+    "introduction": "Major public infrastructure projects in Abastumani are in their final stages, marking a transformative period for the resort town.",
+    "details": "The redevelopment will highlight the natural potential of Abastumani while introducing modern elements. In parallel with public sector work, the private sector is actively involved with the construction of high-class hotels such as Rooms, Hilton, and Paragraph.",
+    "section1": "The construction of a parking facility at the entrance of the town is nearing completion. The lot will accommodate up to 770 vehicles and include electric vehicle charging stations.",
+    "section2": "Phase two of the urban renewal includes the rehabilitation of green and blue corridors — new walking and cycling paths, recreational and rest zones, and the restoration of central roads and other infrastructure.",
+    "section3": "Significant progress has already been made: 20 historic homes from the 19th–20th centuries, the 1932-built National Astrophysical Observatory, and the 1982 cable car line have been fully restored.",
+    "section4": "Austria is currently manufacturing a 1.5-meter telescope and 12-meter dome for the observatory. Roadwork continues on the Baghdati-Abastumani highway and the construction of the bypass road is underway.",
+    "coverImageAlt": "Abastumani Urban Renewal Project Cover Image",
+    "image1": "Urban Redevelopment Work in Abastumani",
+    "image2": "Green and Blue Corridor Restoration",
+    "image3": "High-Class Hotels Under Construction",
+    "accessibility": "The urban renewal projects include pedestrian-friendly and accessible infrastructure for persons with disabilities."
+  },
+  "blogFour": {
+    "title": "Renewed Regions Program in Samtskhe-Javakheti",
+    "executor": "Executor",
+    "executorName": "Ministry of Regional Development and Infrastructure",
+    "date": "Completed",
+    "dateValue": "April 2025",
+    "category": "Category",
+    "categoryName": "Regional Development",
+    "introduction": "The first phase of the 'Renewed Regions' program in Samtskhe-Javakheti is nearing completion, with major infrastructure projects wrapping up across the region.",
+    "details": "The ongoing projects were visited by the Minister of Regional Development and Infrastructure, Irakli Karseladze, together with the State Representative Besik Amiranashvili and local municipal mayors.",
+    "section1": "In Akhaltsikhe, rehabilitation works are being finalized on Natenadze Street, Giorgi Brtskinvale Square, and six nearby parks. Additionally, central buildings in the city are undergoing restoration.",
+    "section2": "In Adigeni, the urban renewal of the central area is in its final phase, with the restoration of five buildings and the arrangement of adjacent green areas and pedestrian walkways along Tamar Mepe Street.",
+    "section3": "In Aspindza, the infrastructure surrounding the War Memorial and the triangular park has been fully rehabilitated. A new kindergarten for 180 children has also been built, including outdoor areas and fully equipped spaces for recreation, dining, and activities.",
+    "section4": "In Aspindza, the Municipal Development Fund is implementing a complete renovation of a public school designed for 600 students. The project includes all necessary upgrades—water supply, sewage, fire safety, heating, electricity, ventilation, classrooms, a sports field, and a redesigned schoolyard. Completion is expected this year.",
+    "coverImageAlt": "Cover image of the Renewed Regions project in Samtskhe-Javakheti",
+    "image1": "Rehabilitated square in Akhaltsikhe",
+    "image2": "Urban renewal in Adigeni",
+    "image3": "New kindergarten and school renovation in Aspindza",
+    "accessibility": "The projects ensure accessible infrastructure for all, including persons with disabilities."
+  },
+  "blogFive": {
+    "title": "Kindergarten Renovation in Aspindza",
+    "executor": "Executor",
+    "executorName": "Municipal Development Fund of Georgia",
+    "date": "Completed",
+    "dateValue": "March 2025",
+    "category": "Category",
+    "categoryName": "Education Infrastructure",
+    "introduction": "A new kindergarten has been successfully completed in Aspindza, providing a modern and child-friendly environment for up to 180 children.",
+    "details": "The project is part of the 'Renewed Regions' initiative and was implemented with the support of the Municipal Development Fund under the Ministry of Regional Development and Infrastructure.",
+    "section1": "The building includes age-appropriate classrooms, activity rooms, a dining area, restrooms, and administrative spaces — all fully adapted for children’s comfort and safety.",
+    "section2": "Spacious outdoor areas have been arranged for recreation and physical activities, ensuring a healthy environment for early development.",
+    "section3": "The kindergarten complies with modern safety, hygiene, and accessibility standards, including ramps, child-safe infrastructure, and fire safety systems.",
+    "section4": "Currently, the kindergarten is being equipped with furniture, educational tools, and toys, preparing it for full-scale operation and welcoming its first students.",
+    "coverImageAlt": "Kindergarten renovation project in Aspindza",
+    "image1": "Interior view of renovated kindergarten classrooms",
+    "image2": "Play and learning area setup",
+    "image3": "Outdoor recreation area of the kindergarten",
+    "accessibility": "The facility is fully adapted for children and accessible to persons with disabilities."
   }
 }

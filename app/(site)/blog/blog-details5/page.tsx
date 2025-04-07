@@ -12,6 +12,7 @@ const SingleBlogPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
+    "/images/blog6/saqanela.png",
     "/images/blog6/blog6-1.jpg",
     "/images/blog6/blog6-2.jpg",
     "/images/blog6/blog6-3.jpg",
@@ -90,61 +91,62 @@ const SingleBlogPage = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-4 mt-8 text-3xl font-bold text-gray-800 dark:text-white md:text-4xl lg:text-5xl">
-              {t("blog-details2.title")}
+              {t("blogFour.title")}
             </h1>
 
-            {/* Project Specifications - Simplified */}
+            {/* Project Specifications */}
             <ul className="mb-6 flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-400">
               <li>
                 <span className="font-medium text-gray-700 dark:text-gray-300">
-                  Executor:
+                  {t("blogFour.executor")}:
                 </span>{" "}
-                {t("blog-details2.executorName")}
+                {t("blogFour.executorName")}
               </li>
               <li className="ml-1">•</li>
               <li>
                 <span className="font-medium text-gray-700 dark:text-gray-300">
-                  Completed:
+                  {t("blogFour.date")}:
                 </span>{" "}
-                {t("blog-details2.dateValue")}
+                {t("blogFour.dateValue")}
               </li>
               <li className="ml-1">•</li>
               <li>
                 <span className="font-medium text-gray-700 dark:text-gray-300">
-                  Category:
+                  {t("blogFour.category")}:
                 </span>{" "}
-                {t("blog-details2.categoryName")}
+                {t("blogFour.categoryName")}
               </li>
             </ul>
 
             <div className="prose prose-lg max-w-none">
               <p className="mb-8 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                {t("blog-details2.introduction")}
+                {t("blogFour.introduction")}
               </p>
 
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                {t("blog-details2.details")}
+                {t("blogFour.details")}
               </p>
 
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                {t("blog-details2.section1")}
+                {t("blogFour.section1")}
               </p>
 
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                {t("blog-details2.section2")}
+                {t("blogFour.section2")}
               </p>
 
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                {t("blog-details2.section3")}
+                {t("blogFour.section3")}
               </p>
 
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                {t("blog-details2.section4")}
+                {t("blogFour.section4")}
               </p>
             </div>
           </div>
         </div>
       </section>
+
       <Feature />
     </>
   );
