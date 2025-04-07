@@ -1,11 +1,12 @@
 "use client";
-import BlogData from "@/components/Blog/blogData";
+import useBlogData from "@/components/Blog/blogData";
 import BlogItem from "@/components/Blog/BlogItem";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const BlogPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const BlogData = useBlogData();
 
   useEffect(() => {
     const handleScroll = () => {

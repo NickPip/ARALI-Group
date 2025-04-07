@@ -3,11 +3,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../Common/SectionHeader";
 import BlogItem from "./BlogItem";
-import BlogData from "./blogData";
+import useBlogData from "./blogData";
 import { motion } from "framer-motion";
 
 const Blog = () => {
   const { t } = useTranslation();
+  const BlogData = useBlogData();
 
   const containerVariants = {
     hidden: { opacity: 0 },

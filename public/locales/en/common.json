@@ -98,8 +98,39 @@
   "blog": {
     "title": "Our Projects",
     "subtitle": "Projects",
-    "description": "Ongoing and completed projects.",
-    "ourwork": "OUR WORK"
+    "description": "Explore our latest construction and infrastructure projects",
+    "items": {
+      "rustaviSportsComplex": {
+        "title": "RUSTAVI SPORTS COMPLEX",
+        "metadata": "A multifunctional sports complex, a two-story, closed-type sports facility whose main hall will serve 8 Olympic sports.",
+        "location": "Rustavi, Georgia"
+      },
+      "roadRehabilitation": {
+        "title": "ROAD REHABILITATION PROJECT",
+        "metadata": "Rehabilitation works of Aspindza Street in Akhaltsikhe.",
+        "location": "Akhaltsikhe, Georgia"
+      },
+      "roadCleaning": {
+        "title": "ROAD CLEANING OPERATIONS",
+        "metadata": "The company actively assists snowy regions with road cleaning operations.",
+        "location": "Various Locations, Georgia"
+      },
+      "solarPowerPlant": {
+        "title": "SOLAR POWER PLANT",
+        "metadata": "Construction of a solar power plant to provide clean energy to the region.",
+        "location": "Kakheti, Georgia"
+      },
+      "gasStation": {
+        "title": "GAS STATION CONSTRUCTION",
+        "metadata": "Modern gas station construction with advanced safety features and amenities.",
+        "location": "Tbilisi, Georgia"
+      },
+      "industrialComplex": {
+        "title": "INDUSTRIAL COMPLEX",
+        "metadata": "Development of a state-of-the-art industrial complex for manufacturing.",
+        "location": "Kutaisi, Georgia"
+      }
+    }
   },
 
   "project1": {
