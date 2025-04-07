@@ -99,6 +99,8 @@
     "title": "Our Projects",
     "subtitle": "Projects",
     "description": "Explore our latest construction and infrastructure projects",
+    "relatedPosts": "Related Projects",
+    "noImage": "No image",
     "items": {
       "rustaviSportsComplex": {
         "title": "RUSTAVI SPORTS COMPLEX",
