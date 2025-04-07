@@ -137,7 +137,7 @@ const Contact = () => {
             <FiAlertCircle className="text-xl" />
             <span className="font-medium">{t("contact.emergency")}:</span>
             <a href="tel:+995595308220" className="underline">
-              +995 595 308 220
+              +995 598 70 79 29
             </a>
           </div>
         </div>
@@ -183,7 +183,7 @@ const Contact = () => {
                     href="tel:+995595308220"
                     className="text-blue-600 hover:underline"
                   >
-                    +995 595 308 220
+                    +995 598 70 79 29
                   </a>
                 </div>
                 <div>

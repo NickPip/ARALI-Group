@@ -194,10 +194,10 @@ const Contact = () => {
                 {t("contact.phoneLabel")}
               </h3>
               <a
-                href="tel:+995595308220"
+                href="tel:+995598707929"
                 className="text-blue-600 hover:underline"
               >
-                +995595308220
+                +995 598 70 79 29
               </a>
             </div>
           </motion.div>
