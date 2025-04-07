@@ -24,6 +24,30 @@ const BlogData: Blog[] = [
       "The company actively assists snowy regions with road cleaning operations.",
     location: "Various Locations, Georgia",
   },
+  {
+    _id: 4,
+    mainImage: "/images/blog4/blog4-1.jpg",
+    title: "SOLAR POWER PLANT",
+    metadata:
+      "Construction of a solar power plant to provide clean energy to the region.",
+    location: "Kakheti, Georgia",
+  },
+  {
+    _id: 5,
+    mainImage: "/images/blog5/blog5-1.jpg",
+    title: "GAS STATION CONSTRUCTION",
+    metadata:
+      "Modern gas station construction with advanced safety features and amenities.",
+    location: "Tbilisi, Georgia",
+  },
+  {
+    _id: 6,
+    mainImage: "/images/blog6/blog6-1.jpg",
+    title: "INDUSTRIAL COMPLEX",
+    metadata:
+      "Development of a state-of-the-art industrial complex for manufacturing.",
+    location: "Kutaisi, Georgia",
+  },
 ];
 
 export default BlogData;
