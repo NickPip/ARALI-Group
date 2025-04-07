@@ -6,12 +6,16 @@ import { useTranslation } from "react-i18next";
 
 const BlogPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t } = useTranslation();
   const BlogData = useBlogData();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,18 +32,19 @@ const BlogPage = () => {
       />
 
       {/* Title Section */}
-      <section className="bg-white pb-16 pt-48 dark:bg-gray-900">
+      <section className="bg-white pb-8 pt-32 dark:bg-gray-900 sm:pb-12 sm:pt-40 md:pb-16 md:pt-48">
         <div className="container mx-auto px-4">
-          <h1 className="text-center text-6xl font-bold uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white md:text-7xl lg:text-7xl">
+          <h1 className="text-center text-3xl font-bold uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             {t("blog.ourwork")}
           </h1>
         </div>
       </section>
 
       {/* Projects Grid Section */}
-      <section className="bg-white pb-32 dark:bg-gray-900">
+      <section className="bg-white pb-16 dark:bg-gray-900 sm:pb-20 md:pb-24 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
             {BlogData.map((post, index) => (
               <BlogItem key={index} blog={post} index={index} />
             ))}
