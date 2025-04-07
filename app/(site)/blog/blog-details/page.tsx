@@ -13,6 +13,11 @@ const SingleBlogPage = () => {
 
   const heroImages = [
     "/images/blog/coverProject.png",
+    "/images/blog/rustavi1.png",
+    "/images/blog/rustavi2.png",
+    "/images/blog/rustavi3.png",
+    "/images/blog/rustavi4.png",
+
     "/images/blog/feature1.jpg",
     "/images/blog/feature2.png",
   ];

@@ -6,15 +6,12 @@ import { useTranslation } from "react-i18next";
 
 const BlogPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
   const BlogData = useBlogData();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +31,7 @@ const BlogPage = () => {
       <section className="bg-white pb-16 pt-48 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h1 className="text-center text-6xl font-bold uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white md:text-7xl lg:text-7xl">
-            OUR WORK
+            {t("blog.ourwork")}
           </h1>
         </div>
       </section>
@@ -42,7 +39,6 @@ const BlogPage = () => {
       {/* Projects Grid Section */}
       <section className="bg-white pb-32 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          {/* Projects Grid */}
           <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
             {BlogData.map((post, index) => (
               <BlogItem key={index} blog={post} index={index} />
