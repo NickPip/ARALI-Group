@@ -32,7 +32,7 @@ export default function HeroCarousel() {
         link: "/concrete-production",
       },
       {
-        image: "/images/blog/truck-1-arali.png",
+        image: "/images/blog/arali-karieri.png",
         title: t("carousel.slide4.title"),
         description: t("carousel.slide4.description"),
         buttonText: t("carousel.slide4.buttonText"),
