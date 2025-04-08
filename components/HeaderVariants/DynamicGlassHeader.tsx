@@ -78,7 +78,8 @@ const DynamicGlassHeader = () => {
               className="group flex items-center space-x-4 lg:ml-0"
             >
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 className="flex items-center"
               >
@@ -93,26 +94,36 @@ const DynamicGlassHeader = () => {
                   height={40}
                   className="h-[40px] w-[40px] lg:h-[60px] lg:w-[60px]"
                 />
-                <div className="ml-2 flex flex-col lg:ml-4">
-                  <span
+                <motion.div
+                  className="ml-2 flex flex-col lg:ml-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.span
                     className={`text-lg font-bold tracking-wide transition-colors duration-300 lg:text-2xl ${
                       isScrolled
                         ? "text-gray-900 dark:text-white"
                         : "text-white"
                     }`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     AraliGroup
-                  </span>
-                  <p
+                  </motion.span>
+                  <motion.p
                     className={`hidden text-sm font-semibold tracking-widest transition-colors duration-300 lg:block ${
                       isScrolled
                         ? "text-gray-600 dark:text-gray-400"
                         : "text-white/90"
                     }`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
                   >
                     SINCE 2004
-                  </p>
-                </div>
+                  </motion.p>
+                </motion.div>
               </motion.div>
             </Link>
 
@@ -125,33 +136,45 @@ const DynamicGlassHeader = () => {
                   onMouseEnter={() => setActiveDropdown(item.title)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link
-                    href={item.path || "#"}
-                    className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
-                      isScrolled
-                        ? pathname === item.path
-                          ? "text-blue-600 dark:text-blue-400"
-                          : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
-                        : "text-white hover:text-white/80"
-                    }`}
-                  >
-                    {t(item.title)}
-                  </Link>
+                  <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+                    <Link
+                      href={item.path || "#"}
+                      className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                        isScrolled
+                          ? pathname === item.path
+                            ? "text-blue-600 dark:text-blue-400"
+                            : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                          : "text-white hover:text-white/80"
+                      }`}
+                    >
+                      {t(item.title)}
+                    </Link>
+                  </motion.div>
                   {item.submenu && activeDropdown === item.title && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 25,
+                      }}
                       className="absolute left-0 top-full w-56 rounded-lg bg-white/90 p-3 shadow-xl backdrop-blur-xl dark:bg-black/90"
                     >
                       {item.submenu.map((subItem) => (
-                        <Link
+                        <motion.div
                           key={subItem.title}
-                          href={subItem.path}
-                          className="block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-blue-900/50 dark:hover:text-blue-400"
+                          whileHover={{ x: 5 }}
+                          whileTap={{ x: 0 }}
                         >
-                          {t(subItem.title)}
-                        </Link>
+                          <Link
+                            href={subItem.path}
+                            className="block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-blue-900/50 dark:hover:text-blue-400"
+                          >
+                            {t(subItem.title)}
+                          </Link>
+                        </motion.div>
                       ))}
                     </motion.div>
                   )}
@@ -162,8 +185,13 @@ const DynamicGlassHeader = () => {
             {/* Right Side */}
             <div className="flex items-center space-x-4 lg:space-x-6">
               <div className="hidden items-center space-x-6 lg:flex">
-                <ThemeToggler />
-                <a
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ThemeToggler />
+                </motion.div>
+                <motion.a
                   href="https://www.facebook.com/araliconstruction"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -172,10 +200,12 @@ const DynamicGlassHeader = () => {
                       ? "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                       : "text-white hover:bg-white/10"
                   }`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <FaFacebook className="h-6 w-6" />
-                </a>
-                <button
+                </motion.a>
+                <motion.button
                   onClick={() =>
                     i18n.changeLanguage(i18n.language === "ge" ? "en" : "ge")
                   }
@@ -184,15 +214,17 @@ const DynamicGlassHeader = () => {
                       ? "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <FaGlobe className="h-5 w-5" />
                   <span>{i18n.language === "ge" ? "ქართული" : "English"}</span>
-                </button>
+                </motion.button>
               </div>
 
               {/* Hamburger (Only when menu is closed) */}
               {!isMenuOpen && (
-                <button
+                <motion.button
                   onClick={() => setIsMenuOpen(true)}
                   className={`rounded-lg p-2.5 transition-colors duration-200 lg:hidden ${
                     isScrolled
@@ -200,6 +232,8 @@ const DynamicGlassHeader = () => {
                       : "text-white hover:bg-white/10"
                   }`}
                   aria-label="Open menu"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <svg
                     className="h-6 w-6"
@@ -214,7 +248,7 @@ const DynamicGlassHeader = () => {
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
-                </button>
+                </motion.button>
               )}
             </div>
           </div>
@@ -225,21 +259,30 @@ const DynamicGlassHeader = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           />
 
           {/* Mobile Panel */}
-          <div className="absolute right-0 top-0 h-full w-full max-w-sm overflow-y-auto bg-white shadow-lg dark:bg-gray-900">
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="absolute right-0 top-0 h-full w-full max-w-sm overflow-y-auto bg-white shadow-lg dark:bg-gray-900"
+          >
             {/* Close Button */}
             <div className="flex justify-end border-b border-gray-200 p-4 dark:border-gray-700">
-              <button
-                onClick={() => {
-                  console.log("close");
-                  setIsMenuOpen(false);
-                }}
+              <motion.button
+                onClick={() => setIsMenuOpen(false)}
                 className="rounded-md p-2 text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <svg
                   className="h-6 w-6"
@@ -254,24 +297,40 @@ const DynamicGlassHeader = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </button>
+              </motion.button>
             </div>
 
-            {/* Add your mobile links, theme switch, etc. here */}
-            <div className="space-y-4 p-4">
+            {/* Mobile Menu Items */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="space-y-4 p-4"
+            >
               {/* Theme / Language */}
-              <div className="flex flex-col space-y-4">
-                <div className="flex items-center justify-between rounded-lg bg-gray-100 px-4 py-3 dark:bg-gray-800">
+              <motion.div
+                className="flex flex-col space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                <motion.div
+                  className="flex items-center justify-between rounded-lg bg-gray-100 px-4 py-2.5 dark:bg-gray-800"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <span className="text-sm font-medium text-gray-800 dark:text-gray-300">
                     {t("menu.theme")}
                   </span>
                   <ThemeToggler />
-                </div>
-                <button
+                </motion.div>
+                <motion.button
                   onClick={() =>
                     i18n.changeLanguage(i18n.language === "ge" ? "en" : "ge")
                   }
-                  className="flex items-center justify-between rounded-lg bg-gray-100 px-4 py-3 text-sm font-medium text-gray-800 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-white"
+                  className="flex w-full items-center justify-between rounded-lg bg-gray-100 px-4 py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-white"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <span>{t("menu.language")}</span>
                   <div className="flex items-center gap-2">
@@ -280,30 +339,41 @@ const DynamicGlassHeader = () => {
                     </span>
                     <FaGlobe className="h-5 w-5" />
                   </div>
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
 
               {/* Navigation Items */}
-              {menuItems.map((item) => (
-                <div key={item.title}>
+              {menuItems.map((item, idx) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.4 + idx * 0.1 }}
+                >
                   {item.submenu ? (
                     <>
-                      <button
+                      <motion.button
                         onClick={() =>
                           setActiveDropdown(
                             activeDropdown === item.title ? null : item.title,
                           )
                         }
                         className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                        whileHover={{ x: 5 }}
+                        whileTap={{ x: 0 }}
                       >
                         {t(item.title)}
-                        <svg
+                        <motion.svg
                           className={`h-5 w-5 transform transition-transform duration-200 ${
                             activeDropdown === item.title ? "rotate-180" : ""
                           }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
+                          animate={{
+                            rotate: activeDropdown === item.title ? 180 : 0,
+                          }}
+                          transition={{ duration: 0.3 }}
                         >
                           <path
                             strokeLinecap="round"
@@ -311,26 +381,38 @@ const DynamicGlassHeader = () => {
                             strokeWidth={2}
                             d="M19 9l-7 7-7-7"
                           />
-                        </svg>
-                      </button>
+                        </motion.svg>
+                      </motion.button>
                       <AnimatePresence>
                         {activeDropdown === item.title && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
                             <div className="ml-4 space-y-2 py-2">
-                              {item.submenu.map((subItem) => (
-                                <Link
+                              {item.submenu.map((subItem, subIdx) => (
+                                <motion.div
                                   key={subItem.title}
-                                  href={subItem.path}
-                                  className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                                  onClick={() => setIsMenuOpen(false)}
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{
+                                    duration: 0.3,
+                                    delay: subIdx * 0.1,
+                                  }}
+                                  whileHover={{ x: 5 }}
+                                  whileTap={{ x: 0 }}
                                 >
-                                  {t(subItem.title)}
-                                </Link>
+                                  <Link
+                                    href={subItem.path}
+                                    className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                                    onClick={() => setIsMenuOpen(false)}
+                                  >
+                                    {t(subItem.title)}
+                                  </Link>
+                                </motion.div>
                               ))}
                             </div>
                           </motion.div>
@@ -338,18 +420,20 @@ const DynamicGlassHeader = () => {
                       </AnimatePresence>
                     </>
                   ) : (
-                    <Link
-                      href={item.path || "#"}
-                      className="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t(item.title)}
-                    </Link>
+                    <motion.div whileHover={{ x: 5 }} whileTap={{ x: 0 }}>
+                      <Link
+                        href={item.path || "#"}
+                        className="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {t(item.title)}
+                      </Link>
+                    </motion.div>
                   )}
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       )}
     </>
