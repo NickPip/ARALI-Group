@@ -112,7 +112,7 @@ const DynamicGlassHeader = () => {
                     AraliGroup
                   </motion.span>
                   <motion.p
-                    className={`hidden text-sm font-semibold tracking-widest transition-colors duration-300 lg:block ${
+                    className={`text-sm font-semibold tracking-widest transition-colors duration-300 ${
                       isScrolled
                         ? "text-gray-600 dark:text-gray-400"
                         : "text-white/90"
