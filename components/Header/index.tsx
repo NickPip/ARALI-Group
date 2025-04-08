@@ -66,80 +66,184 @@ const Header = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
+        isScrolled || navigationOpen
           ? "bg-white backdrop-blur-md dark:bg-gray-900/90"
           : "bg-transparent"
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
-        <div className="flex w-full items-center justify-between xl:w-1/4">
-          <div className="flex items-center gap-13">
-            <Link
-              href="/"
-              className="flex items-center gap-3 rounded-md px-10 py-1"
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 2xl:px-0">
+        <div className="flex w-full items-center justify-between py-4">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src={
+                headerIsWhite
+                  ? "/images/logo/arali_logo_high_res.png"
+                  : "/images/logo/arali_logo_fully_white.png"
+              }
+              alt="logo"
+              width={40}
+              height={40}
+            />
+            <span
+              className={`text-2xl font-extrabold tracking-tight ${
+                headerIsWhite ? "text-blue-800 dark:text-white" : "text-white"
+              }`}
             >
-              <Image
-                className="-mt-1"
-                src={
-                  headerIsWhite
-                    ? "/images/logo/arali_logo_high_res.png"
-                    : "/images/logo/arali_logo_fully_white.png"
-                }
-                alt="logo"
-                width={40}
-                height={40}
-              />
-              <span
-                className={`pt-1 text-2xl font-extrabold tracking-tight ${
-                  headerIsWhite ? "text-blue-800 dark:text-white" : "text-white"
-                }`}
+              AraliGroup
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden items-center xl:flex">
+            <nav className="mr-6">
+              <ul className="flex items-center gap-16">
+                {menuData.map((menuItem, idx) => {
+                  if (idx === 3) return null;
+
+                  const linkColor = headerIsWhite
+                    ? "text-blue-400 hover:text-blue-400 drop-shadow dark:text-blue-400 dark:hover:text-blue-400"
+                    : "text-white hover:text-white drop-shadow-sm dark:text-white dark:hover:text-white";
+
+                  return (
+                    <li
+                      key={idx}
+                      className={menuItem.submenu ? "relative" : ""}
+                    >
+                      {menuItem.submenu ? (
+                        <>
+                          <button
+                            onClick={() => setDropdownToggler(!dropdownToggler)}
+                            className={`flex w-full items-center justify-between gap-3 transition-all duration-200 ease-in-out ${linkColor}`}
+                          >
+                            {t(menuItem.title)}
+                            <span>
+                              <svg
+                                className={`h-3 w-3 ${
+                                  headerIsWhite
+                                    ? "fill-black dark:fill-white"
+                                    : "fill-white"
+                                }`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                              >
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                              </svg>
+                            </span>
+                          </button>
+
+                          <ul
+                            className={`mt-2 flex-col gap-2 pl-4 ${
+                              dropdownToggler ? "flex" : "hidden"
+                            }`}
+                          >
+                            <ThemeToggler />
+                            {menuItem.submenu.map((item, key) => (
+                              <li key={key}>
+                                <Link
+                                  href={item.path || "#"}
+                                  onClick={handleMenuClick}
+                                  className={linkColor}
+                                >
+                                  {t(item.title)}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      ) : (
+                        <Link
+                          href={menuItem.path!}
+                          onClick={handleMenuClick}
+                          className={`block transition-colors duration-300 ease-in-out ${linkColor}`}
+                        >
+                          {t(menuItem.title)}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            <div className="flex items-center gap-6">
+              <div>
+                <a
+                  href="https://www.facebook.com/araliconstruction"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={
+                      headerIsWhite
+                        ? "/images/icon/facebook.png"
+                        : "/images/icon/facebook-logo-white.png"
+                    }
+                    width={24}
+                    height={24}
+                    alt="Facebook"
+                  />
+                </a>
+              </div>
+
+              <div>
+                <LanguageSwitcher />
+              </div>
+
+              <div className="flex items-center">
+                <ThemeToggler />
+              </div>
+
+              <div
+                className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide transition-all duration-300
+                  ${
+                    headerIsWhite
+                      ? "border-blue-800 text-blue-800 dark:border-white dark:text-white"
+                      : "border-white text-white"
+                  }`}
               >
-                AraliGroup
-              </span>
-            </Link>
+                SINCE 2004
+              </div>
+            </div>
           </div>
 
+          {/* Mobile Hamburger */}
           <button
             aria-label="hamburger toggler"
-            className="block xl:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
+            className="flex items-center justify-center xl:hidden"
           >
             <div className="relative flex h-6 w-6 items-center justify-center">
-              {/* Line 1 */}
               <span
-                className={`absolute h-0.5 w-6 transform rounded-sm transition duration-300 ease-in-out
-        ${navigationOpen ? "rotate-45 bg-black" : "-translate-y-2 bg-white"}`}
+                className={`absolute h-0.5 w-6 transform rounded-sm bg-current transition duration-300 ease-in-out
+                  ${navigationOpen ? "rotate-45" : "-translate-y-2"}`}
               />
-              {/* Line 2 */}
               <span
-                className={`absolute h-0.5 w-6 transform rounded-sm transition duration-300 ease-in-out
-        ${navigationOpen ? "opacity-0" : "bg-white opacity-100"}`}
+                className={`absolute h-0.5 w-6 transform rounded-sm bg-current transition duration-300 ease-in-out
+                  ${navigationOpen ? "opacity-0" : "opacity-100"}`}
               />
-              {/* Line 3 */}
               <span
-                className={`absolute h-0.5 w-6 transform rounded-sm transition duration-300 ease-in-out
-        ${navigationOpen ? "-rotate-45 bg-black" : "translate-y-2 bg-white"}`}
+                className={`absolute h-0.5 w-6 transform rounded-sm bg-current transition duration-300 ease-in-out
+                  ${navigationOpen ? "-rotate-45" : "translate-y-2"}`}
               />
             </div>
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         <div
           className={`
-    overflow-hidden transition-all duration-300 ease-in-out xl:overflow-visible
-    ${navigationOpen ? "visible max-h-[500px] opacity-100" : "invisible max-h-0 opacity-0"}
-    w-full items-center justify-between
-    xl:visible xl:flex xl:max-h-none xl:opacity-100
-  `}
+            overflow-hidden bg-white transition-all duration-300 ease-in-out dark:bg-gray-900 xl:hidden
+            ${navigationOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"}
+          `}
         >
-          <nav>
-            <ul className="ml-6 mt-4 flex flex-col gap-5 pl-5 pt-6 text-left font-roboto text-sm font-bold xl:mt-0 xl:flex-row xl:items-center xl:gap-16 xl:pl-[80px] xl:pt-0 xl:text-center">
+          <nav className="py-4">
+            <ul className="flex flex-col gap-4 px-4">
               {menuData.map((menuItem, idx) => {
                 if (idx === 3) return null;
 
-                const linkColor = headerIsWhite
-                  ? "text-blue-400 hover:text-blue-400 drop-shadow dark:text-blue-400 dark:hover:text-blue-400"
-                  : "text-white hover:text-white drop-shadow-sm dark:text-white dark:hover:text-white";
+                const linkColor =
+                  "text-blue-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400";
 
                 return (
                   <li key={idx} className={menuItem.submenu ? "relative" : ""}>
@@ -147,18 +251,12 @@ const Header = () => {
                       <>
                         <button
                           onClick={() => setDropdownToggler(!dropdownToggler)}
-                          className={`flex cursor-pointer items-center justify-between gap-3 transition-all duration-200 ease-in-out ${linkColor} ${
-                            !isMobile ? "hover:scale-105" : ""
-                          }`}
+                          className={`flex w-full items-center justify-between gap-3 transition-all duration-200 ease-in-out ${linkColor}`}
                         >
                           {t(menuItem.title)}
                           <span>
                             <svg
-                              className={`h-3 w-3 ${
-                                headerIsWhite
-                                  ? "fill-black dark:fill-white"
-                                  : "fill-white"
-                              }`}
+                              className="h-3 w-3 fill-current"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
                             >
@@ -168,23 +266,16 @@ const Header = () => {
                         </button>
 
                         <ul
-                          className={`dropdown absolute left-0 top-full mt-2 w-60 flex-col gap-2 rounded-md px-4 py-3 shadow-md ${
+                          className={`mt-2 flex-col gap-2 pl-4 ${
                             dropdownToggler ? "flex" : "hidden"
-                          } ${
-                            headerIsWhite
-                              ? "bg-white text-black dark:bg-black dark:text-white"
-                              : "bg-white text-black"
                           }`}
                         >
-                          <ThemeToggler />
                           {menuItem.submenu.map((item, key) => (
                             <li key={key}>
                               <Link
                                 href={item.path || "#"}
                                 onClick={handleMenuClick}
-                                className={`transition-all duration-200 ease-in-out ${
-                                  !isMobile ? "hover:scale-105" : ""
-                                }`}
+                                className={linkColor}
                               >
                                 {t(item.title)}
                               </Link>
@@ -196,9 +287,7 @@ const Header = () => {
                       <Link
                         href={menuItem.path!}
                         onClick={handleMenuClick}
-                        className={`transition-colors duration-300 ease-in-out ${linkColor} ${
-                          !isMobile ? "hover:scale-105" : ""
-                        }`}
+                        className={`block transition-colors duration-300 ease-in-out ${linkColor}`}
                       >
                         {t(menuItem.title)}
                       </Link>
@@ -209,45 +298,27 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <div>
+          <div className="flex items-center justify-between gap-6 border-t border-gray-200 px-4 py-4 dark:border-gray-700">
+            <div className="flex items-center gap-4">
               <a
                 href="https://www.facebook.com/araliconstruction"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-blue-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
               >
                 <Image
-                  src={
-                    headerIsWhite
-                      ? "/images/icon/facebook.png"
-                      : "/images/icon/facebook-logo-white.png"
-                  }
+                  src="/images/icon/facebook.png"
                   width={24}
                   height={24}
                   alt="Facebook"
                 />
               </a>
-            </div>
-
-            <div onClick={handleMenuClick}>
               <LanguageSwitcher />
-              {/* <ThemeToggler /> */}
-            </div>
-            <div onClick={handleMenuClick}></div>
-            <div className="hidden xl:block">
               <ThemeToggler />
             </div>
-            <div onClick={handleMenuClick}></div>
 
-            <div
-              className={`border-4 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide transition-all duration-300
-                ${
-                  headerIsWhite
-                    ? "border-blue-800 text-blue-800 dark:border-white dark:text-white"
-                    : "border-white text-white"
-                }`}
-            >
+            <div className="border-4 border-blue-800 px-2 py-0.5 text-sm font-extrabold uppercase tracking-wide text-blue-800 dark:border-white dark:text-white">
               SINCE 2004
             </div>
           </div>

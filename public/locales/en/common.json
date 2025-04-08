@@ -10,7 +10,9 @@
     "concreteProduction": "Concrete Production",
     "quarries": "Quarries",
     "gasFillingStation": "Gas Filling Station",
-    "energy": "Energy"
+    "energy": "Energy",
+    "theme": "Theme",
+    "language": "Language"
   },
   "language": "Language",
   "hero": {

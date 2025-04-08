@@ -10,7 +10,9 @@
     "concreteProduction": "ბეტონი",
     "quarries": "კარიერები",
     "gasFillingStation": "გაზი",
-    "energy": "ენერგეტიკა"
+    "energy": "ენერგეტიკა",
+    "theme": "თემა",
+    "language": "ენა"
   },
   "language": "ენა",
   "hero": {
