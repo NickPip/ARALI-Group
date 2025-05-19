@@ -46,7 +46,6 @@ const BlogItem = ({ blog, index }: BlogItemProps) => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h3 className="mb-2 text-xl font-semibold">{displayTitle}</h3>
-            <p className="mb-2 text-sm opacity-90">{displayMetadata}</p>
             <p className="text-sm font-medium">{displayLocation}</p>
           </div>
         </div>
