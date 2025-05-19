@@ -5,46 +5,49 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
-const BlogItem = ({ blog, index }: { blog: Blog; index: number }) => {
-  const { t } = useTranslation();
-  const {
-    mainImage = "/images/blog/default.jpg",
-    title,
-    metadata,
-    location,
-  } = blog;
+interface BlogItemProps {
+  blog: Blog;
+  index: number;
+}
+
+const BlogItem = ({ blog, index }: BlogItemProps) => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const { mainImage, title, metadata, location, path } = blog;
+
+  const displayTitle =
+    typeof title === "object"
+      ? title[currentLang as keyof typeof title]
+      : title;
+  const displayMetadata =
+    typeof metadata === "object"
+      ? metadata[currentLang as keyof typeof metadata]
+      : metadata;
+  const displayLocation =
+    typeof location === "object"
+      ? location[currentLang as keyof typeof location]
+      : location;
 
   return (
     <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="group cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative"
     >
-      <Link href={`/blog/blog-details${index === 0 ? "" : index}`}>
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+      <Link href={path || `/blog/blog-details${index === 0 ? "" : index}`}>
+        <div className="relative h-[400px] overflow-hidden rounded-lg">
           <Image
-            src={mainImage}
-            alt={t(title)}
+            src={mainImage || "/images/blog1.jpg"}
+            alt={displayTitle}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          {/* Dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-
-          {/* Text content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h2 className="mb-1 text-xl font-bold uppercase leading-tight tracking-wide text-white">
-              {title}
-            </h2>
-            {location && (
-              <p className="text-sm font-normal text-white/90">{location}</p>
-            )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 className="mb-2 text-xl font-semibold">{displayTitle}</h3>
+            <p className="mb-2 text-sm opacity-90">{displayMetadata}</p>
+            <p className="text-sm font-medium">{displayLocation}</p>
           </div>
         </div>
       </Link>

@@ -572,5 +572,43 @@
   },
   "common": {
     "back": "Back"
+  },
+  "ongoing": {
+    "title": "Ongoing Projects",
+    "subtitle": "Current Projects",
+    "description": "Explore our construction and infrastructure projects currently in progress",
+    "items": {
+      "sportsComplex": {
+        "title": "AKHALTSIKHE SPORTS COMPLEX",
+        "metadata": "A modern sports complex featuring swimming pools, training halls, and specialized sports facilities.",
+        "location": "Akhaltsikhe, Georgia"
+      },
+      "roadRehabilitation": {
+        "title": "ROAD REHABILITATION PROJECT",
+        "metadata": "Comprehensive rehabilitation of major arterial roads with modern infrastructure.",
+        "location": "Various Locations, Georgia"
+      },
+      "residentialComplex": {
+        "title": "RESIDENTIAL COMPLEX",
+        "metadata": "Construction of a modern residential complex with sustainable design features.",
+        "location": "Tbilisi, Georgia"
+      }
+    },
+    "ourwork": "Ongoing Projects",
+    "project1": {
+      "title": "Rustavi Sports Complex",
+      "metadata": "Multi-functional sports complex, two-story, closed-type sports complex main hall will serve 8 Olympic sports.",
+      "location": "Rustavi, Georgia"
+    },
+    "project2": {
+      "title": "Road Rehabilitation",
+      "metadata": "Road rehabilitation works in Aspindza street, Akhaltsikhe.",
+      "location": "Akhaltsikhe, Georgia"
+    },
+    "project3": {
+      "title": "Road Cleaning Works",
+      "metadata": "The company actively assists snowy regions with road cleaning operations.",
+      "location": "Samtskhe-Javakheti, Georgia"
+    }
   }
 }
