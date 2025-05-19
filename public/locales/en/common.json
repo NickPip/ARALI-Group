@@ -543,7 +543,7 @@
     "categoryName": "Education Infrastructure",
     "introduction": "A new kindergarten has been successfully completed in Aspindza, providing a modern and child-friendly environment for up to 180 children.",
     "details": "The project is part of the 'Renewed Regions' initiative and was implemented with the support of the Municipal Development Fund under the Ministry of Regional Development and Infrastructure.",
-    "section1": "The building includes age-appropriate classrooms, activity rooms, a dining area, restrooms, and administrative spaces — all fully adapted for children’s comfort and safety.",
+    "section1": "The building includes age-appropriate classrooms, activity rooms, a dining area, restrooms, and administrative spaces — all fully adapted for children's comfort and safety.",
     "section2": "Spacious outdoor areas have been arranged for recreation and physical activities, ensuring a healthy environment for early development.",
     "section3": "The kindergarten complies with modern safety, hygiene, and accessibility standards, including ramps, child-safe infrastructure, and fire safety systems.",
     "section4": "Currently, the kindergarten is being equipped with furniture, educational tools, and toys, preparing it for full-scale operation and welcoming its first students.",
@@ -552,5 +552,25 @@
     "image2": "Play and learning area setup",
     "image3": "Outdoor recreation area of the kindergarten",
     "accessibility": "The facility is fully adapted for children and accessible to persons with disabilities."
+  },
+  "blogSix": {
+    "title": "Akhaltsikhe Sports Complex Nears Completion",
+    "executor": "Executor",
+    "location": "Location",
+    "locationValue": "Akhaltsikhe",
+    "category": "Category",
+    "categoryValue": "Sports Complex",
+    "intro": "The construction works of the Akhaltsikhe Sports Complex are in their final stages. The complex is being built by Arali Group.",
+    "details": "The sports complex will feature large and small swimming pools, training halls, weightlifting, boxing, and wrestling halls. Each hall and pool will have its own changing rooms and showers. Additionally, the project includes an open-air café and a small shop. A parking area will be arranged on the adjacent territory of the sports complex.",
+    "section1": "The Minister of Infrastructure, Revaz Sokhadze, along with the Executive Director of the Municipal Development Fund, Beka Urushadze, and Arali Group's co-founder, Eka Tatashvili, familiarized themselves with the progress of the Akhaltsikhe Sports Complex construction.",
+    "section2": "The sports complex is fully adapted for people with limited abilities.",
+    "section3": "After the completion of construction, the population of Akhaltsikhe will have a well-equipped environment for sports activities, as well as the opportunity to host tournaments in various sports at both national and international levels.",
+    "section4": "The existence of a sports complex that meets modern standards will help establish a healthy lifestyle among the city's youth.",
+    "section5": "The modern sports complex will serve as a hub for sports development and community engagement in the region.",
+    "galleryTitle": "Gallery of the project",
+    "viewGallery": "Visit Gallery"
+  },
+  "common": {
+    "back": "Back"
   }
 }
