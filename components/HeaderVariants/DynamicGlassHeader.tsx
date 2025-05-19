@@ -43,7 +43,13 @@ const DynamicGlassHeader = () => {
   const menuItems = [
     { title: "menu.home", path: "/" },
     { title: "menu.about", path: "/docs" },
-    { title: "menu.completedProjects", path: "/blog" },
+    {
+      title: "menu.projects",
+      submenu: [
+        { title: "menu.ongoingProjects", path: "/ongoing" },
+        { title: "menu.completedProjects", path: "/blog" },
+      ],
+    },
     {
       title: "menu.directions",
       submenu: [

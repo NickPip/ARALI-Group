@@ -2,7 +2,9 @@
   "menu": {
     "home": "Home",
     "about": "About Us",
-    "completedProjects": "Completed Projects",
+    "projects": "Projects",
+    "ongoingProjects": "Ongoing",
+    "completedProjects": "Completed",
     "directions": "Aims / Objectives",
     "contact": "Contact Us",
     "roadConstruction": "Road Construction",

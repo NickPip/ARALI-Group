@@ -2,7 +2,9 @@
   "menu": {
     "home": "მთავარი",
     "about": "ჩვენ შესახებ",
-    "completedProjects": "პროექტები",
+    "projects": "პროექტები",
+    "ongoingProjects": "მიმდინარე",
+    "completedProjects": "დასრულებული",
     "directions": "მიმართულებები",
     "contact": "დაგვიკავშირდით",
     "roadConstruction": "საგზაო",

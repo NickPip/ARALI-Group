@@ -15,11 +15,23 @@ const menuData: Menu[] = [
   },
   {
     id: 2.1,
-    title: "menu.completedProjects",
+    title: "menu.projects",
     newTab: false,
-    path: "/blog",
+    submenu: [
+      {
+        id: 2.11,
+        title: "menu.ongoingProjects",
+        newTab: false,
+        path: "/ongoing",
+      },
+      {
+        id: 2.12,
+        title: "menu.completedProjects",
+        newTab: false,
+        path: "/blog",
+      },
+    ],
   },
-
   {
     id: 3,
     title: "menu.directions",
@@ -63,7 +75,6 @@ const menuData: Menu[] = [
       },
     ],
   },
-
   {
     id: 4,
     title: "menu.contact",
