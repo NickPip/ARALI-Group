@@ -13,7 +13,7 @@ const VideoGalleryPage = () => {
 
   const videoData = {
     thumbnail: "/images/blog6/DJI_20250517160053_0394_D.jpg",
-    video: "/videos/ახალციხის სპორტკომპლექსი.mp4",
+    youtubeId: "UM8TuGqjQJI",
   };
 
   return (
@@ -68,7 +68,7 @@ const VideoGalleryPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+            className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black/90"
             onClick={() => setIsVideoOpen(false)}
           >
             <button
@@ -79,15 +79,18 @@ const VideoGalleryPage = () => {
             </button>
 
             <div
-              className="relative h-[90vh] w-[90vw] max-w-7xl"
+              className="relative h-[75vh] w-[90vw] max-w-5xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <video
-                src={videoData.video}
-                controls
-                className="h-full w-full object-contain"
-                autoPlay
-              />
+              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${videoData.youtubeId}?autoplay=1`}
+                  title="Video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute left-0 top-0 h-full w-full"
+                />
+              </div>
             </div>
           </motion.div>
         )}

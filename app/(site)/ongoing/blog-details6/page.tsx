@@ -112,12 +112,14 @@ const SingleBlogPage = () => {
                 >
                   {t("blogSix.viewGallery")}
                 </Link>
+                {/*
                 <Link
                   href="/ongoing/blog-details6/videos"
                   className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
                 >
                   {t("blogSix.viewVideoGallery")}
                 </Link>
+                */}
               </div>
             </div>
           </div>
