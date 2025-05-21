@@ -572,7 +572,9 @@
     "section4": "The existence of a sports complex that meets modern standards will help establish a healthy lifestyle among the city's youth.",
     "section5": "The modern sports complex will serve as a hub for sports development and community engagement in the region.",
     "galleryTitle": "Gallery of the project",
-    "viewGallery": "Visit Gallery"
+    "viewGallery": "Visit Gallery",
+    "viewVideoGallery": "View Video Gallery",
+    "videoGalleryTitle": "Video Gallery"
   },
   "common": {
     "back": "Back"

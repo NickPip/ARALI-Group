@@ -43,3 +43,9 @@ node_modules/
 .DS_Store
 yarn.lock
 package-lock.json
+
+# Large video files
+public/videos/*.mp4
+public/videos/*.mov
+public/videos/*.avi
+public/videos/*.mkv

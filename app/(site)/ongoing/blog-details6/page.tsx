@@ -105,12 +105,18 @@ const SingleBlogPage = () => {
                 {t("blogSix.section5")}
               </p>
 
-              <div className="mt-12 flex justify-center">
+              <div className="mt-12 flex justify-center gap-4">
                 <Link
                   href="/ongoing/blog-details6/gallery"
                   className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
                 >
                   {t("blogSix.viewGallery")}
+                </Link>
+                <Link
+                  href="/ongoing/blog-details6/videos"
+                  className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
+                >
+                  {t("blogSix.viewVideoGallery")}
                 </Link>
               </div>
             </div>
