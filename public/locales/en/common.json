@@ -105,6 +105,8 @@
     "description": "Explore our latest construction and infrastructure projects",
     "relatedPosts": "Related Projects",
     "noImage": "No image",
+    "searchPlaceholder": "Search projects...",
+    "noResults": "No projects found matching your search",
     "items": {
       "rustaviSportsComplex": {
         "title": "RUSTAVI SPORTS COMPLEX",
