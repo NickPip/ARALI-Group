@@ -21,6 +21,23 @@ const useOngoingData = () => {
       },
       path: "/ongoing/blog-details6",
     },
+    {
+      _id: 2,
+      mainImage: "/images/blog7/DJI_20250522152659_0621_D.jpg",
+      title: {
+        en: "Kutaisi-Baghdati-Abastumani-Benara Road Rehabilitation",
+        ge: "ქუთაისი-ბაღდათი-აბასთუმანი-ბენარას დამაკავშირებელი გზის რეაბილიტაცია",
+      },
+      metadata: {
+        en: "The rehabilitation of the road connecting Kutaisi-Baghdati-Abastumani-Benara is in active phase.",
+        ge: "ქუთაისი-ბაღდათი-აბასთუმანი-ბენარას დამაკავშირებელი გზის რეაბილიტაცია აქტიურ ფაზაშია.",
+      },
+      location: {
+        en: "Kutaisi-Baghdati-Abastumani-Benara, Georgia",
+        ge: "ქუთაისი-ბაღდათი-აბასთუმანი-ბენარა, საქართველო",
+      },
+      path: "/ongoing/blog-details7",
+    },
   ];
 };
 
