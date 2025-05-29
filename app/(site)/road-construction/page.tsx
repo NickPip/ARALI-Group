@@ -5,17 +5,20 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { FaRoad, FaCity, FaTrafficLight, FaTools } from "react-icons/fa";
 import Feature from "@/components/Features";
+import HeroImage from "@/components/Hero/HeroImage";
+
 export default function RoadConstructionPage() {
   const { t } = useTranslation();
 
   return (
     <>
       {/* Hero Banner */}
-      <section
-        className="relative h-[60vh] bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('/images/blog/gzebi.png')" }}
+      <HeroImage
+        src="/images/blog/gzebi.png"
+        alt="Road Construction"
+        className="h-[60vh]"
       >
-        <div className="flex h-full w-full items-center justify-center bg-black/60">
+        <div className="flex h-full w-full items-center justify-center">
           <div className="px-4 text-center">
             <h1 className="text-4xl font-bold md:text-5xl">
               {t("roadConstruction.title")}
@@ -25,7 +28,7 @@ export default function RoadConstructionPage() {
             </p>
           </div>
         </div>
-      </section>
+      </HeroImage>
 
       {/* Intro Section */}
       <section className="flex justify-center bg-white pb-16 pt-20 dark:bg-blacksection md:pb-20 md:pt-24 lg:pb-24 lg:pt-28">
