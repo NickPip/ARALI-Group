@@ -169,14 +169,14 @@ const BlueprintLoadingScreen = () => {
 
   return (
     <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900">
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center px-4">
         {/* Blueprint Grid Background */}
         <div className="absolute inset-0 opacity-10">
           <div className="h-full w-full bg-[linear-gradient(90deg,rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
         </div>
 
         {/* Technical Icons */}
-        <div className="mb-8 flex items-center gap-6">
+        <div className="mb-6 flex items-center gap-4 sm:mb-8 sm:gap-6">
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -188,9 +188,9 @@ const BlueprintLoadingScreen = () => {
             <Image
               src="/images/logo/arali_logo_fully_white.png"
               alt="AraliGroup Logo"
-              width={32}
-              height={32}
-              className="brightness-125 filter"
+              width={24}
+              height={24}
+              className="brightness-125 filter sm:h-8 sm:w-8"
             />
           </motion.div>
           <motion.div
@@ -198,12 +198,12 @@ const BlueprintLoadingScreen = () => {
             transition={{ repeat: Infinity, duration: 2 }}
             className="text-cyan-300"
           >
-            <FaRegLightbulb size={32} />
+            <FaRegLightbulb className="h-6 w-6 sm:h-8 sm:w-8" />
           </motion.div>
         </div>
 
         {/* Company Name with Technical Style */}
-        <motion.div className="mb-6 flex gap-2">
+        <motion.div className="mb-4 flex flex-wrap justify-center gap-1 sm:mb-6 sm:gap-2">
           <div className="flex">
             {Array.from("ARALI").map((letter, index) => (
               <motion.span
@@ -211,7 +211,7 @@ const BlueprintLoadingScreen = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="text-3xl font-bold text-cyan-100"
+                className="text-2xl font-bold text-cyan-100 sm:text-3xl"
               >
                 {letter}
               </motion.span>
@@ -224,7 +224,7 @@ const BlueprintLoadingScreen = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                className="text-3xl font-bold text-cyan-100"
+                className="text-2xl font-bold text-cyan-100 sm:text-3xl"
               >
                 {letter}
               </motion.span>
@@ -233,7 +233,7 @@ const BlueprintLoadingScreen = () => {
         </motion.div>
 
         {/* Technical Loading Indicator */}
-        <div className="relative h-1 w-56 overflow-hidden rounded-full bg-gray-800">
+        <div className="relative h-1 w-40 overflow-hidden rounded-full bg-gray-800 sm:w-56">
           <motion.div
             animate={{
               x: ["-100%", "100%"],
@@ -252,7 +252,7 @@ const BlueprintLoadingScreen = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="font-mono mt-6 text-sm text-cyan-300"
+          className="font-mono mt-4 text-sm text-cyan-300 sm:mt-6 sm:text-base"
         >
           {t("loading.message")}
         </motion.p>

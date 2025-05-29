@@ -12,7 +12,8 @@ import "../globals.css";
 import { Oswald } from "next/font/google";
 import ToasterContext from "@/app/context/ToastContext";
 import DynamicGlassHeader from "@/components/HeaderVariants/DynamicGlassHeader";
-import LoadingScreen from "@/components/Loading";
+import { LoadingProvider } from "@/app/context/LoadingContext";
+import ConstructionLoader from "@/components/Loading/ConstructionLoader";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export default function RootLayout({
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Increased to 2 seconds to show the loading animation
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,19 +40,21 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black ${oswald.className}`}>
         {isLoading ? (
-          <LoadingScreen />
+          <ConstructionLoader />
         ) : (
           <ThemeProvider
             enableSystem={false}
             attribute="class"
             defaultTheme="light"
           >
-            <Lines />
-            <DynamicGlassHeader />
-            <ToasterContext />
-            {children}
-            <Footer />
-            <ScrollToTop />
+            <LoadingProvider>
+              <Lines />
+              <DynamicGlassHeader />
+              <ToasterContext />
+              {children}
+              <Footer />
+              <ScrollToTop />
+            </LoadingProvider>
           </ThemeProvider>
         )}
       </body>
