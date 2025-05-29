@@ -14,10 +14,9 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "AraliGroup",
-
-  // other metadata
-  description: "Arali",
+  title: "AraliGroup – Home",
+  description:
+    "Welcome to AraliGroup - Your trusted partner in construction and development",
 };
 
 export default function Home() {
