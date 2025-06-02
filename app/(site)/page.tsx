@@ -12,6 +12,7 @@ import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
+import VideoHeroSection from "@/components/VideoHeroSection";
 
 export const metadata: Metadata = {
   title: "AraliGroup – Home",
@@ -23,6 +24,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+
       <FunFact />
       {/* <Brands /> */}
       {/* <FeaturesTab /> */}
@@ -34,6 +36,7 @@ export default function Home() {
 
       {/* <Testimonial /> */}
       {/* <Pricing /> */}
+      <VideoHeroSection />
       <Blog />
       <FAQ />
       {/* <Contact /> */}
