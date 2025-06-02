@@ -177,6 +177,15 @@ module.exports = {
           "0%": { opacity: 0, transform: "translateY(20px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         line1: "line 3s linear infinite",
@@ -198,6 +207,8 @@ module.exports = {
         slideInRight: "slideInFromRight 1.6s ease-out forwards",
         slideInRightDelay: "slideInFromRight 0.8s ease-out 0.2s forwards",
         slideInRightSlow: "slideInFromRight 0.7s ease-out forwards",
+        "fade-in": "fade-in 0.8s ease-out forwards",
+        gradient: "gradient 8s ease infinite",
       },
     },
   },

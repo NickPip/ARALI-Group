@@ -21,12 +21,18 @@ const VideoHeroSection: React.FC = () => {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Section title */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-            {t("videoHero.title")}
+        <div className="mb-16 text-center">
+          <h2 className="relative mb-6 inline-block text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
+            <span className="relative text-primary">
+              {t("videoHero.title")}
+            </span>
+            <div className="absolute -bottom-2 left-0 h-0.5 w-0 transform bg-primary transition-all duration-1000 ease-out group-hover:w-full"></div>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            {t("videoHero.subtitle")}
+          <p className="animate-fade-in mx-auto max-w-2xl text-base text-gray-600 md:text-lg">
+            <span className="relative inline-block">
+              {t("videoHero.subtitle")}
+              <div className="absolute -bottom-1 left-0 h-px w-full scale-x-0 transform bg-primary/30 transition-transform duration-700 ease-out group-hover:scale-x-100"></div>
+            </span>
           </p>
         </div>
 
