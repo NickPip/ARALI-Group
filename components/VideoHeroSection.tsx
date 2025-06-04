@@ -28,7 +28,7 @@ const VideoHeroSection: React.FC = () => {
             </span>
             <div className="absolute -bottom-2 left-0 h-0.5 w-0 transform bg-primary transition-all duration-1000 ease-out group-hover:w-full"></div>
           </h2>
-          <div className="animate-fade-in mx-auto max-w-2xl text-base text-gray-600 md:text-lg">
+          <div className="mx-auto max-w-2xl animate-fade-in text-base text-gray-600 md:text-lg">
             <span className="relative inline-block">
               {t("videoHero.subtitle")}
               <div className="absolute -bottom-1 left-0 h-px w-full scale-x-0 transform bg-primary/30 transition-transform duration-700 ease-out group-hover:scale-x-100"></div>
