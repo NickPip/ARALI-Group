@@ -7,12 +7,12 @@ const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === "ge" ? "en" : "ge";
+    const newLang = i18n.language === "ka" ? "en" : "ka";
     i18n.changeLanguage(newLang);
     saveLanguage(newLang);
   };
 
-  const currentLabel = i18n.language === "ge" ? "ქართული" : "English";
+  const currentLabel = i18n.language === "ka" ? "ქართული" : "English";
 
   return (
     <button
