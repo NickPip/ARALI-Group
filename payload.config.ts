@@ -106,6 +106,27 @@ const VideoHero = {
   ],
 };
 
+const Blog = {
+  slug: "blog",
+  labels: { singular: "Blog Post", plural: "Blog Posts" },
+  access: { read: () => true },
+  admin: {
+    useAsTitle: "title",
+    defaultColumns: ["title", "date", "position", "image"],
+    sortable: true,
+  },
+  fields: [
+    { name: "title", type: "text", required: true, localized: true },
+    { name: "subtitle", type: "text", localized: true },
+    { name: "description", type: "textarea", localized: true },
+    { name: "image", type: "upload", relationTo: "media" },
+    { name: "slug", type: "text", required: true, unique: true },
+    { name: "date", type: "date" },
+    { name: "content", type: "richText", localized: true },
+    { name: "position", type: "number" },
+  ],
+};
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -113,7 +134,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Blog],
   globals: [Hero, FunFact, VideoHero],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

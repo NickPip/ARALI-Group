@@ -16,6 +16,7 @@ import VideoHeroSection from "@/components/VideoHeroSection";
 import HeroDynamic from "@/components/HeroDynamic";
 import FunFactDynamic from "@/components/FunFactDynamic";
 import VideoHeroSectionDynamic from "@/components/VideoHeroSectionDynamic";
+import BlogDynamic from "@/components/Blog/BlogDynamic";
 
 export const metadata: Metadata = {
   title: "AraliGroup – Home",
@@ -42,7 +43,8 @@ export default function Home() {
       {/* <Pricing /> */}
       {/* <VideoHeroSection /> */}
       <VideoHeroSectionDynamic />
-      <Blog />
+      {/* <Blog /> */}
+      <BlogDynamic />
       <FAQ />
       {/* <Contact /> */}
       <Feature />
