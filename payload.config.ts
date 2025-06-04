@@ -90,6 +90,22 @@ const FunFact = {
   ],
 };
 
+const VideoHero = {
+  slug: "video-hero",
+  label: "Video Hero",
+  access: {
+    read: () => true,
+  },
+  fields: [
+    {
+      name: "videoUrl",
+      type: "text",
+      required: true,
+      label: "Video URL",
+    },
+  ],
+};
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -98,7 +114,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media],
-  globals: [Hero, FunFact],
+  globals: [Hero, FunFact, VideoHero],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
