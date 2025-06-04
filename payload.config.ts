@@ -16,6 +16,9 @@ const dirname = path.dirname(filename);
 const Hero = {
   slug: "hero",
   label: "Hero Section",
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: "slides",
@@ -59,6 +62,34 @@ const Hero = {
   ],
 };
 
+const FunFact = {
+  slug: "fun-fact",
+  label: "Fun Fact",
+  access: {
+    read: () => true,
+  },
+  fields: [
+    {
+      name: "completedProjects",
+      type: "number",
+      required: true,
+      label: "Completed Projects",
+    },
+    {
+      name: "partnerCompanies",
+      type: "number",
+      required: true,
+      label: "Partner Companies",
+    },
+    {
+      name: "ongoingProjects",
+      type: "number",
+      required: true,
+      label: "Ongoing Projects",
+    },
+  ],
+};
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -67,7 +98,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media],
-  globals: [Hero],
+  globals: [Hero, FunFact],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
