@@ -106,6 +106,43 @@ const VideoHero = {
   ],
 };
 
+const FAQ = {
+  slug: "faq",
+  label: "FAQ",
+  access: {
+    read: () => true,
+  },
+  fields: [
+    {
+      name: "items",
+      type: "array",
+      fields: [
+        {
+          name: "question",
+          type: "text",
+          required: true,
+          localized: true,
+          label: "Question",
+        },
+        {
+          name: "answer",
+          type: "textarea",
+          required: true,
+          localized: true,
+          label: "Answer",
+        },
+        {
+          name: "position",
+          type: "number",
+          required: true,
+          label: "Position",
+          defaultValue: 0,
+        },
+      ],
+    },
+  ],
+};
+
 const Blog = {
   slug: "blog",
   labels: { singular: "Blog Post", plural: "Blog Posts" },
@@ -135,7 +172,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Blog],
-  globals: [Hero, FunFact, VideoHero],
+  globals: [Hero, FunFact, VideoHero, FAQ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
