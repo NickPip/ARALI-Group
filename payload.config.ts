@@ -6,14 +6,16 @@ import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
+import type { GlobalConfig, CollectionConfig } from "payload";
 
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
+import Completed from "./collections/Completed";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const Hero = {
+const Hero: GlobalConfig = {
   slug: "hero",
   label: "Hero Section",
   access: {
@@ -62,7 +64,7 @@ const Hero = {
   ],
 };
 
-const FunFact = {
+const FunFact: GlobalConfig = {
   slug: "fun-fact",
   label: "Fun Fact",
   access: {
@@ -90,7 +92,7 @@ const FunFact = {
   ],
 };
 
-const VideoHero = {
+const VideoHero: GlobalConfig = {
   slug: "video-hero",
   label: "Video Hero",
   access: {
@@ -106,7 +108,7 @@ const VideoHero = {
   ],
 };
 
-const FAQ = {
+const FAQ: GlobalConfig = {
   slug: "faq",
   label: "FAQ",
   access: {
@@ -143,14 +145,13 @@ const FAQ = {
   ],
 };
 
-const Blog = {
+const Blog: CollectionConfig = {
   slug: "blog",
   labels: { singular: "Blog Post", plural: "Blog Posts" },
   access: { read: () => true },
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "date", "position", "image"],
-    sortable: true,
   },
   fields: [
     { name: "title", type: "text", required: true, localized: true },
@@ -171,7 +172,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Blog],
+  collections: [Users, Media, Blog, Completed],
   globals: [Hero, FunFact, VideoHero, FAQ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

@@ -1,0 +1,20 @@
+import type { CollectionConfig } from "payload";
+
+const Completed: CollectionConfig = {
+  slug: "completed",
+  labels: { singular: "Completed Project", plural: "Completed Projects" },
+  access: { read: () => true },
+  admin: {
+    useAsTitle: "title",
+    defaultColumns: ["title", "image", "location"],
+  },
+  fields: [
+    { name: "title", type: "text", required: true, localized: true },
+    { name: "description", type: "textarea", localized: true },
+    { name: "image", type: "upload", relationTo: "media" },
+    { name: "slug", type: "text", required: true, unique: true },
+    { name: "location", type: "text", required: true, localized: true },
+  ],
+};
+
+export default Completed;

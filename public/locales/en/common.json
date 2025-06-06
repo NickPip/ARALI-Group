@@ -638,5 +638,11 @@
     "galleryTitle": "Gallery of the project",
     "videoGalleryTitle": "Video Gallery",
     "viewVideoGallery": "View Video Gallery"
+  },
+  "completed": {
+    "title": "Completed Projects",
+    "description": "View our completed projects and achievements.",
+    "searchPlaceholder": "Search projects...",
+    "noResults": "No completed projects found."
   }
 }
