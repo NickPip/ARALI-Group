@@ -11,6 +11,7 @@ import type { GlobalConfig, CollectionConfig } from "payload";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import Completed from "./collections/Completed";
+import Inprogress from "./collections/Inprogress";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -172,7 +173,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Blog, Completed],
+  collections: [Users, Media, Blog, Completed, Inprogress],
   globals: [Hero, FunFact, VideoHero, FAQ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

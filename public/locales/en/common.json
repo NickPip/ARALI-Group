@@ -644,5 +644,11 @@
     "description": "View our completed projects and achievements.",
     "searchPlaceholder": "Search projects...",
     "noResults": "No completed projects found."
+  },
+  "inprogress": {
+    "title": "In Progress Projects",
+    "description": "View our ongoing projects and achievements.",
+    "searchPlaceholder": "Search projects...",
+    "noResults": "No in progress projects found."
   }
 }
