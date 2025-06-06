@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BlogItem from "@/components/Blog/BlogItem";
 
-interface CompletedProject {
+interface InProgressProject {
   id: string;
   title: string;
   subtitle: string;
@@ -12,17 +12,13 @@ interface CompletedProject {
     url: string;
   };
   slug: string;
-  completionDate: string;
   location: string;
-  client: string;
-  projectValue: string;
-  duration: string;
 }
 
-export default function CompletedPage() {
+export default function InProgressPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [completedProjects, setCompletedProjects] = useState<
-    CompletedProject[]
+  const [inProgressProjects, setInProgressProjects] = useState<
+    InProgressProject[]
   >([]);
   const { t, i18n } = useTranslation();
 
@@ -42,69 +38,61 @@ export default function CompletedPage() {
   }, []);
 
   useEffect(() => {
-    const fetchInprogressProjects = async () => {
+    const fetchInProgressProjects = async () => {
       try {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3000"}/api/inprogress?locale=${i18n.language}&limit=12&sort=position`,
         );
         const data = await response.json();
-        setCompletedProjects(data.docs);
+        // Clean up slugs by removing leading slashes
+        const cleanedProjects = data.docs.map((project: InProgressProject) => ({
+          ...project,
+          slug: project.slug.replace(/^\/+/, ""),
+        }));
+        setInProgressProjects(cleanedProjects);
       } catch (error) {
         console.error("Error fetching in progress projects:", error);
       }
     };
-    fetchInprogressProjects();
+
+    fetchInProgressProjects();
   }, [i18n.language]);
 
-  const filteredProjects = completedProjects.filter((project) =>
+  const filteredProjects = inProgressProjects.filter((project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
     <>
-      {/* Header Background Overlay - Always visible for header items */}
+      {/* Header Background Overlay */}
       <div className="pointer-events-none fixed left-0 right-0 top-0 z-40 h-32 bg-gradient-to-b from-black/30 via-black/20 to-transparent" />
-      <div className="container mx-auto flex flex-col items-center px-4 pb-12 pt-32">
-        <h1 className="mb-2 text-center text-5xl font-extrabold tracking-tight text-black">
+
+      <div className="container mx-auto px-4 pb-12 pt-32">
+        <h1 className="mb-8 text-center text-4xl font-bold text-gray-900 dark:text-white">
           {t("inprogress.title", "In Progress Projects")}
         </h1>
-        <p className="mb-8 max-w-2xl text-center text-lg text-black">
+
+        <p className="mb-12 text-center text-lg text-gray-600 dark:text-gray-400">
           {t(
             "inprogress.description",
             "View our ongoing projects and achievements.",
           )}
         </p>
-        {/* Margin between header and content */}
-        <div className="my-8 flex w-full justify-center">
-          <div className="relative w-full max-w-md">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
-                />
-              </svg>
-            </span>
-            <input
-              type="text"
-              placeholder={t(
-                "inprogress.searchPlaceholder",
-                "Search projects...",
-              )}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 text-gray-900 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+
+        {/* Search Bar */}
+        <div className="mb-12">
+          <input
+            type="text"
+            placeholder={t(
+              "inprogress.searchPlaceholder",
+              "Search projects...",
+            )}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+          />
         </div>
-        {/* Results Grid */}
+
         {filteredProjects.length === 0 ? (
           <div className="mt-16 flex flex-col items-center">
             <svg
@@ -137,9 +125,9 @@ export default function CompletedPage() {
                     _id: parseInt(project.id),
                     mainImage: project.image.url,
                     title: project.title,
-                    metadata: project.description,
+                    metadata: project.subtitle,
                     location: project.location,
-                    path: `/inprogress/${project.slug}`,
+                    path: `/projects/${project.slug}`,
                   }}
                   index={index}
                 />

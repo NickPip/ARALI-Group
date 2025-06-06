@@ -9,6 +9,14 @@ const nextConfig = {
         hostname: "cdn.sanity.io",
       },
     ],
+    domains: [
+      "localhost",
+      "127.0.0.1",
+      "img.youtube.com",
+      "i.ytimg.com",
+      "youtube.com",
+      "www.youtube.com",
+    ],
   },
 };
 
