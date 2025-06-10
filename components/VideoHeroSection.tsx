@@ -48,7 +48,7 @@ const VideoHeroSection: React.FC = () => {
                   >
                     {/* Thumbnail Image - Replace with your actual thumbnail URL */}
                     <img
-                      src="https://img.youtube.com/vi/WkXWMCcazVs/maxresdefault.jpg"
+                      src="https://img.youtube.com/vi/dz26HhEP75o/maxresdefault.jpg"
                       alt="Video thumbnail"
                       className="h-full w-full object-cover"
                     />
@@ -68,7 +68,7 @@ const VideoHeroSection: React.FC = () => {
                 ) : (
                   <iframe
                     className="absolute left-0 top-0 h-full w-full rounded-2xl"
-                    src="https://www.youtube.com/embed/WkXWMCcazVs?autoplay=1&rel=0"
+                    src="https://www.youtube.com/embed/dz26HhEP75o?rel=0"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
