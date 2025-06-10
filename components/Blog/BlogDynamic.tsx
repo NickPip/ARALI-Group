@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import SectionHeader from "../Common/SectionHeader";
 import BlogItem from "./BlogItem";
 import { motion } from "framer-motion";
+import { Blog } from "@/types/blog";
 
 interface BlogPost {
   id: string;
@@ -29,7 +30,7 @@ interface BlogPost {
 
 const BlogDynamic = () => {
   const { t, i18n } = useTranslation();
-  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const locale = i18n.language || "en";
 
@@ -44,12 +45,13 @@ const BlogDynamic = () => {
 
         // Transform the data to match the expected format
         const transformedBlogs = data.docs.map((blog: BlogPost) => ({
-          id: blog.id,
+          _id: parseInt(blog.id),
           mainImage: blog.image?.url || "/images/blog1.jpg",
           title: blog.title,
           metadata: blog.subtitle,
           location: blog.description,
           path: `/blog/${blog.slug}`,
+          date: blog.date,
         }));
 
         setBlogs(transformedBlogs);
@@ -137,7 +139,7 @@ const BlogDynamic = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {blogs.map((blog, key) => (
-            <motion.div key={blog.id} variants={itemVariants}>
+            <motion.div key={blog._id} variants={itemVariants}>
               <BlogItem blog={blog} index={key} />
             </motion.div>
           ))}
