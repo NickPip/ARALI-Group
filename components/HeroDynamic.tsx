@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 interface Slide {
   image?: { url: string };
@@ -10,6 +11,16 @@ interface Slide {
   link?: string;
   category?: string;
 }
+
+// Static background images in the same order as your slides
+const staticImages = [
+  "/images/blog/gzebi.png",
+  "/images/blog/solar.png",
+  "/images/blog/concrete.png",
+  "/images/blog/arali-karieri.png",
+  "/images/blog/gas.png",
+  "/images/features/slider.png",
+];
 
 const HeroDynamic: React.FC = () => {
   const [slides, setSlides] = useState<Slide[]>([]);
@@ -51,7 +62,7 @@ const HeroDynamic: React.FC = () => {
                 : "opacity-0"
             }`}
             style={{
-              backgroundImage: `url('${slide.image?.url}')`,
+              backgroundImage: `url('${staticImages[index]}')`,
               zIndex: currentSlide === index ? 10 : 0,
               animationPlayState:
                 currentSlide === index && isPaused ? "paused" : "running",
@@ -81,14 +92,14 @@ const HeroDynamic: React.FC = () => {
           </p>
 
           {slides[currentSlide].buttonText && slides[currentSlide].link && (
-            <a href={slides[currentSlide].link}>
+            <Link href={slides[currentSlide].link}>
               <button
                 key={currentSlide + "-button"}
                 className="lg:text-1xl mt-10 animate-slideInRightDelay rounded-md bg-primary px-12 py-1 font-thin text-white opacity-0 hover:bg-primary/80"
               >
                 {slides[currentSlide].buttonText}
               </button>
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -100,7 +111,45 @@ const HeroDynamic: React.FC = () => {
           className="border-1 group relative flex h-16 w-16 items-center justify-center rounded-full border-white bg-transparent transition-colors hover:bg-white"
           aria-label="Pause/Play Slideshow"
         >
-          {isPaused ? "Play" : "Pause"}
+          <svg
+            key={currentSlide}
+            className="pointer-events-none absolute left-0 top-0 h-full w-full -rotate-90 transform"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="white"
+              strokeWidth="4"
+              fill="transparent"
+              strokeDasharray="282.743"
+              strokeDashoffset="282.743"
+              className={!isPaused ? "animate-progress" : ""}
+            />
+          </svg>
+          {isPaused ? (
+            // Play icon
+            <svg
+              className="h-6 w-6 text-white group-hover:text-primary"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon points="5,3 19,10 5,17" />
+            </svg>
+          ) : (
+            // Pause icon
+            <svg
+              className="h-6 w-6 text-white group-hover:text-primary"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="4" y="3" width="4" height="14" />
+              <rect x="12" y="3" width="4" height="14" />
+            </svg>
+          )}
         </button>
       </div>
 
