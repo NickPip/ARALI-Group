@@ -13,7 +13,7 @@ const VideoGalleryPage = () => {
 
   const videoData = {
     thumbnail: "/images/blog6/DJI_20250517160053_0394_D.jpg",
-    youtubeId: "_Uw_z837SV4",
+    youtubeId: "Ayao3SKAJb4",
   };
 
   return (
