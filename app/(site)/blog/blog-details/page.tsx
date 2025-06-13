@@ -142,6 +142,14 @@ const SingleBlogPage = () => {
                 {t("blogTwo.section4")}
               </p>
             </div>
+            <div className="mt-12 flex justify-center gap-4">
+              <a
+                href="/blog/blog-details/videos"
+                className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
+              >
+                {t("blogTwo.viewGallery", "View Gallery")}
+              </a>
+            </div>
           </div>
         </div>
       </section>
