@@ -4,16 +4,89 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiArrowLeft, FiX } from "react-icons/fi";
-import { useState } from "react";
+import {
+  FiArrowLeft,
+  FiX,
+  FiPlay,
+  FiPause,
+  FiVolume2,
+  FiVolumeX,
+} from "react-icons/fi";
+import { useState, useEffect, useRef } from "react";
+import { toast } from "react-hot-toast";
 
 const VideoGalleryPage = () => {
   const { t } = useTranslation();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [playbackRate, setPlaybackRate] = useState(1);
+  const [videoQuality, setVideoQuality] = useState("auto");
+  const videoRef = useRef<HTMLIFrameElement>(null);
 
   const videoData = {
     thumbnail: "/images/blog7/DJI_20250522152659_0621_D.jpg",
     youtubeId: "abajoGmX6y8",
+  };
+
+  const handleVideoError = () => {
+    setIsLoading(false);
+    toast.error("Failed to load video. Please try again later.");
+  };
+
+  const handleVideoLoad = () => {
+    setIsLoading(false);
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      const message = isPlaying ? "pauseVideo" : "playVideo";
+      videoRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: message }),
+        "*",
+      );
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const message = isMuted ? "unMute" : "mute";
+      videoRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: message }),
+        "*",
+      );
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const changePlaybackRate = (rate: number) => {
+    if (videoRef.current) {
+      videoRef.current.contentWindow?.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "setPlaybackRate",
+          args: [rate],
+        }),
+        "*",
+      );
+      setPlaybackRate(rate);
+    }
+  };
+
+  const changeQuality = (quality: string) => {
+    if (videoRef.current) {
+      videoRef.current.contentWindow?.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "setPlaybackQuality",
+          args: [quality],
+        }),
+        "*",
+      );
+      setVideoQuality(quality);
+    }
   };
 
   return (
@@ -39,14 +112,56 @@ const VideoGalleryPage = () => {
             style={{ maxWidth: "100vw" }}
             onClick={(e) => e.stopPropagation()}
           >
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                <div className="h-16 w-16 animate-spin rounded-full border-4 border-white border-t-transparent"></div>
+              </div>
+            )}
             <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
               <iframe
-                src={`https://www.youtube.com/embed/${videoData.youtubeId}?autoplay=1`}
+                ref={videoRef}
+                src={`https://www.youtube.com/embed/${videoData.youtubeId}?autoplay=1&enablejsapi=1&origin=${window.location.origin}&controls=0&rel=0`}
                 title="Video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute left-0 top-0 h-full w-full rounded-b-lg"
+                onLoad={handleVideoLoad}
+                onError={handleVideoError}
               />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-black/50 p-4 text-white">
+              <div className="flex items-center space-x-4">
+                <button onClick={togglePlay} className="hover:text-gray-300">
+                  {isPlaying ? <FiPause size={24} /> : <FiPlay size={24} />}
+                </button>
+                <button onClick={toggleMute} className="hover:text-gray-300">
+                  {isMuted ? <FiVolumeX size={24} /> : <FiVolume2 size={24} />}
+                </button>
+              </div>
+              <div className="flex items-center space-x-4">
+                <select
+                  value={playbackRate}
+                  onChange={(e) => changePlaybackRate(Number(e.target.value))}
+                  className="bg-transparent text-white"
+                >
+                  <option value={0.5}>0.5x</option>
+                  <option value={1}>1x</option>
+                  <option value={1.5}>1.5x</option>
+                  <option value={2}>2x</option>
+                </select>
+                <select
+                  value={videoQuality}
+                  onChange={(e) => changeQuality(e.target.value)}
+                  className="bg-transparent text-white"
+                >
+                  <option value="auto">Auto</option>
+                  <option value="hd1080">1080p</option>
+                  <option value="hd720">720p</option>
+                  <option value="large">480p</option>
+                  <option value="medium">360p</option>
+                  <option value="small">240p</option>
+                </select>
+              </div>
             </div>
           </div>
         </motion.div>

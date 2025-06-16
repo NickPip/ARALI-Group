@@ -30,7 +30,7 @@ const VideoHeroSectionDynamic: React.FC = () => {
     ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
     : "";
   const embedUrl = videoId
-    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
+    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&controls=0`
     : "";
 
   return (

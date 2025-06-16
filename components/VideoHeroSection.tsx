@@ -68,7 +68,7 @@ const VideoHeroSection: React.FC = () => {
                 ) : (
                   <iframe
                     className="absolute left-0 top-0 h-full w-full rounded-2xl"
-                    src="https://www.youtube.com/embed/dz26HhEP75o?rel=0"
+                    src="https://www.youtube.com/embed/dz26HhEP75o?rel=0&controls=0&autoplay=1"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

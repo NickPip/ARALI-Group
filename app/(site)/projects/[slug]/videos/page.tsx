@@ -110,7 +110,7 @@ export default function ProjectVideosPage({
                     project.videos[selectedVideo].videoUrl ||
                       project.videos[selectedVideo].url,
                   )
-                }?autoplay=1`}
+                }?autoplay=1&controls=0&rel=0`}
                 title={project.videos[selectedVideo].title || "Video player"}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
