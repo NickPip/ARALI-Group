@@ -137,6 +137,11 @@
         "title": "Renewed Regions Program",
         "metadata": "Development of a state-of-the-art industrial complex for manufacturing.",
         "location": "Samtskhe-Javakheti, Georgia"
+      },
+      "newProject": {
+        "title": "NEW CONSTRUCTION PROJECT",
+        "metadata": "A modern construction project showcasing innovative building techniques and sustainable design principles.",
+        "location": "Tbilisi, Georgia"
       }
     },
     "ourwork": "OUR WORK"
@@ -650,5 +655,20 @@
     "description": "View our ongoing projects and achievements.",
     "searchPlaceholder": "Search projects...",
     "noResults": "No in progress projects found."
+  },
+  "blogNine": {
+    "title": "Rehabilitation of the Green and Blue Corridor in Abastumani Settlement Completed",
+    "executor": "Executor",
+    "executorName": "Arali Group",
+    "date": "Completed",
+    "dateValue": "2024",
+    "category": "Category",
+    "categoryName": "Infrastructure Rehabilitation",
+    "introduction": "The company 'Arali' has completed the rehabilitation project of the green and blue corridor in Abastumani settlement.",
+    "details": "The project was implemented by the order of the Municipal Development Fund and with the financial support of the World Bank.",
+    "section1": "The project included the complete rehabilitation of the green and blue corridor in Abastumani, which covered the rehabilitation of 7.2 kilometers of the internal state road - Kutaisi (Sagoria) - Baghdati-Abastumani-Benara. It also included the renovation of internal neighborhood roads, adjacent parks, stadium, public toilets, outdoor lighting, riverbank reinforcement, existing bridges, and the arrangement of bicycle and pedestrian paths.",
+    "section2": "The project started in May 2021 and was completed at the end of 2024. The total cost of the works amounted to 44.6 million GEL.",
+    "section3": "The aim of the project is to promote the infrastructural development of Abastumani, improve the urban environment, and increase its tourism potential.",
+    "section4": "This project represents an important step for the development of the region, ensuring better living conditions for the local population and increasing the region's tourist attractiveness."
   }
 }

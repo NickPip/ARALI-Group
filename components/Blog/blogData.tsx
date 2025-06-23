@@ -47,6 +47,14 @@ const useBlogData = () => {
       metadata: t("blog.items.industrialComplex.metadata"),
       location: t("blog.items.industrialComplex.location"),
     },
+    {
+      _id: 7,
+      mainImage: "/images/blog/feature1.jpg",
+      title: t("blog.items.newProject.title"),
+      metadata: t("blog.items.newProject.metadata"),
+      location: t("blog.items.newProject.location"),
+      path: "/blog/blog-details9",
+    },
   ];
 
   return BlogData;
