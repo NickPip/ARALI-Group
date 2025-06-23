@@ -657,7 +657,7 @@
     "noResults": "No in progress projects found."
   },
   "blogNine": {
-    "title": "Rehabilitation of the Green and Blue Corridor in Abastumani Settlement Completed",
+    "title": "Rehabilitation of the Green and Blue Corridor in Abastumani Settlement",
     "executor": "Executor",
     "executorName": "Arali Group",
     "date": "Completed",
@@ -669,6 +669,10 @@
     "section1": "The project included the complete rehabilitation of the green and blue corridor in Abastumani, which covered the rehabilitation of 7.2 kilometers of the internal state road - Kutaisi (Sagoria) - Baghdati-Abastumani-Benara. It also included the renovation of internal neighborhood roads, adjacent parks, stadium, public toilets, outdoor lighting, riverbank reinforcement, existing bridges, and the arrangement of bicycle and pedestrian paths.",
     "section2": "The project started in May 2021 and was completed at the end of 2024. The total cost of the works amounted to 44.6 million GEL.",
     "section3": "The aim of the project is to promote the infrastructural development of Abastumani, improve the urban environment, and increase its tourism potential.",
-    "section4": "This project represents an important step for the development of the region, ensuring better living conditions for the local population and increasing the region's tourist attractiveness."
+    "section4": "This project represents an important step for the development of the region, ensuring better living conditions for the local population and increasing the region's tourist attractiveness.",
+    "viewGallery": "View Gallery",
+    "viewVideoGallery": "View Video Gallery",
+    "galleryTitle": "Gallery of the project",
+    "videoGalleryTitle": "Video Gallery"
   }
 }

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Feature from "@/components/Features";
+import Link from "next/link";
 
 const SingleBlogPage = () => {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ const SingleBlogPage = () => {
       {/* Single Cover Image */}
       <div className="relative h-[80vh] w-full">
         <Image
-          src="/images/blog/feature1.jpg"
+          src="/blog9/DJI_20250519170823_0629_D.jpg"
           alt="Project cover image"
           fill
           className="object-cover"
@@ -78,6 +79,21 @@ const SingleBlogPage = () => {
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
                 {t("blogNine.section4")}
               </p>
+
+              <div className="mt-12 flex justify-center gap-4">
+                <Link
+                  href="/blog/blog-details9/gallery"
+                  className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
+                >
+                  {t("blogNine.viewGallery")}
+                </Link>
+                <Link
+                  href="/blog/blog-details9/videos"
+                  className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-center text-base font-medium text-white transition-all hover:bg-primary/90"
+                >
+                  {t("blogNine.viewVideoGallery")}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

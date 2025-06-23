@@ -49,10 +49,10 @@ const useBlogData = () => {
     },
     {
       _id: 7,
-      mainImage: "/images/blog/feature1.jpg",
-      title: t("blog.items.newProject.title"),
-      metadata: t("blog.items.newProject.metadata"),
-      location: t("blog.items.newProject.location"),
+      mainImage: "/blog9/DJI_20250519170823_0629_D.jpg",
+      title: t("blogNine.title"),
+      metadata: t("blogNine.categoryName"),
+      location: "Abastumani, Georgia",
       path: "/blog/blog-details9",
     },
   ];
