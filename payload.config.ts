@@ -7,6 +7,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import type { GlobalConfig, CollectionConfig } from "payload";
+import { gcsStorage } from "@payloadcms/storage-gcs";
 
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
@@ -181,6 +182,19 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
+    gcsStorage({
+      collections: {
+        media: true,
+      },
+      bucket: process.env.GCS_BUCKET || "",
+      options: {
+        projectId: process.env.GCS_PROJECT_ID || "",
+        apiEndpoint: process.env.GCS_ENDPOINT || "",
+        credentials: process.env.GCS_CREDENTIALS_JSON
+          ? JSON.parse(process.env.GCS_CREDENTIALS_JSON)
+          : undefined,
+      },
+    }),
     // storage-adapter-placeholder
   ],
   localization: {
