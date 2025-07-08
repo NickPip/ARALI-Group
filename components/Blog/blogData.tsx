@@ -40,13 +40,13 @@ const useBlogData = () => {
       metadata: t("blog.items.gasStation.metadata"),
       location: t("blog.items.gasStation.location"),
     },
-    {
-      _id: 6,
-      mainImage: "/images/blog6/blog6-1.jpg",
-      title: t("blog.items.industrialComplex.title"),
-      metadata: t("blog.items.industrialComplex.metadata"),
-      location: t("blog.items.industrialComplex.location"),
-    },
+    // {
+    //   _id: 6,
+    //   mainImage: "/images/blog6/blog6-1.jpg",
+    //   title: t("blog.items.industrialComplex.title"),
+    //   metadata: t("blog.items.industrialComplex.metadata"),
+    //   location: t("blog.items.industrialComplex.location"),
+    // },
     {
       _id: 7,
       mainImage: "/blog9/DJI_20250519170823_0629_D.jpg",
