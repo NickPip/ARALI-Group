@@ -101,7 +101,7 @@ const SingleBlogPage = () => {
                 <span className="font-medium text-gray-700 dark:text-gray-300">
                   Executor:
                 </span>{" "}
-                Arali Groupp
+                Arali Group
               </li>
               <li className="ml-1">•</li>
               <li>
