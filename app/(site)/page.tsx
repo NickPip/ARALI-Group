@@ -42,8 +42,8 @@ export default function Home() {
 
       {/* <Testimonial /> */}
       {/* <Pricing /> */}
-      <VideoHeroSection />
-      {/* <VideoHeroSectionDynamic /> */}
+      {/* <VideoHeroSection /> */}
+      <VideoHeroSectionDynamic />
       <Blog />
       {/* <BlogDynamic /> */}
       <FAQ />

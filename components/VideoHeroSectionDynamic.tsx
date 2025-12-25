@@ -13,13 +13,13 @@ function getYouTubeId(url: string): string | null {
 const VideoHeroSectionDynamic: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoUrl, setVideoUrl] = useState<string>("");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    fetch("/api/globals/video-hero")
+    fetch(`/api/globals/video-hero?locale=${i18n.language}`)
       .then((res) => res.json())
       .then((data) => setVideoUrl(data.videoUrl || ""));
-  }, []);
+  }, [i18n.language]);
 
   const handlePlay = () => {
     setIsPlaying(true);
